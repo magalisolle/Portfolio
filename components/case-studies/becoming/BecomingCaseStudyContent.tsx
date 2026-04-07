@@ -11,7 +11,7 @@ import {
 } from "@/components/case-studies";
 
 const IMG = (file: string) =>
-  `/images/becoming/${encodeURIComponent(file)}`;
+  `/images/Becoming/${encodeURIComponent(file)}`;
 
 export function BecomingCaseStudyContent() {
   return (
