@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Product designer focused on building clear and scalable digital products. SaaS, fintech, and complex workflows.",
   applicationName: "Magas Portfolio",
   icons: {
-    icon: "/images/favicon.png",
+    icon: "/favicon.png",
   },
 };
 
