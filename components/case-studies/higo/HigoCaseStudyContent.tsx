@@ -11,7 +11,7 @@ import {
 } from "@/components/case-studies";
 
 const IMG = (file: string) =>
-  `/images/higo/${encodeURIComponent(file)}`;
+  `/images/Higo/${encodeURIComponent(file)}`;
 
 export function HigoCaseStudyContent() {
   return (
@@ -371,7 +371,7 @@ export function HigoCaseStudyContent() {
             <div className="flex flex-col gap-4">
               <div className="overflow-hidden rounded-3xl bg-[#fdfdfd] p-4 md:p-6">
                 <Image
-                  src="/images/higo/pagos-de-nomina.png"
+                  src="/images/Higo/pagos-de-nomina.png"
                   alt="Payroll payments list view"
                   width={1440}
                   height={900}

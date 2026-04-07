@@ -11,7 +11,7 @@ import {
 } from "@/components/case-studies";
 
 const IMG = (file: string) =>
-  `/images/dinksmart/${encodeURIComponent(file)}`;
+  `/images/Dinksmart/${encodeURIComponent(file)}`;
 
 export function DinksmartCaseStudyContent() {
   return (
