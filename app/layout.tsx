@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Poppins } from "next/font/google";
 import { generalSans } from "./fonts";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body
         className={`${bricolage.variable} ${poppins.variable} bg-mint text-ink antialiased`}
       >
+        <ScrollToTop />
         {children}
       </body>
     </html>
