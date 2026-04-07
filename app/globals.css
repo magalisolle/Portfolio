@@ -1,0 +1,294 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — Magali-Solle (Figma file FeF5ES2xRY75wBP8gFjOVr).
+ * Keep in sync with Figma Variables / local styles; components use these via utilities and .btn-* classes.
+ */
+@theme {
+  --color-mint: #c8f4b7;
+  --color-ink: #181818;
+  --color-ink-strong: #121212;
+  --color-muted: #555555;
+  --color-muted-soft: #7a7a7a;
+  --color-heading-case: #363636;
+  --color-card-case: #f3fcf0;
+  --color-cream: #fff7e5;
+  /* Hero rulo swirl stroke (matches rulo.svg embedded style, light cream) */
+  --color-rulo-stroke: #fdf9f6;
+  --color-lilac: #d0d0fd;
+  --color-about-bg: #e8effd;
+  /* Theme Go! Coaching — Figma variables: Theme Go! Coaching/Surface/* */
+  --color-go-coaching-subtle: #f6f9fe;
+  --color-go-coaching-inverse: #a7c2f6;
+  /* Case study long-form (Figma Web frame — FeF5ES2xRY75wBP8gFjOVr, node 4845:2308) */
+  --color-case-study-bg: #ededfa;
+  --color-footer: #3c3c3c;
+  --color-footer-text: #fffbf2;
+  --color-pill: #93bf80;
+  --color-chip: #c8f4b7;
+  /*
+   * Linked to next/font/local in app/fonts.ts — --font-general-sans is set on <html>.
+   * Do not use the string "General Sans" here; the optimized family name must match Next.
+   */
+  --font-sans: var(--font-general-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-button: var(--font-general-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /*
+   * Figma — Button component set (FeF5ES2xRY75wBP8gFjOVr).
+   * Primary / Secondary / Tertiary / Success / Error + size & state variants.
+   */
+  --color-figma-button-primary-surface: #3c3c3c;
+  --color-figma-button-primary-surface-hover: #2a2a2a;
+  --color-figma-button-on-primary: #fdfdfd;
+  --color-figma-button-secondary-border: #181818;
+  --color-figma-button-secondary-on-light: #181818;
+  --color-figma-button-secondary-hover-fill: rgb(250 250 250 / 0.08);
+  --color-figma-button-success: #067503;
+  --color-figma-button-error: #ac3333;
+  --color-figma-blacks-700: #212121;
+
+  /* Actions/Button/* Bold — General Sans 600, tracking 2.5% */
+  --tracking-button: 0.025em;
+  --font-weight-button: 600;
+  /* Figma: Primary & Secondary use 48px corner radius (pill) */
+  --radius-button-pill: 48px;
+  /* Tertiary: 16px / 12px / 8px by size (large / medium / small) */
+  --radius-button-tertiary-lg: 16px;
+  --radius-button-tertiary-md: 12px;
+  --radius-button-tertiary-sm: 8px;
+  --radius-button-soft: var(--radius-button-tertiary-lg);
+
+  /* Medium = nav CTAs (Figma: padding 12px 16px) */
+  --padding-button-nav-x: 1rem;
+  --padding-button-nav-y: 0.75rem;
+  /* Footer outline — medium (Figma: 12px × 16px, Actions/Button/M Bold) */
+  --padding-button-footer-x: 1rem;
+  --padding-button-footer-y: 0.75rem;
+  /* Hero soft CTA — tertiary large: 16px */
+  --padding-button-hero-x: 1rem;
+  --padding-button-hero-y: 1rem;
+  /* Tertiary link row — medium */
+  --padding-button-tertiary-x: 1rem;
+  --padding-button-tertiary-y: 0.5rem;
+
+  --color-button-primary-bg: var(--color-figma-button-primary-surface);
+  --color-button-primary-hover: var(--color-figma-button-primary-surface-hover);
+  --color-button-primary-fg: var(--color-figma-button-on-primary);
+  /* Footer CTA — Figma Secondary, Mode=Dark: stroke + label #FDFDFD (not body cream) */
+  --color-button-footer-border: var(--color-figma-button-on-primary);
+  --color-button-footer-fg: var(--color-figma-button-on-primary);
+}
+
+@layer components {
+  /* Primary — Figma: Style=Primary, Size=medium, State=default (pill 48px, fill #3C3C3C) */
+  .btn-primary {
+    font-family: var(--font-button);
+    font-weight: var(--font-weight-button);
+    font-style: normal;
+    font-synthesis: none;
+    @apply inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181818] focus-visible:ring-offset-2 focus-visible:ring-offset-mint active:opacity-90;
+    border-radius: var(--radius-button-pill);
+    background-color: var(--color-button-primary-bg);
+    color: var(--color-button-primary-fg);
+    padding: var(--padding-button-nav-y) var(--padding-button-nav-x);
+    letter-spacing: var(--tracking-button);
+    font-size: 0.875rem;
+    line-height: 1.14285714;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-button-primary-hover);
+  }
+
+  /* Tertiary large — soft hero (“View selected work”): no fill, #181818 label, 16px radius */
+  .btn-secondary-soft {
+    font-family: var(--font-button);
+    font-weight: var(--font-weight-button);
+    font-style: normal;
+    font-synthesis: none;
+    @apply inline-flex items-center justify-center gap-2 text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181818]/35 focus-visible:ring-offset-2 focus-visible:ring-offset-mint;
+    border-radius: var(--radius-button-soft);
+    padding: var(--padding-button-hero-y) var(--padding-button-hero-x);
+    letter-spacing: var(--tracking-button);
+    font-size: 1rem;
+    line-height: 1.25;
+    background: transparent;
+  }
+  .btn-secondary-soft:hover {
+    background-color: var(--color-figma-button-secondary-hover-fill);
+  }
+
+  /*
+   * Secondary on dark footer — Figma: Size=medium, Style=Secondary, Mode=Dark
+   * Transparent fill, stroke #FDFDFD 2px, Actions/Button/M Bold, radius 48px, padding 12×16px.
+   */
+  .btn-outline-footer {
+    font-family: var(--font-button);
+    font-weight: var(--font-weight-button);
+    font-style: normal;
+    font-synthesis: none;
+    @apply inline-flex w-fit shrink-0 cursor-pointer select-none items-center justify-center gap-2 border-solid bg-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#fdfdfd]/55 focus-visible:ring-offset-2 focus-visible:ring-offset-footer active:opacity-90;
+    border-radius: var(--radius-button-pill);
+    border-width: 2px;
+    border-color: var(--color-button-footer-border);
+    color: var(--color-button-footer-fg);
+    padding: var(--padding-button-footer-y) var(--padding-button-footer-x);
+    letter-spacing: var(--tracking-button);
+    font-size: 0.875rem;
+    line-height: 1.14285714;
+  }
+  .btn-outline-footer:hover {
+    background-color: var(--color-figma-button-secondary-hover-fill);
+  }
+
+  /* Tertiary medium — case study row (Actions/Button/M Bold ≈ 14px) */
+  .btn-tertiary {
+    font-family: var(--font-button);
+    font-weight: var(--font-weight-button);
+    font-style: normal;
+    font-synthesis: none;
+    @apply inline-flex w-fit items-center gap-2 text-ink transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#181818]/25 focus-visible:ring-offset-2 focus-visible:ring-offset-card-case;
+    border-radius: var(--radius-button-tertiary-md);
+    padding: var(--padding-button-tertiary-y) var(--padding-button-tertiary-x);
+    letter-spacing: var(--tracking-button);
+    font-size: 0.875rem;
+    line-height: 1.14285714;
+  }
+  .btn-tertiary:hover {
+    background-color: var(--color-figma-button-secondary-hover-fill);
+  }
+
+  /*
+   * Case study body column (max 1186): must match Tailwind px-4 md:px-8 lg:px-[131px] exactly.
+   * CaseStudyWideBleed pulls to column edges with the inverse margin — same breakpoints/values.
+   */
+  .case-study-body-inner {
+    padding-inline: 1rem;
+  }
+  @media (min-width: 768px) {
+    .case-study-body-inner {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .case-study-body-inner {
+      padding-inline: 131px;
+    }
+  }
+
+  /*
+   * Wide bleed sits inside .case-study-body-inner: old margins only undid body padding,
+   * not the side gap that centers max-w-[1186px]. Parent .case-study-body-band sets
+   * container-type so we can pull by max(0, (100cqi - 1186px) / 2) + body padding.
+   */
+  .case-study-body-band {
+    container-type: inline-size;
+    container-name: cs-body-band;
+  }
+
+  .case-study-wide-bleed-outer {
+    box-sizing: border-box;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    overflow-x: clip;
+    margin-inline: -1rem;
+  }
+  @media (min-width: 768px) {
+    .case-study-wide-bleed-outer {
+      margin-inline: -2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .case-study-wide-bleed-outer {
+      margin-inline: -131px;
+    }
+  }
+
+  /* Fallback when container queries are unavailable — same as .case-study-body-inner */
+  .case-study-wide-bleed-align-text {
+    padding-inline: 1rem;
+  }
+  @media (min-width: 768px) {
+    .case-study-wide-bleed-align-text {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .case-study-wide-bleed-align-text {
+      padding-inline: 131px;
+    }
+  }
+
+  @supports (container-type: inline-size) {
+    .case-study-wide-bleed-outer {
+      margin-inline: calc(
+        -1 * (max(0px, (100cqi - 1186px) / 2) + 1rem)
+      );
+    }
+    @media (min-width: 768px) {
+      .case-study-wide-bleed-outer {
+        margin-inline: calc(
+          -1 * (max(0px, (100cqi - 1186px) / 2) + 2rem)
+        );
+      }
+    }
+    @media (min-width: 1024px) {
+      .case-study-wide-bleed-outer {
+        margin-inline: calc(
+          -1 * (max(0px, (100cqi - 1186px) / 2) + 131px)
+        );
+      }
+    }
+
+    /* Title line aligns with body copy; figure stays full bleed width below. */
+    .case-study-wide-bleed-align-text {
+      padding-inline: calc(max(0px, (100cqi - 1186px) / 2) + 1rem);
+    }
+    @media (min-width: 768px) {
+      .case-study-wide-bleed-align-text {
+        padding-inline: calc(max(0px, (100cqi - 1186px) / 2) + 2rem);
+      }
+    }
+    @media (min-width: 1024px) {
+      .case-study-wide-bleed-align-text {
+        padding-inline: calc(max(0px, (100cqi - 1186px) / 2) + 131px);
+      }
+    }
+  }
+
+  /* Same as Tailwind px-3 sm:px-5 md:px-8 lg:px-10 xl:px-12 — shared by hero + wide-bleed inner */
+  .case-study-hero-band-inner {
+    padding-inline: 0.75rem;
+  }
+  @media (min-width: 640px) {
+    .case-study-hero-band-inner {
+      padding-inline: 1.25rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .case-study-hero-band-inner {
+      padding-inline: 2rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .case-study-hero-band-inner {
+      padding-inline: 2.5rem;
+    }
+  }
+  @media (min-width: 1280px) {
+    .case-study-hero-band-inner {
+      padding-inline: 3rem;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-style: normal;
+  }
+}

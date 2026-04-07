@@ -1,0 +1,32 @@
+{
+  "name": "magas-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node ./node_modules/next/dist/bin/next dev --webpack",
+    "dev:turbo": "node ./node_modules/next/dist/bin/next dev --turbopack",
+    "build": "node ./node_modules/next/dist/bin/next build",
+    "start": "node ./node_modules/next/dist/bin/next start",
+    "preview": "node ./node_modules/next/dist/bin/next build && node ./node_modules/next/dist/bin/next start -p 3005",
+    "lint": "eslint",
+    "download:go-coaching-images": "node scripts/download-go-coaching-figma-images.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0",
+    "next": "16.2.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.2",
+    "ffmpeg-static": "^5.3.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

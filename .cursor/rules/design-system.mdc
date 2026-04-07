@@ -1,0 +1,16 @@
+---
+description: Figma design tokens and button primitives for Magali-Solle portfolio
+globs: "**/*.{tsx,css}"
+alwaysApply: false
+---
+
+# Design system (Figma)
+
+- **Source file:** [Magali-Solle](https://www.figma.com/design/FeF5ES2xRY75wBP8gFjOVr/Magali-Solle) — single source of truth for colors and button tokens.
+- **Tokens:** `app/globals.css` (`@theme` + `:root`-style variables under `--tracking-button`, `--radius-button-*`, `--padding-button-*`, `--color-*`). When Figma Variables change, update those values there first.
+- **Buttons:** Do not hand-roll long Tailwind strings for buttons. Use:
+  - `btn-primary` — filled pill (nav Work / About)
+  - `btn-secondary-soft` — ghost hero CTA
+  - `btn-outline-footer` — outline on dark footer
+  - `btn-tertiary` — case study row link + icon
+- New buttons should extend these classes or add a variant in `@layer components` in `globals.css` using the same CSS variables.

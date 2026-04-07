@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask
+      id="iphoneNotch"
+      maskUnits="objectBoundingBox"
+      maskContentUnits="objectBoundingBox"
+    >
+      <!-- Rect ligeramente más grande que 1×1 para evitar halos en los bordes al escalar -->
+      <rect x="-0.03" y="-0.03" width="1.06" height="1.06" fill="white" />
+      <ellipse cx="0.5" cy="0.016" rx="0.242" ry="0.018" fill="black" />
+    </mask>
+  </defs>
+</svg>
