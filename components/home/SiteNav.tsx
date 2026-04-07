@@ -5,10 +5,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "#case-studies", label: "Case Studies" },
-  { href: "#side-projects", label: "Side Projects" },
-  { href: "#ai-workflow", label: "AI in my workflow" },
-  { href: "#about", label: "About" },
+  { href: "/#case-studies", label: "Case Studies" },
+  { href: "/#side-projects", label: "Side Projects" },
+  { href: "/#ai-workflow", label: "AI in my workflow" },
+  { href: "/#about", label: "About" },
 ];
 
 export function SiteNav() {
