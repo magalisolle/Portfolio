@@ -82,7 +82,7 @@ export function CaseStudies() {
   return (
     <section
       id="case-studies"
-      className="relative overflow-hidden px-16 pb-20 pt-24 md:px-8 lg:px-[131px]"
+      className="relative overflow-hidden px-4 pb-20 pt-24 md:px-8 lg:px-[131px]"
     >
       <div className="mx-auto flex max-w-[1186px] flex-col gap-12">
         <h2 className="text-[32px] font-medium leading-tight text-ink md:text-[32px]">

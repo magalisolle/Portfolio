@@ -51,7 +51,7 @@ export function SideProjects() {
   return (
     <section
       id="side-projects"
-      className="bg-cream px-16 py-24 md:px-8 md:py-28 lg:px-[121px] lg:py-[116px]"
+      className="bg-cream px-4 py-24 md:px-8 md:py-28 lg:px-[121px] lg:py-[116px]"
     >
       <div className="mx-auto flex max-w-[1197px] flex-col gap-6">
         <h2 className="text-[32px] font-medium leading-tight text-ink">

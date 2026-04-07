@@ -28,7 +28,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="bg-about-bg px-16 py-24 md:px-8 md:py-28 lg:px-[123px] lg:py-[139px]"
+      className="bg-about-bg px-4 py-24 md:px-8 md:py-28 lg:px-[123px] lg:py-[139px]"
     >
       <div className="mx-auto flex max-w-[1186px] flex-col gap-10 md:flex-row md:items-start md:gap-16 lg:gap-[328px]">
         <h2 className="shrink-0 text-[32px] font-semibold leading-tight text-ink md:pt-1">
