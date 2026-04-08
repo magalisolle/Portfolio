@@ -61,7 +61,7 @@ const cases: CaseStudyItem[] = [
     imageClassName: "object-cover object-bottom",
     imageVariant: "cauciones",
     textColumnClassName:
-      "bg-white rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
+      "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
     imageColumnClassName: "!bg-[#C4B5FD]",
     caseStudyHref: "/case-studies/cauciones",
   },
