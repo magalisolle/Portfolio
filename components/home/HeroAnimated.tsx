@@ -48,7 +48,7 @@ export function HeroAnimated({ rulo }: Props) {
   return (
     <section
       id="hero"
-      className="relative box-border flex h-[100dvh] min-h-[100dvh] max-h-[100dvh] flex-col justify-center overflow-visible px-16 lg:px-[142px]"
+      className="relative box-border flex h-[100dvh] min-h-[100dvh] max-h-[100dvh] flex-col justify-center overflow-visible px-4 lg:px-[142px]"
     >
       <div className="relative mx-auto flex w-full max-w-[1440px] flex-col -translate-y-[clamp(1rem,3vh,2.5rem)]">
         <div className="relative isolate z-0 mt-8 w-full overflow-visible text-[clamp(2.25rem,8vw,5rem)] sm:mt-10 md:mt-12">

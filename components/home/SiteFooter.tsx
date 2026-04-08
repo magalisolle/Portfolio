@@ -33,7 +33,7 @@ export function SiteFooter() {
   );
 
   return (
-    <footer className="relative overflow-hidden bg-[#3c3c3c] px-6 py-14 md:px-[57px]">
+    <footer className="relative overflow-hidden bg-[#3c3c3c] px-4 py-14 md:px-[57px]">
       {/* Cat image — absolute bottom-left */}
       <div className="pointer-events-none absolute bottom-0 left-8 rotate-[1.8deg] md:left-14">
         <Image

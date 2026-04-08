@@ -23,7 +23,7 @@ export function AIWorkflow() {
   return (
     <section
       id="ai-workflow"
-      className="bg-lilac px-16 py-24 md:px-16 md:py-28 lg:px-[123px] lg:py-[134px]"
+      className="bg-lilac px-4 py-24 md:px-16 md:py-28 lg:px-[123px] lg:py-[134px]"
     >
       <div className="mx-auto flex max-w-[1186px] flex-col gap-10">
         <h2 className="text-[32px] font-semibold leading-tight text-ink">

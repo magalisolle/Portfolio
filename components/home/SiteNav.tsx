@@ -17,7 +17,7 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-mint/90 backdrop-blur-md">
       <nav
-        className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-3 md:px-8 lg:px-[57px]"
+        className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-4 py-3 md:px-8 lg:px-[57px]"
         aria-label="Primary"
       >
         {/* Logo */}
@@ -83,7 +83,7 @@ export function SiteNav() {
 
       {/* Mobile/tablet dropdown */}
       {open && (
-        <div className="border-t border-black/5 bg-mint px-6 py-4 lg:hidden">
+        <div className="border-t border-black/5 bg-mint px-4 py-4 lg:hidden">
           <div className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <a
