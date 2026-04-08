@@ -1,4 +1,4 @@
-/** Encode filenames for `/public/images` assets (handles spaces and special chars). */
+/** Return the path for a `/public/images` asset. Next.js Image and quoted CSS url() handle spaces natively. */
 export function imagePath(filename: string): string {
-  return `/images/${encodeURIComponent(filename)}`;
+  return `/images/${filename}`;
 }
