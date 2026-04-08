@@ -31,7 +31,7 @@ const cases: CaseStudyItem[] = [
     client: "PAYANA (2024)",
     title: "Redesign of Transactions",
     description:
-      "An onboarding redesign that increased activation rate by 19% and sign-up rate by 41%",
+      "A unified transactions panel with full money path visibility and self-service reprocess flow for rejected payments.",
     image: "Rectangle 1.png",
     // cover: la captura llena toda la mitad derecha hasta el borde de la card (sin bandas)
     imageClassName:
@@ -42,7 +42,7 @@ const cases: CaseStudyItem[] = [
     client: "IOL Inversiones (2023)",
     title: "Design of Simple Purchase",
     description:
-      "An onboarding redesign that increased activation rate by 19% and sign-up rate by 41%",
+      "A faster parallel purchase flow that let experienced users buy in two taps — driving +12% conversion and +14% approval rate improvement.",
     image: "comprasimpleiol 1.png",
     imageClassName: "object-cover object-center",
     imageOverlay: "Frame 34809 1.png",
@@ -55,7 +55,7 @@ const cases: CaseStudyItem[] = [
     client: "IOL Inversiones (2023)",
     title: "Adaption of Cauciones",
     description:
-      "An onboarding redesign that increased activation rate by 19% and sign-up rate by 41%",
+      "Bringing a web-only investment instrument to mobile, with smart defaults driven by real user behavior data.",
     caucionesCardImage: "caucioness.png",
     image: "ilustraciones_app.png",
     imageClassName: "object-cover object-bottom",
@@ -69,7 +69,7 @@ const cases: CaseStudyItem[] = [
     client: "Rootstrap (2025)",
     title: "MVP of Go! Coaching",
     description:
-      "An onboarding redesign that increased activation rate by 19% and sign-up rate by 41%",
+      "A sales performance platform that replaced 6 spreadsheets with a single connected system for loan officers and their coaches.",
     image: "Week Activity Panel.png",
     imageClassName: "object-contain object-top",
     imageVariant: "mvp",
