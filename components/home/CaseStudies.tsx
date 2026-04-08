@@ -47,7 +47,7 @@ const cases: CaseStudyItem[] = [
     imageClassName: "object-cover object-center",
     imageOverlay: "Frame 34809 1.png",
     textColumnClassName:
-      "bg-white rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
+      "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
     imageColumnClassName: "bg-lilac",
     caseStudyHref: "/case-studies/compra-simple",
   },
