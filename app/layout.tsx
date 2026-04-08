@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Poppins } from "next/font/google";
 import { generalSans } from "./fonts";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -46,5 +47,6 @@ export default function RootLayout({
         {children}
       </body>
     </html>
+    <GoogleAnalytics gaId="G-H7BW1R0WH9" />
   );
 }
