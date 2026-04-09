@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import Image from "next/image";
+import { ExpandableImage } from "@/components/ExpandableImage";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@/components/icons/ArrowIcons";
 import { imagePath } from "@/lib/image-path";
@@ -175,7 +176,7 @@ export function GoCoachingCaseStudyContent() {
         <div className="flex flex-col gap-6 md:flex-row md:gap-8">
           <figure className="m-0 flex min-w-0 flex-1 flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3">
-              <Image
+              <ExpandableImage
                 src={imagePath("google sheets.png")}
                 alt="Activity Tracker Google Sheets used by students before the platform."
                 width={590}
@@ -190,7 +191,7 @@ export function GoCoachingCaseStudyContent() {
           </figure>
           <figure className="m-0 flex min-w-0 flex-1 flex-col gap-3 justify-center">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3">
-              <Image
+              <ExpandableImage
                 src={imagePath("diagram circle.png")}
                 alt="Previous and complete flow diagram from Circle platform."
                 width={1256}
@@ -241,7 +242,7 @@ export function GoCoachingCaseStudyContent() {
           {/* Left box — single image, hugs content */}
           <figure className="m-0 flex min-w-0 flex-[7] flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3">
-              <Image
+              <ExpandableImage
                 src={imagePath("sessions.png")}
                 alt="Working session notes — client calls documented as coach and student needs."
                 width={1276}
@@ -257,7 +258,7 @@ export function GoCoachingCaseStudyContent() {
           {/* Right box — two images inside one shared card */}
           <figure className="m-0 flex min-w-0 flex-[3] flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3 flex flex-col gap-3">
-              <Image
+              <ExpandableImage
                 src={imagePath("wireframes.png")}
                 alt="Early wireframes exploring layout and hierarchy before high fidelity."
                 width={498}
@@ -265,7 +266,7 @@ export function GoCoachingCaseStudyContent() {
                 className="h-auto w-full rounded-xl"
                 sizes="(max-width: 1424px) 30vw, 427px"
               />
-              <Image
+              <ExpandableImage
                 src={imagePath("wireframeeeegocoaching 1.png")}
                 alt="Additional early sketches exploring hierarchy and layout."
                 width={374}
@@ -358,7 +359,7 @@ export function GoCoachingCaseStudyContent() {
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(70dvw,997px)] flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3">
-              <Image
+              <ExpandableImage
                 src={imagePath("diagram.png")}
                 alt="Diagram of the student experience through the Go! Coaching platform."
                 width={1656}
@@ -547,7 +548,7 @@ export function GoCoachingCaseStudyContent() {
             </CaseStudyHeadingBlock>
 
             <figure className="m-0 flex flex-col gap-3 overflow-hidden rounded-2xl">
-              <Image
+              <ExpandableImage
                 src={imagePath("moodboards.png")}
                 alt="Three moodboard directions; the chosen spatial, dark, high-contrast direction became the design system foundation."
                 width={1824}

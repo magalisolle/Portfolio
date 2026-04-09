@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ExpandableImage } from "@/components/ExpandableImage";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@/components/icons/ArrowIcons";
 import {
@@ -155,8 +156,8 @@ export function CaucionesCaseStudyContent() {
               <CaseStudyEmphasis>Desktop insights:</CaseStudyEmphasis>
             </CaseStudyHeadingBlock>
             <figure className="relative left-1/2 -translate-x-1/2 flex w-[calc(100vw-1.5rem)] flex-col gap-2 overflow-hidden rounded-2xl md:w-[calc(100vw-4rem)] lg:w-[min(calc(100vw-5rem),1344px)] xl:w-[min(calc(100vw-6rem),1328px)]">
-              <Image
-                src="/images/desktop%20hotjar.png"
+              <ExpandableImage
+                src="/images/desktop hotjar.png"
                 alt="Desktop Hotjar heatmap with stat cards and caption: Previous and complete flow from Circle."
                 width={2534}
                 height={1198}
@@ -170,7 +171,7 @@ export function CaucionesCaseStudyContent() {
           </div>
 
           <figure className="mx-auto mt-[200px] mb-[120px] w-full max-w-[min(100%,800px)] overflow-hidden rounded-2xl">
-            <Image
+            <ExpandableImage
               src={`${IMG}/mobile-insights-section.png`}
               alt="Mobile responsive Hotjar insights with stat cards and phone mockup. Caption: Analyzed Hotjar Heatmap in Responsive Size."
               width={1650}

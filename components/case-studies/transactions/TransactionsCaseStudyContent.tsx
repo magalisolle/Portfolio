@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ExpandableImage } from "@/components/ExpandableImage";
 import { LoopedVideo } from "./LoopedVideo";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@/components/icons/ArrowIcons";
@@ -150,7 +151,7 @@ export function TransactionsCaseStudyContent() {
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(100dvw,1424px)] flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl p-6" style={{ backgroundColor: "#F6EEF5" }}>
-              <Image
+              <ExpandableImage
                 src={IMG("research.png")}
                 alt="Research synthesis — user interview insights and product analysis."
                 width={1600}
@@ -315,7 +316,7 @@ export function TransactionsCaseStudyContent() {
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(100dvw,1424px)] flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6EEF5] p-6">
-              <Image
+              <ExpandableImage
                 src={IMG("opciones.png")}
                 alt="Three transaction model options mapped before the final decision."
                 width={1600}
@@ -407,7 +408,7 @@ export function TransactionsCaseStudyContent() {
       <CaseStudyWideBleed className="!mt-10 md:!mt-14">
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(100dvw,700px)] flex flex-col gap-3">
-              <Image
+              <ExpandableImage
                 src={IMG("diagramapriorizacion.png")}
                 alt="Value vs. effort prioritization matrix."
                 width={1424}
@@ -579,12 +580,13 @@ export function TransactionsCaseStudyContent() {
       <CaseStudyWideBleed className="!mt-10 md:!mt-14">
         <div className="flex flex-col items-center gap-3">
           <div className="rounded-2xl p-6 flex flex-col md:flex-row items-start gap-6 w-full max-w-[1100px]" style={{ backgroundColor: "#F6EEF5" }}>
-            <Image
+            <ExpandableImage
               src={IMG("PaymentFlow.png")}
               alt="Recorrido del dinero — full payment timeline."
               width={800}
               height={900}
-              className="h-auto w-full md:w-[55%] rounded-xl"
+              className="h-auto w-full rounded-xl"
+              containerClassName="w-full md:w-[55%]"
               sizes="(max-width: 768px) 100vw, 55vw"
             />
             <div className="flex flex-col gap-6 md:flex-1 md:self-stretch">
@@ -757,7 +759,7 @@ export function TransactionsCaseStudyContent() {
       <CaseStudyWideBleed className="!mt-10 md:!mt-14">
         <div className="overflow-hidden rounded-2xl p-6" style={{ backgroundColor: "#F6EEF5" }}>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <Image
+            <ExpandableImage
               src={IMG("analisys1.png")}
               alt="Amplitude funnel — reprocess flow analysis."
               width={800}
@@ -765,7 +767,7 @@ export function TransactionsCaseStudyContent() {
               className="h-auto w-full rounded-xl"
               sizes="(max-width: 1186px) 50vw, 593px"
             />
-            <Image
+            <ExpandableImage
               src={IMG("analisys2.png")}
               alt="Amplitude funnel — search reprocess analysis."
               width={800}
@@ -801,7 +803,7 @@ export function TransactionsCaseStudyContent() {
             </div>
             {/* Right — images card */}
             <div className="overflow-hidden rounded-2xl p-6 flex flex-col gap-7 md:w-[52%] shrink-0" style={{ backgroundColor: "#F6EEF5" }}>
-              <Image
+              <ExpandableImage
                 src={IMG("top events.png")}
                 alt="Top events — post-launch Amplitude data."
                 width={800}
@@ -809,7 +811,7 @@ export function TransactionsCaseStudyContent() {
                 className="h-auto w-full rounded-xl"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <Image
+              <ExpandableImage
                 src={IMG("most viewed.png")}
                 alt="Most viewed screens — post-launch Amplitude data."
                 width={800}

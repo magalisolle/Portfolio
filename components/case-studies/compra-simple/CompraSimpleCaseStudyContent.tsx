@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ExpandableImage } from "@/components/ExpandableImage";
 import { ArrowLeftIcon } from "@/components/icons/ArrowIcons";
 import {
   CaseStudyHighlightCallout,
@@ -194,7 +195,7 @@ export function CompraSimpleCaseStudyContent() {
           <div className="flex w-full min-w-0 justify-center">
             <figure className="m-0 flex w-full flex-col gap-3">
               <div className="rounded-2xl p-4" style={{ backgroundColor: "#f6f9fe" }}>
-                <Image
+                <ExpandableImage
                   src={IMG("Compra Simple 2.png")}
                   alt="New Compra Simple flow showing interaction with the older flow"
                   width={1332}
