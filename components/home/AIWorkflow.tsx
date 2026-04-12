@@ -9,34 +9,34 @@ const CARDS = {
     {
       title: "AI-Assisted Research",
       body: "I use ChatGPT as a thinking partner during discovery. It helps me understand how a product works, explore competitors, and quickly build context around new industries.",
-      image: "ilustraciones-01.webp",
+      image: "ilustraciones-01.png",
     },
     {
       title: "Fast Prototyping",
       body: "I like moving quickly from ideas to interactive prototypes. Rapid prototyping helps test assumptions early and align teams around how the product should actually work.",
-      image: "ilustraciones-02.webp",
+      image: "ilustraciones-02.png",
     },
     {
       title: "Designing Closer to Code",
       body: "I've started implementing my own designs to see how they behave in a real, live environment. I still use Figma, but I enjoy integrating these tools into my workflow.",
-      image: "ilustraciones-03.webp",
+      image: "ilustraciones-03.png",
     },
   ],
   es: [
     {
       title: "Investigación asistida por IA",
       body: "Uso ChatGPT como partner de pensamiento durante el discovery. Me ayuda a entender cómo funciona un producto, explorar competidores y construir contexto rápidamente en industrias nuevas.",
-      image: "ilustraciones-01.webp",
+      image: "ilustraciones-01.png",
     },
     {
       title: "Prototipado rápido",
       body: "Me gusta pasar rápido de ideas a prototipos interactivos. El prototipado rápido ayuda a testear supuestos desde temprano y alinear a los equipos alrededor de cómo debería funcionar realmente el producto.",
-      image: "ilustraciones-02.webp",
+      image: "ilustraciones-02.png",
     },
     {
       title: "Diseñando más cerca del código",
       body: "Empecé a implementar mis propios diseños para ver cómo se comportan en un entorno real. Sigo usando Figma, pero disfruto integrar estas herramientas a mi flujo de trabajo.",
-      image: "ilustraciones-03.webp",
+      image: "ilustraciones-03.png",
     },
   ],
 };

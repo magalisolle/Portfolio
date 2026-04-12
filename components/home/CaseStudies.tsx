@@ -104,29 +104,29 @@ const IMAGE_CONFIG: Pick<
   | "mvpStreakImage"
 >[] = [
   {
-    image: "Rectangle 1.webp",
+    image: "Rectangle 1.png",
     imageClassName: "object-cover object-left object-top md:object-[18%_center]",
   },
   {
-    image: "comprasimpleiol 1.webp",
+    image: "comprasimpleiol 1.png",
     imageClassName: "object-cover object-center",
-    imageOverlay: "Frame 34809 1.webp",
+    imageOverlay: "Frame 34809 1.png",
     textColumnClassName: "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
     imageColumnClassName: "bg-lilac",
   },
   {
-    caucionesCardImage: "caucioness.webp",
-    image: "ilustraciones_app.webp",
+    caucionesCardImage: "caucioness.png",
+    image: "ilustraciones_app.png",
     imageClassName: "object-cover object-bottom",
     imageVariant: "cauciones",
     textColumnClassName: "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
     imageColumnClassName: "!bg-[#C4B5FD]",
   },
   {
-    image: "Week Activity Panel.webp",
+    image: "Week Activity Panel.png",
     imageClassName: "object-contain object-top",
     imageVariant: "mvp",
-    mvpStreakImage: "Streak.webp",
+    mvpStreakImage: "Streak.png",
   },
 ];
 
