@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, Poppins } from "next/font/google";
 import { generalSans } from "./fonts";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { LanguageProvider } from "@/lib/i18n";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -43,8 +44,10 @@ export default function RootLayout({
       <body
         className={`${bricolage.variable} ${poppins.variable} bg-mint text-ink antialiased`}
       >
-        <ScrollToTop />
-        {children}
+        <LanguageProvider>
+          <ScrollToTop />
+          {children}
+        </LanguageProvider>
         <GoogleAnalytics gaId="G-H7BW1R0WH9" />
       </body>
     </html>

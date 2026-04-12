@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDownIcon } from "@/components/icons/ArrowIcons";
 import type { RuloSvgParsed } from "@/lib/rulo-svg-paths";
 import { HeroSwirl } from "./HeroSwirl";
+import { useLanguage } from "@/lib/i18n";
 
 /** Ancho máximo del rulo en pantalla. */
 const RULO_MAX_WIDTH_PX = 991; // 1166 × 0.85 (−15%)
@@ -25,12 +26,31 @@ const TIMELINE = {
   cta: { delay: 5.3, duration: 0.6 },
 } as const;
 
+const T = {
+  en: {
+    line1: "Hi! I'm Magali,",
+    line2: "A Product Designer",
+    description:
+      "Focused on building clear and scalable digital products. Experience across SaaS, fintech platforms, and complex user workflows.",
+    cta: "View selected work",
+  },
+  es: {
+    line1: "¡Hola! Soy Magali,",
+    line2: "Diseñadora de Producto",
+    description:
+      "Enfocada en construir productos digitales claros y escalables. Experiencia en plataformas SaaS, fintech y flujos de trabajo complejos.",
+    cta: "Ver trabajos seleccionados",
+  },
+};
+
 type Props = {
   rulo: RuloSvgParsed;
 };
 
 export function HeroAnimated({ rulo }: Props) {
   const reduceMotion = useReducedMotion();
+  const { lang } = useLanguage();
+  const t = T[lang];
 
   const fadeUp = (delay: number, duration: number) =>
     reduceMotion
@@ -71,7 +91,7 @@ export function HeroAnimated({ rulo }: Props) {
             style={{ fontFeatureSettings: '"liga" 1' }}
             {...fadeUp(TIMELINE.line1.delay, TIMELINE.line1.duration)}
           >
-            Hi! I’m Magali,
+            {t.line1}
           </motion.p>
 
           <motion.p
@@ -79,15 +99,14 @@ export function HeroAnimated({ rulo }: Props) {
             style={{ fontFeatureSettings: '"liga" 1' }}
             {...fadeUp(TIMELINE.line2.delay, TIMELINE.line2.duration)}
           >
-            A Product Designer
+            {t.line2}
           </motion.p>
 
           <motion.p
             className="relative z-[2] ml-auto mt-5 max-w-[min(60rem,calc(100%-1rem))] text-balance text-right text-base font-medium leading-snug text-muted sm:mt-6 sm:text-lg md:text-[clamp(1.125rem,2.2vw,1.75rem)] md:leading-[1.35]"
             {...fadeUp(TIMELINE.description.delay, TIMELINE.description.duration)}
           >
-            Focused on building clear and scalable digital products. Experience
-            across SaaS, fintech platforms, and complex user workflows.
+            {t.description}
           </motion.p>
         </div>
 
@@ -97,7 +116,7 @@ export function HeroAnimated({ rulo }: Props) {
             className="btn-secondary-soft"
             {...fadeUp(TIMELINE.cta.delay, TIMELINE.cta.duration)}
           >
-            View selected work
+            {t.cta}
             <ArrowDownIcon className="size-4 shrink-0" />
           </motion.a>
         </div>

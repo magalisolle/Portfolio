@@ -4,13 +4,42 @@ import Image from "next/image";
 import linkedinSrc from "@/public/images/linkedin.svg";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { CONTACT_EMAIL } from "@/lib/constants";
+import { useLanguage } from "@/lib/i18n";
 
 const COPY_FEEDBACK_MS = 2000;
 
+const T = {
+  en: {
+    letsChat: "Let's chat :)",
+    copyEmail: "Copy my email",
+    copied: "Copied!",
+    letsConnect: "Let's connect",
+    seeMyExperience: "See my experience",
+    downloadResume: "Download Resume",
+    copyright: "© 2026 Magali Solle",
+    ariaLinkedIn: "LinkedIn",
+    ariaCopyEmail: (email: string) => `Copy ${email} to clipboard`,
+    ariaCopied: "Email copied to clipboard",
+  },
+  es: {
+    letsChat: "¡Hablemos! :)",
+    copyEmail: "Copiar mi email",
+    copied: "¡Copiado!",
+    letsConnect: "Conectemos",
+    seeMyExperience: "Mirá mi experiencia",
+    downloadResume: "Descargar CV",
+    copyright: "© 2026 Magali Solle",
+    ariaLinkedIn: "LinkedIn",
+    ariaCopyEmail: (email: string) => `Copiar ${email} al portapapeles`,
+    ariaCopied: "Email copiado al portapapeles",
+  },
+};
 
 export function SiteFooter() {
   const [copied, setCopied] = useState(false);
   const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const { lang } = useLanguage();
+  const t = T[lang];
 
   const copyEmail = useCallback(async () => {
     try {
@@ -53,7 +82,7 @@ export function SiteFooter() {
           {/* Let's chat */}
           <div className="flex items-center gap-4">
             <span className="font-[family-name:var(--font-general-sans)] text-base font-semibold leading-6 text-[#fffbf2]">
-              Let&apos;s chat :)
+              {t.letsChat}
             </span>
             <span className="h-6 w-px bg-[#fffbf2]/30" aria-hidden />
             <button
@@ -61,36 +90,36 @@ export function SiteFooter() {
               onClick={copyEmail}
               aria-label={
                 copied
-                  ? "Email copied to clipboard"
-                  : `Copy ${CONTACT_EMAIL} to clipboard`
+                  ? t.ariaCopied
+                  : t.ariaCopyEmail(CONTACT_EMAIL)
               }
               className="rounded-full border-2 border-[#fdfdfd] px-4 py-2 font-[family-name:var(--font-general-sans)] text-sm font-semibold leading-4 tracking-[0.025em] text-[#fdfdfd] transition-opacity hover:opacity-75"
             >
-              {copied ? "Copied!" : "Copy my email"}
+              {copied ? t.copied : t.copyEmail}
             </button>
           </div>
 
           {/* Let's connect */}
           <div className="flex items-center gap-4">
             <span className="font-[family-name:var(--font-general-sans)] text-base font-semibold leading-6 text-[#fffbf2]">
-              Let&apos;s connect
+              {t.letsConnect}
             </span>
             <span className="h-6 w-px bg-[#fffbf2]/30" aria-hidden />
             <a
               href="https://www.linkedin.com/in/magalisolle/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label={t.ariaLinkedIn}
               className="transition-opacity hover:opacity-75"
             >
-              <Image src={linkedinSrc} alt="LinkedIn" width={17} height={17} />
+              <Image src={linkedinSrc} alt={t.ariaLinkedIn} width={17} height={17} />
             </a>
           </div>
 
           {/* See my experience */}
           <div className="flex items-center gap-4">
             <span className="font-[family-name:var(--font-general-sans)] text-base font-semibold leading-6 text-[#fffbf2]">
-              See my experience
+              {t.seeMyExperience}
             </span>
             <span className="h-6 w-px bg-[#fffbf2]/30" aria-hidden />
             <a
@@ -98,7 +127,7 @@ export function SiteFooter() {
               download
               className="flex items-center gap-2 font-[family-name:var(--font-general-sans)] text-sm font-semibold leading-4 tracking-[0.025em] text-[#fdfdfd] transition-opacity hover:opacity-75"
             >
-              Download Resume
+              {t.downloadResume}
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
                 <path
                   d="M7 1v8M7 9l-3-3M7 9l3-3M1 12h12"
@@ -115,7 +144,7 @@ export function SiteFooter() {
         {/* Copyright */}
         <div className="flex justify-end">
           <p className="font-[family-name:var(--font-general-sans)] text-sm leading-6 text-[#fdfdfd]">
-            © 2026 Magali Solle
+            {t.copyright}
           </p>
         </div>
       </div>

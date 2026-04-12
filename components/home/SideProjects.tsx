@@ -1,7 +1,10 @@
+"use client";
+
 import type React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { imagePath } from "@/lib/image-path";
+import { useLanguage } from "@/lib/i18n";
 
 /** Fondo del área de imagen en las tres cards (mismo tono que Becoming) */
 const SIDE_PROJECT_IMAGE_BG = "#FFEEC7";
@@ -21,33 +24,69 @@ type SideProject = {
   href?: string;
 };
 
-const projects: SideProject[] = [
-  {
-    title: "Becoming",
-    description:
-      "A reading companion app to track books, highlights, and the ideas you want to remember.",
-    images: ["CardInfo.png", "CardInfo2.png"],
-    href: "/case-studies/becoming",
-  },
-  {
-    title: "Higo",
-    description:
-      "A receivables dashboard for SMBs to track invoices, clients, and payment status in one place.",
-    image: "higoooo.png",
-    imageInsetTopLeft: true,
-    href: "/case-studies/higo",
-  },
-  {
-    title: "Dinksmart",
-    description:
-      "A friendlier way to manage everyday money decisions and stay on top of savings goals.",
-    image: "Homepagedinksmartt.png",
-    imageTopMarginOnly: true,
-    href: "/case-studies/dinksmart",
-  },
-];
+const PROJECTS = {
+  en: [
+    {
+      title: "Becoming",
+      description:
+        "A reading companion app to track books, highlights, and the ideas you want to remember.",
+      images: ["CardInfo.png", "CardInfo2.png"] as readonly [string, string],
+      href: "/case-studies/becoming",
+    },
+    {
+      title: "Higo",
+      description:
+        "A receivables dashboard for SMBs to track invoices, clients, and payment status in one place.",
+      image: "higoooo.png",
+      imageInsetTopLeft: true,
+      href: "/case-studies/higo",
+    },
+    {
+      title: "Dinksmart",
+      description:
+        "A friendlier way to manage everyday money decisions and stay on top of savings goals.",
+      image: "Homepagedinksmartt.png",
+      imageTopMarginOnly: true,
+      href: "/case-studies/dinksmart",
+    },
+  ] as SideProject[],
+  es: [
+    {
+      title: "Becoming",
+      description:
+        "Una app de lectura para registrar libros, highlights y las ideas que querés recordar.",
+      images: ["CardInfo.png", "CardInfo2.png"] as readonly [string, string],
+      href: "/case-studies/becoming",
+    },
+    {
+      title: "Higo",
+      description:
+        "Un dashboard de cuentas por cobrar para PYMEs: facturas, clientes y estado de pagos en un solo lugar.",
+      image: "higoooo.png",
+      imageInsetTopLeft: true,
+      href: "/case-studies/higo",
+    },
+    {
+      title: "Dinksmart",
+      description:
+        "Una forma más amigable de gestionar las decisiones financieras del día a día y estar al tanto de los objetivos de ahorro.",
+      image: "Homepagedinksmartt.png",
+      imageTopMarginOnly: true,
+      href: "/case-studies/dinksmart",
+    },
+  ] as SideProject[],
+};
+
+const T = {
+  en: { sectionTitle: "Side Projects" },
+  es: { sectionTitle: "Proyectos Personales" },
+};
 
 export function SideProjects() {
+  const { lang } = useLanguage();
+  const projects = PROJECTS[lang];
+  const t = T[lang];
+
   return (
     <section
       id="side-projects"
@@ -55,7 +94,7 @@ export function SideProjects() {
     >
       <div className="mx-auto flex max-w-[1197px] flex-col gap-6">
         <h2 className="text-[32px] font-medium leading-tight text-ink">
-          Side Projects
+          {t.sectionTitle}
         </h2>
         <div className="grid gap-12 md:grid-cols-3 md:gap-[51px]">
           {projects.map((p) => {
@@ -106,12 +145,10 @@ export function SideProjects() {
                       }
                     >
                       {p.imageInsetTopLeft ? (
-                        /* Zoom tipo “viewport” fijo: la imagen es más ancha que el hueco; recorte por overflow, anclada arriba-izquierda (como referencia) */
                         <div
                           className="absolute inset-0 bg-no-repeat"
                           style={{
                             backgroundImage: `url(${JSON.stringify(imagePath(p.image!))})`,
-                            /* Un solo eje en % + auto mantiene proporción del PNG (sin estirar); left top = zoom hacia esa esquina */
                             backgroundSize: "168% auto",
                             backgroundPosition: "left top",
                             backgroundRepeat: "no-repeat",
@@ -119,7 +156,6 @@ export function SideProjects() {
                           aria-hidden
                         />
                       ) : p.imageTopMarginOnly ? (
-                        /* PNG alto: ancho = 100% del hueco; solo se ve la franja superior (el resto lo corta overflow) */
                         <Image
                           src={imagePath(p.image!)}
                           alt=""

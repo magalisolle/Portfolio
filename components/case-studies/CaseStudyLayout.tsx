@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { SiteFooter } from "@/components/home/SiteFooter";
 import { SiteNav } from "@/components/home/SiteNav";
 import { ArrowLeftIcon } from "@/components/icons/ArrowIcons";
+import { useLanguage } from "@/lib/i18n";
 
 export type CaseStudyMeta = {
   title: string;
@@ -43,6 +46,8 @@ export function CaseStudyLayout({
   pageBgClassName = "bg-case-study-bg",
   ringOffsetClassName = "focus-visible:ring-offset-case-study-bg",
 }: Props) {
+  const { lang } = useLanguage();
+  const backLabel = lang === "es" ? "Volver a los casos" : "Back to case studies";
   return (
     <div className={`min-h-screen text-ink ${pageBgClassName}`.trim()}>
       <SiteNav />
@@ -54,7 +59,7 @@ export function CaseStudyLayout({
               <Link
                 href={backHref}
                 className={`-ml-1 inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-button-primary-bg)] text-[var(--color-button-primary-fg)] transition-colors hover:bg-[var(--color-button-primary-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/30 focus-visible:ring-offset-2 ${ringOffsetClassName} sm:-ml-2 md:-ml-3`.trim()}
-                aria-label="Back to case studies"
+                aria-label={backLabel}
               >
                 <ArrowLeftIcon className="size-4" />
               </Link>
@@ -72,7 +77,7 @@ export function CaseStudyLayout({
             <Link
               href={backHref}
               className={`inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-button-primary-bg)] text-[var(--color-button-primary-fg)] transition-colors hover:bg-[var(--color-button-primary-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/30 focus-visible:ring-offset-2 ${ringOffsetClassName}`.trim()}
-              aria-label="Back to case studies"
+              aria-label={backLabel}
             >
               <ArrowLeftIcon className="size-4" />
             </Link>

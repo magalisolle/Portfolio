@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowRightIcon } from "@/components/icons/ArrowIcons";
 import { imagePath } from "@/lib/image-path";
+import { useLanguage } from "@/lib/i18n";
 
 type CaseStudyItem = {
   client: string;
@@ -8,7 +11,7 @@ type CaseStudyItem = {
   description: string;
   image: string;
   imageClassName: string;
-  /** Segunda imagen superpuesta (ej. tarjeta “Compra simple” sobre el teléfono) */
+  /** Segunda imagen superpuesta (ej. tarjeta "Compra simple" sobre el teléfono) */
   imageOverlay?: string;
   /** Clases extra en la columna de texto (p. ej. fondo blanco) */
   textColumnClassName?: string;
@@ -26,59 +29,123 @@ type CaseStudyItem = {
   imageSrc?: string;
 };
 
-const cases: CaseStudyItem[] = [
+const CASES = {
+  en: [
+    {
+      client: "PAYANA (2024)",
+      title: "Redesign of Transactions",
+      description:
+        "A unified transactions panel with full money path visibility and self-service reprocess flow for rejected payments.",
+      caseStudyHref: "/case-studies/transactions",
+    },
+    {
+      client: "IOL Inversiones (2023)",
+      title: "Design of Simple Purchase",
+      description:
+        "A faster parallel purchase flow that let experienced users buy in two taps — driving +12% conversion and +14% approval rate improvement.",
+      caseStudyHref: "/case-studies/compra-simple",
+    },
+    {
+      client: "IOL Inversiones (2023)",
+      title: "Adaption of Cauciones",
+      description:
+        "Bringing a web-only investment instrument to mobile, with smart defaults driven by real user behavior data.",
+      caseStudyHref: "/case-studies/cauciones",
+    },
+    {
+      client: "Rootstrap (2025)",
+      title: "MVP of Go! Coaching",
+      description:
+        "A sales performance platform that replaced 6 spreadsheets with a single connected system for loan officers and their coaches.",
+      caseStudyHref: "/case-studies/go-coaching",
+    },
+  ],
+  es: [
+    {
+      client: "PAYANA (2024)",
+      title: "Rediseño de Transacciones",
+      description:
+        "Un panel de transacciones unificado con visibilidad completa del flujo de dinero y un proceso de autogestión para reprocesar pagos rechazados.",
+      caseStudyHref: "/case-studies/transactions",
+    },
+    {
+      client: "IOL Inversiones (2023)",
+      title: "Diseño de Compra Simple",
+      description:
+        "Un flujo de compra paralelo y más rápido que permitía a los usuarios experimentados comprar en dos toques — generando +12% de conversión y +14% de mejora en la tasa de aprobación.",
+      caseStudyHref: "/case-studies/compra-simple",
+    },
+    {
+      client: "IOL Inversiones (2023)",
+      title: "Adaptación de Cauciones",
+      description:
+        "Llevando un instrumento de inversión exclusivo de la web al móvil, con valores predeterminados inteligentes basados en datos reales de comportamiento de los usuarios.",
+      caseStudyHref: "/case-studies/cauciones",
+    },
+    {
+      client: "Rootstrap (2025)",
+      title: "MVP de Go! Coaching",
+      description:
+        "Una plataforma de rendimiento de ventas que reemplazó 6 planillas con un sistema conectado para asesores de crédito y sus coaches.",
+      caseStudyHref: "/case-studies/go-coaching",
+    },
+  ],
+};
+
+const IMAGE_CONFIG: Pick<
+  CaseStudyItem,
+  | "image"
+  | "imageClassName"
+  | "imageOverlay"
+  | "textColumnClassName"
+  | "imageColumnClassName"
+  | "imageVariant"
+  | "caucionesCardImage"
+  | "mvpStreakImage"
+>[] = [
   {
-    client: "PAYANA (2024)",
-    title: "Redesign of Transactions",
-    description:
-      "A unified transactions panel with full money path visibility and self-service reprocess flow for rejected payments.",
     image: "Rectangle 1.png",
-    // cover: la captura llena toda la mitad derecha hasta el borde de la card (sin bandas)
-    imageClassName:
-      "object-cover object-left object-top md:object-[18%_center]",
-    caseStudyHref: "/case-studies/transactions",
+    imageClassName: "object-cover object-left object-top md:object-[18%_center]",
   },
   {
-    client: "IOL Inversiones (2023)",
-    title: "Design of Simple Purchase",
-    description:
-      "A faster parallel purchase flow that let experienced users buy in two taps — driving +12% conversion and +14% approval rate improvement.",
     image: "comprasimpleiol 1.png",
     imageClassName: "object-cover object-center",
     imageOverlay: "Frame 34809 1.png",
-    textColumnClassName:
-      "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
+    textColumnClassName: "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
     imageColumnClassName: "bg-lilac",
-    caseStudyHref: "/case-studies/compra-simple",
   },
   {
-    client: "IOL Inversiones (2023)",
-    title: "Adaption of Cauciones",
-    description:
-      "Bringing a web-only investment instrument to mobile, with smart defaults driven by real user behavior data.",
     caucionesCardImage: "caucioness.png",
     image: "ilustraciones_app.png",
     imageClassName: "object-cover object-bottom",
     imageVariant: "cauciones",
-    textColumnClassName:
-      "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
+    textColumnClassName: "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
     imageColumnClassName: "!bg-[#C4B5FD]",
-    caseStudyHref: "/case-studies/cauciones",
   },
   {
-    client: "Rootstrap (2025)",
-    title: "MVP of Go! Coaching",
-    description:
-      "A sales performance platform that replaced 6 spreadsheets with a single connected system for loan officers and their coaches.",
     image: "Week Activity Panel.png",
     imageClassName: "object-contain object-top",
     imageVariant: "mvp",
     mvpStreakImage: "Streak.png",
-    caseStudyHref: "/case-studies/go-coaching",
   },
 ];
 
+const T = {
+  en: { sectionTitle: "Case Studies", readCaseStudy: "Read case study", productDesign: "Product Design" },
+  es: { sectionTitle: "Casos de Estudio", readCaseStudy: "Leer caso", productDesign: "Diseño de Producto" },
+};
+
 export function CaseStudies() {
+  const { lang } = useLanguage();
+  const cases = CASES[lang];
+  const t = T[lang];
+
+  const items: CaseStudyItem[] = cases.map((c, i) => ({
+    ...c,
+    ...IMAGE_CONFIG[i],
+    image: IMAGE_CONFIG[i].image ?? "",
+  }));
+
   return (
     <section
       id="case-studies"
@@ -86,10 +153,10 @@ export function CaseStudies() {
     >
       <div className="mx-auto flex max-w-[1186px] flex-col gap-12">
         <h2 className="text-[32px] font-medium leading-tight text-ink md:text-[32px]">
-          Case Studies
+          {t.sectionTitle}
         </h2>
         <div className="flex flex-col gap-14">
-          {cases.map((item) => (
+          {items.map((item) => (
             <article
               key={item.title + item.client}
               id={item.caseStudyHref ? `card-${item.caseStudyHref.replace("/case-studies/", "")}` : undefined}
@@ -103,7 +170,7 @@ export function CaseStudies() {
               >
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="rounded-full bg-chip px-3 py-1.5 text-xs font-semibold tracking-[0.025em] text-ink">
-                    Product Design
+                    {t.productDesign}
                   </span>
                   <span className="text-base text-muted-soft">{item.client}</span>
                 </div>
@@ -116,7 +183,7 @@ export function CaseStudies() {
                   </p>
                 </div>
                 <a href={item.caseStudyHref ?? "#"} className="btn-tertiary">
-                  Read case study
+                  {t.readCaseStudy}
                   <ArrowRightIcon className="size-4" />
                 </a>
               </div>
@@ -128,7 +195,6 @@ export function CaseStudies() {
               >
                 {item.imageOverlay ? (
                   <>
-                    {/* Sin padding horizontal: el fondo (lila + mock) llega al borde de la columna. cover agranda y llena la celda */}
                     <div className="flex min-h-0 w-full flex-1 flex-col items-center justify-center">
                       <div className="relative mx-auto h-full w-full max-w-full min-h-[238px] overflow-hidden px-0 md:min-h-0">
                         <div
@@ -142,7 +208,6 @@ export function CaseStudies() {
                           aria-hidden
                         />
                         <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center py-8 md:py-12">
-                          {/* Referencia: tarjeta grande solapando la mitad derecha del teléfono (escala + translate a la derecha) */}
                           <div className="origin-center scale-[1.34] translate-x-5 sm:translate-x-7 md:translate-x-12">
                             <Image
                               src={imagePath(item.imageOverlay)}
@@ -190,7 +255,6 @@ export function CaseStudies() {
                   </div>
                 ) : item.imageVariant === "cauciones" ? (
                   <div className="grid h-[238px] w-full grid-rows-[1fr_auto] overflow-hidden rounded-none bg-[#C4B5FD] md:h-full md:min-h-0">
-                    {/* Tarjeta stats: centrada en la franja superior (vertical y horizontal) */}
                     <div className="flex min-h-0 items-center justify-center px-4 py-6 md:px-6 md:py-8">
                       {item.caucionesCardImage ? (
                         <Image
@@ -208,14 +272,14 @@ export function CaseStudies() {
                               77,7%
                             </p>
                             <p className="max-w-md text-[15px] leading-relaxed text-[#2F5FFF] md:text-base">
-                              of the users click on the &apos;use all&apos; button
-                              without entering a specific amount.
+                              {lang === "es"
+                                ? "de los usuarios hacen clic en el botón 'usar todo' sin ingresar un monto específico."
+                                : "of the users click on the 'use all' button without entering a specific amount."}
                             </p>
                           </div>
                         </div>
                       )}
                     </div>
-                    {/* Ilustración: siempre completa (contain); ancho al corte del contenedor; pegada abajo */}
                     <div className="relative h-[min(44vh,289px)] w-full shrink-0 overflow-hidden md:h-[min(46%,238px)] md:min-h-[187px]">
                       <Image
                         src={imagePath(item.image)}
