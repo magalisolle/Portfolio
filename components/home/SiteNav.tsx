@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/lib/i18n";
 
 const NAV_LINKS = {
@@ -23,19 +23,113 @@ const NAV_LINKS = {
 const T = {
   en: {
     downloadResume: "Download Resume",
-    resumeHref: "/Magali-Solle-CV-EN.pdf",
     ariaHome: "Home",
     ariaClose: "Close menu",
     ariaOpen: "Open menu",
   },
   es: {
     downloadResume: "Descargar CV",
-    resumeHref: "/Magali-Solle-CV-ES.pdf",
     ariaHome: "Inicio",
     ariaClose: "Cerrar menú",
     ariaOpen: "Abrir menú",
   },
 };
+
+const downloadIcon = (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+    <path
+      d="M8 1v9M8 10l-3-3M8 10l3-3M2 13h12"
+      stroke="#181818"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+function ResumePopover({ label, className }: { label: string; className?: string }) {
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const [popoverWidth, setPopoverWidth] = useState<number | undefined>(undefined);
+  const ref = useRef<HTMLDivElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function handleMouseEnter() {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setPopoverOpen(true);
+    if (btnRef.current) setPopoverWidth(btnRef.current.offsetWidth);
+  }
+
+  function handleMouseLeave() {
+    closeTimer.current = setTimeout(() => setPopoverOpen(false), 100);
+  }
+
+  useEffect(() => {
+    if (!popoverOpen) return;
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setPopoverOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [popoverOpen]);
+
+  return (
+    <div
+      ref={ref}
+      className={`relative ${className ?? ""}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        ref={btnRef}
+        type="button"
+        onClick={() => setPopoverOpen((v) => !v)}
+        className="flex items-center gap-2 font-[family-name:var(--font-general-sans)] text-base font-semibold leading-5 tracking-[0.025em] text-[#181818] transition-opacity hover:opacity-70"
+      >
+        {label}
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+          aria-hidden
+          className={`transition-transform duration-200 ${popoverOpen ? "rotate-180" : ""}`}
+        >
+          <path d="M2 4l4 4 4-4" stroke="#181818" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      {popoverOpen && (
+        <div
+          className="absolute left-1/2 -translate-x-1/2 top-full mt-2 z-50 rounded-2xl border border-black/10 bg-[#93bf80] shadow-lg overflow-hidden"
+          style={popoverWidth ? { width: popoverWidth + 48 } : undefined}
+        >
+          <a
+            href="/Magali-Solle-CV-EN.pdf"
+            download
+            onClick={() => setPopoverOpen(false)}
+            className="flex items-center justify-between gap-3 px-4 py-3 font-[family-name:var(--font-general-sans)] text-sm font-semibold text-[#181818] transition-colors hover:bg-black/5"
+          >
+            Download in English
+            {downloadIcon}
+          </a>
+          <div className="mx-4 border-t border-black/8" />
+          <a
+            href="/Magali-Solle-CV-ES.pdf"
+            download
+            onClick={() => setPopoverOpen(false)}
+            className="flex items-center justify-between gap-3 px-4 py-3 font-[family-name:var(--font-general-sans)] text-sm font-semibold text-[#181818] transition-colors hover:bg-black/5"
+          >
+            Descargar en Español
+            {downloadIcon}
+          </a>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function SiteNav() {
   const [open, setOpen] = useState(false);
@@ -72,22 +166,8 @@ export function SiteNav() {
               {link.label}
             </a>
           ))}
-          <a
-            href={t.resumeHref}
-            download
-            className="ml-4 shrink-0 flex items-center gap-2 font-[family-name:var(--font-general-sans)] text-base font-semibold leading-5 tracking-[0.025em] text-[#181818] transition-opacity hover:opacity-70"
-          >
-            {t.downloadResume}
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-              <path
-                d="M8 1v9M8 10l-3-3M8 10l3-3M2 13h12"
-                stroke="#181818"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </a>
+
+          <ResumePopover label={t.downloadResume} className="ml-4 shrink-0" />
 
           {/* Language toggle */}
           <div className="ml-4 flex items-center rounded-full border border-[#181818]/20 p-0.5 text-sm font-semibold">
@@ -130,8 +210,7 @@ export function SiteNav() {
                   ? "bg-[#181818] text-[#fdfdfd]"
                   : "text-[#181818] hover:bg-black/5"
               }`}
-              aria-pressed={lang === "en"}
-            >
+              aria-pressed={lang === "en"}>
               EN
             </button>
             <button
@@ -183,21 +262,22 @@ export function SiteNav() {
               </a>
             ))}
             <a
-              href={t.resumeHref}
+              href="/Magali-Solle-CV-EN.pdf"
               download
               onClick={() => setOpen(false)}
               className="mt-2 flex items-center justify-center gap-2 rounded-full border border-[#181818]/20 px-4 py-3 font-[family-name:var(--font-general-sans)] text-base font-semibold leading-5 tracking-[0.025em] text-[#181818] transition-opacity hover:opacity-70"
             >
-              {t.downloadResume}
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-                <path
-                  d="M8 1v9M8 10l-3-3M8 10l3-3M2 13h12"
-                  stroke="#181818"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              Download in English
+              {downloadIcon}
+            </a>
+            <a
+              href="/Magali-Solle-CV-ES.pdf"
+              download
+              onClick={() => setOpen(false)}
+              className="flex items-center justify-center gap-2 rounded-full border border-[#181818]/20 px-4 py-3 font-[family-name:var(--font-general-sans)] text-base font-semibold leading-5 tracking-[0.025em] text-[#181818] transition-opacity hover:opacity-70"
+            >
+              Descargar en Español
+              {downloadIcon}
             </a>
           </div>
         </div>
