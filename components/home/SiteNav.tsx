@@ -146,7 +146,7 @@ export function SiteNav() {
         {/* Logo */}
         <Link href="/" aria-label={t.ariaHome} onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
           <Image
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt="Magali Solle"
             width={72}
             height={38}

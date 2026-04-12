@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     "Senior Product Designer with 6+ years of experience in SaaS, fintech, and digital products. Based in Buenos Aires.",
   applicationName: "Magas Portfolio",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.webp",
   },
 };
 

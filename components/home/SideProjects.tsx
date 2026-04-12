@@ -30,14 +30,14 @@ const PROJECTS = {
       title: "Becoming",
       description:
         "A reading companion app to track books, highlights, and the ideas you want to remember.",
-      images: ["CardInfo.png", "CardInfo2.png"] as readonly [string, string],
+      images: ["CardInfo.webp", "CardInfo2.webp"] as readonly [string, string],
       href: "/case-studies/becoming",
     },
     {
       title: "Higo",
       description:
         "A receivables dashboard for SMBs to track invoices, clients, and payment status in one place.",
-      image: "higoooo.png",
+      image: "higoooo.webp",
       imageInsetTopLeft: true,
       href: "/case-studies/higo",
     },
@@ -45,7 +45,7 @@ const PROJECTS = {
       title: "Dinksmart",
       description:
         "A friendlier way to manage everyday money decisions and stay on top of savings goals.",
-      image: "Homepagedinksmartt.png",
+      image: "Homepagedinksmartt.webp",
       imageTopMarginOnly: true,
       href: "/case-studies/dinksmart",
     },
@@ -55,14 +55,14 @@ const PROJECTS = {
       title: "Becoming",
       description:
         "Una app de lectura para registrar libros, highlights y las ideas que querés recordar.",
-      images: ["CardInfo.png", "CardInfo2.png"] as readonly [string, string],
+      images: ["CardInfo.webp", "CardInfo2.webp"] as readonly [string, string],
       href: "/case-studies/becoming",
     },
     {
       title: "Higo",
       description:
         "Un dashboard de cuentas por cobrar para PYMEs: facturas, clientes y estado de pagos en un solo lugar.",
-      image: "higoooo.png",
+      image: "higoooo.webp",
       imageInsetTopLeft: true,
       href: "/case-studies/higo",
     },
@@ -70,7 +70,7 @@ const PROJECTS = {
       title: "Dinksmart",
       description:
         "Una forma más amigable de gestionar las decisiones financieras del día a día y estar al tanto de los objetivos de ahorro.",
-      image: "Homepagedinksmartt.png",
+      image: "Homepagedinksmartt.webp",
       imageTopMarginOnly: true,
       href: "/case-studies/dinksmart",
     },

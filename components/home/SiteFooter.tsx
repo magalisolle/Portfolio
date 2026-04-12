@@ -166,7 +166,7 @@ export function SiteFooter() {
       {/* Cat image — absolute bottom-left */}
       <div className="pointer-events-none absolute bottom-0 left-8 rotate-[1.8deg] md:left-14">
         <Image
-          src="/images/mycats.png"
+          src="/images/mycats.webp"
           alt=""
           width={115}
           height={92}

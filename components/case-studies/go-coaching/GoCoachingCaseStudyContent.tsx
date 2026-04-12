@@ -302,7 +302,7 @@ export function GoCoachingCaseStudyContent() {
           >
             {/* Laptop frame (with transparent screen hole) behind the video — same pattern as Cauciones. */}
             <Image
-              src={imagePath("mockupcoaching-frame.png")}
+              src={imagePath("mockupcoaching-frame.webp")}
               alt=""
               fill
               className="pointer-events-none z-0 object-contain object-center select-none"
@@ -355,7 +355,7 @@ export function GoCoachingCaseStudyContent() {
           <figure className="m-0 flex min-w-0 flex-1 flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3">
               <ExpandableImage
-                src={imagePath("google sheets.png")}
+                src={imagePath("google sheets.webp")}
                 alt="Activity Tracker Google Sheets used by students before the platform."
                 width={590}
                 height={405}
@@ -370,7 +370,7 @@ export function GoCoachingCaseStudyContent() {
           <figure className="m-0 flex min-w-0 flex-1 flex-col gap-3 justify-center">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3">
               <ExpandableImage
-                src={imagePath("diagram circle.png")}
+                src={imagePath("diagram circle.webp")}
                 alt="Previous and complete flow diagram from Circle platform."
                 width={1256}
                 height={560}
@@ -405,7 +405,7 @@ export function GoCoachingCaseStudyContent() {
           <figure className="m-0 flex min-w-0 flex-[7] flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3">
               <ExpandableImage
-                src={imagePath("sessions.png")}
+                src={imagePath("sessions.webp")}
                 alt="Working session notes — client calls documented as coach and student needs."
                 width={1276}
                 height={804}
@@ -421,7 +421,7 @@ export function GoCoachingCaseStudyContent() {
           <figure className="m-0 flex min-w-0 flex-[3] flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3 flex flex-col gap-3">
               <ExpandableImage
-                src={imagePath("wireframes.png")}
+                src={imagePath("wireframes.webp")}
                 alt="Early wireframes exploring layout and hierarchy before high fidelity."
                 width={498}
                 height={354}
@@ -429,7 +429,7 @@ export function GoCoachingCaseStudyContent() {
                 sizes="(max-width: 1424px) 30vw, 427px"
               />
               <ExpandableImage
-                src={imagePath("wireframeeeegocoaching 1.png")}
+                src={imagePath("wireframeeeegocoaching 1.webp")}
                 alt="Additional early sketches exploring hierarchy and layout."
                 width={374}
                 height={281}
@@ -481,7 +481,7 @@ export function GoCoachingCaseStudyContent() {
           <figure className="m-0 w-full max-w-[min(70dvw,997px)] flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3">
               <ExpandableImage
-                src={imagePath("diagram.png")}
+                src={imagePath("diagram.webp")}
                 alt="Diagram of the student experience through the Go! Coaching platform."
                 width={1656}
                 height={1240}
@@ -526,7 +526,7 @@ export function GoCoachingCaseStudyContent() {
                       {/* Left: week selector + laptop + streak */}
                       <div className="flex min-w-0 flex-1 flex-col items-center gap-1">
                         <Image
-                          src={imagePath("Week Selector.png")}
+                          src={imagePath("Week Selector.webp")}
                           alt=""
                           width={1392}
                           height={172}
@@ -534,7 +534,7 @@ export function GoCoachingCaseStudyContent() {
                           aria-hidden
                         />
                         <Image
-                          src={imagePath("mockupcoaching 1.png")}
+                          src={imagePath("mockupcoaching 1.webp")}
                           alt="Activity Tracker desktop screen showing daily logging interface."
                           width={3009}
                           height={1842}
@@ -542,7 +542,7 @@ export function GoCoachingCaseStudyContent() {
                           sizes="(max-width: 1424px) 75vw, 1068px"
                         />
                         <Image
-                          src={imagePath("Streak2.png")}
+                          src={imagePath("Streak2.webp")}
                           alt=""
                           width={948}
                           height={150}
@@ -553,7 +553,7 @@ export function GoCoachingCaseStudyContent() {
                       {/* Right: weekly goals panels */}
                       <div className="w-[17%] flex-shrink-0 -ml-6">
                         <Image
-                          src={imagePath("marketing assets.png")}
+                          src={imagePath("marketing assets.webp")}
                           alt="Weekly goals panels — Marketing, Sales, Outputs and Results progress."
                           width={639}
                           height={2458}
@@ -582,7 +582,7 @@ export function GoCoachingCaseStudyContent() {
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(100dvw,1424px)] flex flex-col gap-3">
             <Image
-              src={imagePath("mobile-coach view.png")}
+              src={imagePath("mobile-coach view.webp")}
               alt="Mobile coach view — multiple screens showing the Go! Coaching app on iPhone."
               width={3594}
               height={2687}
@@ -608,7 +608,7 @@ export function GoCoachingCaseStudyContent() {
 
             <figure className="m-0 flex flex-col gap-3 overflow-hidden rounded-2xl">
               <ExpandableImage
-                src={imagePath("moodboards.png")}
+                src={imagePath("moodboards.webp")}
                 alt="Three moodboard directions; the chosen spatial, dark, high-contrast direction became the design system foundation."
                 width={1824}
                 height={1170}
@@ -622,7 +622,7 @@ export function GoCoachingCaseStudyContent() {
 
             <figure className="m-0 mt-[9rem] flex flex-col gap-3">
               <Image
-                src={imagePath("dashboard mobile.png")}
+                src={imagePath("dashboard mobile.webp")}
                 alt="Mobile — Coach View Dashboard."
                 width={1824}
                 height={1170}
@@ -678,7 +678,7 @@ export function GoCoachingCaseStudyContent() {
                 <figure className="m-0 flex flex-col gap-3">
                   <div className="overflow-hidden rounded-2xl">
                     <Image
-                      src={imagePath("mobile student view.png")}
+                      src={imagePath("mobile student view.webp")}
                       alt="Mobile — Student View — Referral Partners."
                       width={1764}
                       height={1323}
@@ -693,7 +693,7 @@ export function GoCoachingCaseStudyContent() {
                 <figure className="m-0 flex flex-col gap-3">
                   <div className="overflow-hidden rounded-2xl">
                     <Image
-                      src={imagePath("mobile lead view.png")}
+                      src={imagePath("mobile lead view.webp")}
                       alt="Mobile — Student View — Lead View."
                       width={1764}
                       height={1323}
@@ -731,7 +731,7 @@ export function GoCoachingCaseStudyContent() {
             <figure className="m-0 mb-[9rem] flex flex-col gap-3">
               <div className="overflow-hidden rounded-2xl">
                 <Image
-                  src={imagePath("liam johnson.png")}
+                  src={imagePath("liam johnson.webp")}
                   alt="Referral partner profile and detail views — relationship context, forms, and guardrails in the student experience."
                   width={2757}
                   height={1781}
@@ -768,7 +768,7 @@ export function GoCoachingCaseStudyContent() {
             <figure className="m-0 flex flex-col gap-3">
               <div className="overflow-hidden rounded-2xl">
                 <Image
-                  src={imagePath("mobiles.png")}
+                  src={imagePath("mobiles.webp")}
                   alt="Mobile — Student View — Referral Partners."
                   width={1824}
                   height={1170}
