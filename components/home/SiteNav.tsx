@@ -23,12 +23,14 @@ const NAV_LINKS = {
 const T = {
   en: {
     downloadResume: "Download Resume",
+    resumeHref: "/Magali-Solle-CV-EN.pdf",
     ariaHome: "Home",
     ariaClose: "Close menu",
     ariaOpen: "Open menu",
   },
   es: {
     downloadResume: "Descargar CV",
+    resumeHref: "/Magali-Solle-CV-ES.pdf",
     ariaHome: "Inicio",
     ariaClose: "Cerrar menú",
     ariaOpen: "Abrir menú",
@@ -71,7 +73,7 @@ export function SiteNav() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href={t.resumeHref}
             download
             className="ml-4 shrink-0 flex items-center gap-2 font-[family-name:var(--font-general-sans)] text-base font-semibold leading-5 tracking-[0.025em] text-[#181818] transition-opacity hover:opacity-70"
           >
@@ -181,7 +183,7 @@ export function SiteNav() {
               </a>
             ))}
             <a
-              href="/resume.pdf"
+              href={t.resumeHref}
               download
               onClick={() => setOpen(false)}
               className="mt-2 flex items-center justify-center gap-2 rounded-full border border-[#181818]/20 px-4 py-3 font-[family-name:var(--font-general-sans)] text-base font-semibold leading-5 tracking-[0.025em] text-[#181818] transition-opacity hover:opacity-70"
