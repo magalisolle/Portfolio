@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ),
   title: {
-    default: "Magas Portfolio — Magali, Senior Product Designer",
-    template: "%s · Magas Portfolio",
+    default: "Magali Solle \u2014 Product Designer",
+    template: "%s · Magali Solle",
   },
   description:
-    "Product designer focused on building clear and scalable digital products. SaaS, fintech, and complex workflows.",
+    "Senior Product Designer with 6+ years of experience in SaaS, fintech, and digital products. Based in Buenos Aires.",
   applicationName: "Magas Portfolio",
   icons: {
     icon: "/favicon.png",
