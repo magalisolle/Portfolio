@@ -35,6 +35,106 @@ const T = {
   },
 };
 
+const downloadIcon = (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+    <path
+      d="M7 1v8M7 9l-3-3M7 9l3-3M1 12h12"
+      stroke="#fdfdfd"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+function ResumePopover({ label }: { label: string }) {
+  const [popoverOpen, setPopoverOpen] = useState(false);
+  const [popoverWidth, setPopoverWidth] = useState<number | undefined>(undefined);
+  const ref = useRef<HTMLDivElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function handleMouseEnter() {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setPopoverOpen(true);
+    if (btnRef.current) setPopoverWidth(btnRef.current.offsetWidth);
+  }
+
+  function handleMouseLeave() {
+    closeTimer.current = setTimeout(() => setPopoverOpen(false), 100);
+  }
+
+  useEffect(() => {
+    if (!popoverOpen) return;
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setPopoverOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [popoverOpen]);
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        ref={btnRef}
+        type="button"
+        onClick={() => setPopoverOpen((v) => !v)}
+        className="flex items-center gap-2 font-[family-name:var(--font-general-sans)] text-sm font-semibold leading-4 tracking-[0.025em] text-[#fdfdfd] transition-opacity hover:opacity-75"
+      >
+        {label}
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+          aria-hidden
+          className={`transition-transform duration-200 ${popoverOpen ? "rotate-180" : ""}`}
+        >
+          <path d="M2 4l4 4 4-4" stroke="#fdfdfd" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      {popoverOpen && (
+        <div
+          className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-50 rounded-2xl border border-white/10 bg-[#93bf80] shadow-lg overflow-hidden"
+          style={popoverWidth ? { width: popoverWidth + 48 } : undefined}
+        >
+          <a
+            href="/Magali-Solle-CV-EN.pdf"
+            download
+            onClick={() => setPopoverOpen(false)}
+            className="flex items-center justify-between gap-3 px-4 py-3 font-[family-name:var(--font-general-sans)] text-sm font-semibold text-[#181818] transition-colors hover:bg-black/10"
+          >
+            Download in English
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+              <path d="M7 1v8M7 9l-3-3M7 9l3-3M1 12h12" stroke="#181818" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+          <div className="mx-4 border-t border-black/10" />
+          <a
+            href="/Magali-Solle-CV-ES.pdf"
+            download
+            onClick={() => setPopoverOpen(false)}
+            className="flex items-center justify-between gap-3 px-4 py-3 font-[family-name:var(--font-general-sans)] text-sm font-semibold text-[#181818] transition-colors hover:bg-black/10"
+          >
+            Descargar en Español
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+              <path d="M7 1v8M7 9l-3-3M7 9l3-3M1 12h12" stroke="#181818" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function SiteFooter() {
   const [copied, setCopied] = useState(false);
   const resetTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -62,7 +162,7 @@ export function SiteFooter() {
   );
 
   return (
-    <footer className="relative overflow-hidden bg-[#3c3c3c] px-4 py-14 md:px-[57px]">
+    <footer className="relative bg-[#3c3c3c] px-4 py-14 md:px-[57px]">
       {/* Cat image — absolute bottom-left */}
       <div className="pointer-events-none absolute bottom-0 left-8 rotate-[1.8deg] md:left-14">
         <Image
@@ -122,22 +222,7 @@ export function SiteFooter() {
               {t.seeMyExperience}
             </span>
             <span className="h-6 w-px bg-[#fffbf2]/30" aria-hidden />
-            <a
-              href="/resume.pdf"
-              download
-              className="flex items-center gap-2 font-[family-name:var(--font-general-sans)] text-sm font-semibold leading-4 tracking-[0.025em] text-[#fdfdfd] transition-opacity hover:opacity-75"
-            >
-              {t.downloadResume}
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-                <path
-                  d="M7 1v8M7 9l-3-3M7 9l3-3M1 12h12"
-                  stroke="#fdfdfd"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </a>
+            <ResumePopover label={t.downloadResume} />
           </div>
         </div>
 
