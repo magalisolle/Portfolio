@@ -60,7 +60,7 @@ export function AIWorkflow() {
         <h2 className="text-[32px] font-medium leading-tight text-ink">
           {t.sectionTitle}
         </h2>
-        <div className="grid gap-0 divide-y divide-[rgba(24,24,24,0.2)] md:grid-cols-3 md:gap-0 md:divide-x md:divide-y-0">
+        <div className="grid gap-0 divide-y divide-[rgba(24,24,24,0.1)] md:grid-cols-3 md:gap-0 md:divide-x md:divide-y-0">
           {cards.map((card) => (
             <article
               key={card.title}

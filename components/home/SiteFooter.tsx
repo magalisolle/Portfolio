@@ -193,7 +193,7 @@ export function SiteFooter() {
                   ? t.ariaCopied
                   : t.ariaCopyEmail(CONTACT_EMAIL)
               }
-              className="rounded-full border-2 border-[#fdfdfd] px-4 py-2 font-[family-name:var(--font-general-sans)] text-sm font-semibold leading-4 tracking-[0.025em] text-[#fdfdfd] transition-opacity hover:opacity-75"
+              className="w-[140px] rounded-full border-2 border-[#fdfdfd] px-4 py-2 font-[family-name:var(--font-general-sans)] text-sm font-semibold leading-4 tracking-[0.025em] text-[#fdfdfd] transition-opacity hover:opacity-75"
             >
               {copied ? t.copied : t.copyEmail}
             </button>
