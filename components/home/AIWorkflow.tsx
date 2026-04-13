@@ -57,14 +57,14 @@ export function AIWorkflow() {
       className="bg-lilac px-4 py-24 md:px-16 md:py-28 lg:px-[123px] lg:py-[134px]"
     >
       <div className="mx-auto flex max-w-[1186px] flex-col gap-10">
-        <h2 className="text-[32px] font-semibold leading-tight text-ink">
+        <h2 className="text-[32px] font-medium leading-tight text-ink">
           {t.sectionTitle}
         </h2>
-        <div className="grid gap-0 divide-y divide-[rgba(52,52,52,0.07)] md:grid-cols-3 md:gap-0 md:divide-x md:divide-y-0">
+        <div className="grid gap-0 divide-y divide-[rgba(24,24,24,0.2)] md:grid-cols-3 md:gap-0 md:divide-x md:divide-y-0">
           {cards.map((card) => (
             <article
               key={card.title}
-              className="flex flex-col gap-4 px-0 pb-8 pt-8 last:pb-0 first:pt-0 md:px-6 md:pb-0 md:pt-0 md:first:pl-0"
+              className="flex flex-col gap-4 px-0 pb-10 pt-10 last:pb-0 first:pt-0 md:px-10 md:pb-0 md:pt-0 md:first:pl-0"
             >
               <div className="relative h-[50px] w-[50px] shrink-0 overflow-hidden rounded">
                 <Image
