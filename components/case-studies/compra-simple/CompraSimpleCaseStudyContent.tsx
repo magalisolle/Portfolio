@@ -358,7 +358,7 @@ export function CompraSimpleCaseStudyContent() {
                 className="flex items-center justify-center overflow-hidden rounded-2xl py-10 px-8"
                 style={{ backgroundColor: "#DFDCFF" }}
               >
-                <Image
+                <ExpandableImage
                   src={IMG("phone.png")}
                   alt="Stock list screen showing Compra Simple trigger"
                   width={273}
@@ -411,7 +411,7 @@ export function CompraSimpleCaseStudyContent() {
           {/* Images on top, in normal column */}
           <div className="relative z-10 flex flex-col items-center gap-6 md:flex-row md:justify-center md:gap-10">
             <figure className="m-0 flex flex-col items-center gap-3">
-              <Image
+              <ExpandableImage
                 src={IMG("old.png")}
                 alt="Old stock list design"
                 width={337}
@@ -423,7 +423,7 @@ export function CompraSimpleCaseStudyContent() {
               </figcaption>
             </figure>
             <figure className="m-0 flex flex-col items-center gap-3">
-              <Image
+              <ExpandableImage
                 src={IMG("new.png")}
                 alt="New stock list design with Compra Simple component"
                 width={338}
@@ -460,7 +460,7 @@ export function CompraSimpleCaseStudyContent() {
 
             {/* Center — Phone */}
             <div className="flex shrink-0 justify-center md:w-[240px]">
-              <Image
+              <ExpandableImage
                 src={IMG("celular.png")}
                 alt="Compra Simple purchase screen"
                 width={231}
@@ -543,7 +543,7 @@ export function CompraSimpleCaseStudyContent() {
             </div>
             {/* Right — phone screenshot */}
             <div className="min-w-0 flex-1 overflow-hidden rounded-3xl md:max-w-[480px]">
-              <Image
+              <ExpandableImage
                 src={IMG("comprasimpleiol 1.png")}
                 alt="Compra Simple — outcome screenshot"
                 width={930}

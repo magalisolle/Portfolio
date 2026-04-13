@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { ExpandableImage } from "@/components/ExpandableImage";
 import { ArrowLeftIcon } from "@/components/icons/ArrowIcons";
 import {
   CaseStudyLayout,
@@ -224,7 +225,7 @@ export function BecomingCaseStudyContent() {
             aria-hidden
           />
           <div className="relative flex items-center justify-center py-10 px-8">
-            <Image
+            <ExpandableImage
               src={IMG("choooose 1.png")}
               alt="Becoming theme chooser screen"
               width={1440}
@@ -256,8 +257,9 @@ export function BecomingCaseStudyContent() {
               {/* Left: Discovery sessions */}
               <div className="flex flex-col items-center gap-4 md:w-[55%]">
                 <div className="w-full overflow-hidden rounded-3xl bg-[#fff7e5] p-4 md:p-6">
-                  <Image
+                  <ExpandableImage
                     src={IMG("becoming discovery.png")}
+                    zoomable
                     alt="Discovery sessions"
                     width={586}
                     height={737}
@@ -273,8 +275,9 @@ export function BecomingCaseStudyContent() {
               <div className="flex flex-col gap-4 md:flex-1">
                 <div className="flex flex-col items-center gap-4">
                   <div className="w-full overflow-hidden rounded-3xl bg-[#fff7e5] p-4 md:p-6">
-                    <Image
+                    <ExpandableImage
                       src={IMG("LLM.png")}
+                    zoomable
                       alt="How the LLM will work"
                       width={1317}
                       height={667}
@@ -288,8 +291,9 @@ export function BecomingCaseStudyContent() {
                 </div>
                 <div className="flex flex-col items-center gap-4">
                   <div className="w-full overflow-hidden rounded-3xl bg-[#fff7e5] p-4 md:p-6">
-                    <Image
+                    <ExpandableImage
                       src={IMG("pioritize.png")}
+                    zoomable
                       alt="Features prioritization"
                       width={816}
                       height={767}
@@ -334,7 +338,7 @@ export function BecomingCaseStudyContent() {
           <div className="relative py-10 md:py-14">
             <div className="relative mx-auto md:max-w-[1000px]">
             {/* iPhone */}
-            <Image
+            <ExpandableImage
               src={IMG("IPHONEBECOMING 1.png")}
               alt="Becoming — connect your sources screen"
               width={961}
@@ -344,7 +348,7 @@ export function BecomingCaseStudyContent() {
             />
             {/* Cards — flow on mobile, absolute on desktop */}
             <div className="mt-6 flex flex-col items-end gap-4 md:absolute md:right-0 md:top-10 md:mt-0 md:w-[48%]">
-              <Image
+              <ExpandableImage
                 src={IMG("CardInfo1.png")}
                 alt="How to get Readwise Access token"
                 width={528}
@@ -352,7 +356,7 @@ export function BecomingCaseStudyContent() {
                 className="h-auto w-full rounded-2xl drop-shadow-md"
                 sizes="(max-width: 768px) 100vw, 38vw"
               />
-              <Image
+              <ExpandableImage
                 src={IMG("CardInfo2.png")}
                 alt="Access token privacy note"
                 width={528}
@@ -360,7 +364,7 @@ export function BecomingCaseStudyContent() {
                 className="h-auto w-full rounded-2xl drop-shadow-md"
                 sizes="(max-width: 768px) 100vw, 38vw"
               />
-              <Image
+              <ExpandableImage
                 src={IMG("_Dialog_.png")}
                 alt="Token error dialog"
                 width={334}
@@ -400,7 +404,7 @@ export function BecomingCaseStudyContent() {
 
             {/* Setup prompts full-width image */}
             <div className="overflow-hidden rounded-3xl bg-[#fff7e5] p-4 md:p-6">
-              <Image
+              <ExpandableImage
                 src={IMG("setupprompts 1.png")}
                 alt="Prompt setup and cadence configuration"
                 width={2880}
@@ -425,7 +429,7 @@ export function BecomingCaseStudyContent() {
             aria-hidden
           />
           <div className="relative flex flex-col items-center pt-6 pb-20 md:pt-8 md:pb-24">
-            <Image
+            <ExpandableImage
               src={IMG("onboardingbecomingmockup 1.png")}
               alt="First insight screen — Your first Prompt"
               width={1220}
@@ -433,7 +437,7 @@ export function BecomingCaseStudyContent() {
               className="h-auto w-full object-contain"
               sizes="(max-width: 1186px) 100vw, 1186px"
             />
-            <Image
+            <ExpandableImage
               src={IMG("insightss.png")}
               alt="Books read, currently reading, want to read stats"
               width={528}
@@ -464,7 +468,7 @@ export function BecomingCaseStudyContent() {
         <div className="case-study-wide-bleed-outer mt-12 md:mt-14">
           <div className="overflow-hidden rounded-3xl bg-[#fff7e5] p-4 md:p-6">
             <div className="grid gap-4 md:gap-6 sm:grid-cols-2">
-              <Image
+              <ExpandableImage
                 src={IMG("Home empty state.png")}
                 alt="Home screen empty state"
                 width={543}
@@ -472,7 +476,7 @@ export function BecomingCaseStudyContent() {
                 className="h-auto w-full rounded-2xl object-cover"
                 sizes="(max-width: 1186px) 100vw, 50vw"
               />
-              <Image
+              <ExpandableImage
                 src={IMG("home 2.png")}
                 alt="Home screen with content"
                 width={543}
@@ -500,7 +504,7 @@ export function BecomingCaseStudyContent() {
 
             {/* Mobile screens side by side */}
             <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-start sm:justify-center">
-              <Image
+              <ExpandableImage
                 src={IMG("MOBILEBECOMING 1.png")}
                 alt="Becoming mobile experience"
                 width={227}
@@ -508,7 +512,7 @@ export function BecomingCaseStudyContent() {
                 className="h-auto w-full rounded-2xl object-cover sm:w-[22%]"
                 sizes="(max-width: 768px) 100vw, 30vw"
               />
-              <Image
+              <ExpandableImage
                 src={IMG("MOBILE BECOMING2 1.png")}
                 alt="Becoming mobile experience 2"
                 width={227}

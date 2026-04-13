@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { ExpandableImage } from "@/components/ExpandableImage";
 import { ArrowLeftIcon } from "@/components/icons/ArrowIcons";
 import {
   CaseStudyLayout,
@@ -239,7 +240,7 @@ export function HigoCaseStudyContent() {
       <CaseStudySection id="desktop-screens">
         <div className="flex flex-col gap-14">
           <div className="flex flex-col gap-4">
-            <Image
+            <ExpandableImage
               src={IMG("laptop 1.png")}
               alt="Desktop — Home page"
               width={1194}
@@ -253,7 +254,7 @@ export function HigoCaseStudyContent() {
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <Image
+            <ExpandableImage
               src={IMG("laptop2.png")}
               alt="Desktop — Payroll New"
               width={1194}
@@ -290,7 +291,7 @@ export function HigoCaseStudyContent() {
             <div className="flex w-full min-w-0 flex-col gap-4">
               <div className="grid gap-6 md:grid-cols-2">
                 <div className="overflow-hidden rounded-2xl">
-                  <Image
+                  <ExpandableImage
                     src={IMG("pago de nómina.png")}
                     alt="Payroll payment view"
                     width={1440}
@@ -300,7 +301,7 @@ export function HigoCaseStudyContent() {
                   />
                 </div>
                 <div className="overflow-hidden rounded-2xl">
-                  <Image
+                  <ExpandableImage
                     src={IMG("detalle del pago.png")}
                     alt="Payment detail view"
                     width={1440}
@@ -326,7 +327,7 @@ export function HigoCaseStudyContent() {
 
             {/* Cardshigo image */}
             <div className="overflow-hidden rounded-3xl bg-[#fdfdfd] p-4 md:p-6">
-              <Image
+              <ExpandableImage
                 src={IMG("Cardshigo 1.png")}
                 alt="Payroll batch cards with concept and period"
                 width={1946}
@@ -349,7 +350,7 @@ export function HigoCaseStudyContent() {
             {/* Pagos de nómina image */}
             <div className="flex flex-col gap-4">
               <div className="overflow-hidden rounded-3xl bg-[#fdfdfd] p-4 md:p-6">
-                <Image
+                <ExpandableImage
                   src="/images/Higo/pagos-de-nomina.png"
                   alt="Payroll payments list view"
                   width={1440}
@@ -378,7 +379,7 @@ export function HigoCaseStudyContent() {
         {/* detalle del pagooo — blue card */}
         <div className="mt-12 flex flex-col gap-4">
           <div className="overflow-hidden rounded-3xl bg-[#bed2f8] p-4 md:p-6">
-            <Image
+            <ExpandableImage
               src={IMG("detalle del pagooo.png")}
               alt="Payment detail view — full screen"
               width={1440}

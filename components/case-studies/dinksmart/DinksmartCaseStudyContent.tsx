@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { ExpandableImage } from "@/components/ExpandableImage";
 import { ArrowLeftIcon } from "@/components/icons/ArrowIcons";
 import {
   CaseStudyLayout,
@@ -126,7 +127,7 @@ export function DinksmartCaseStudyContent() {
       {/* ── Mockup: Create a Match ───────────────────────────────────────── */}
       <CaseStudySection id="mockup-create-match">
         <div className="flex flex-col gap-4">
-          <Image
+          <ExpandableImage
             src={IMG("mockup phones.png")}
             alt="Create a Match flow"
             width={1016}
@@ -154,7 +155,7 @@ export function DinksmartCaseStudyContent() {
       {/* ── Mockup: Push notification & Match Unavailable ───────────────── */}
       <CaseStudySection id="mockup-notifications">
         <div className="flex flex-col gap-4">
-          <Image
+          <ExpandableImage
             src={IMG("phones3.png")}
             alt="Push notification and Match Unavailable screens"
             width={1022}
@@ -198,7 +199,7 @@ export function DinksmartCaseStudyContent() {
       {/* ── Mockup: Home Screen, Availability & Cancel Pop Up ───────────── */}
       <CaseStudySection id="mockup-home">
         <div className="flex flex-col gap-4">
-          <Image
+          <ExpandableImage
             src={IMG("phones4.png")}
             alt="Home Screen, Availability and Cancel Pop Up"
             width={942}

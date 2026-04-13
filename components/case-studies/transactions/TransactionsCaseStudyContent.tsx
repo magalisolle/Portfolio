@@ -281,8 +281,9 @@ export function TransactionsCaseStudyContent() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <figure className="m-0 flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6EEF5] p-3">
-              <Image
+              <ExpandableImage
                 src={IMG("transaccion vieja1.png")}
+                zoomable
                 alt="Old transactions experience — first screen."
                 width={1200}
                 height={800}
@@ -296,8 +297,9 @@ export function TransactionsCaseStudyContent() {
           </figure>
           <figure className="m-0 flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6EEF5] p-3">
-              <Image
+              <ExpandableImage
                 src={IMG("transaccion vieja 2.png")}
+                zoomable
                 alt="Old transactions experience — second screen."
                 width={1200}
                 height={800}
@@ -343,6 +345,7 @@ export function TransactionsCaseStudyContent() {
             <div className="overflow-hidden rounded-2xl p-6" style={{ backgroundColor: "#F6EEF5" }}>
               <ExpandableImage
                 src={IMG("research.png")}
+                zoomable
                 alt="Research synthesis — user interview insights and product analysis."
                 width={1600}
                 height={900}
@@ -435,6 +438,7 @@ export function TransactionsCaseStudyContent() {
             <div className="overflow-hidden rounded-2xl bg-[#F6EEF5] p-6">
               <ExpandableImage
                 src={IMG("opciones.png")}
+                zoomable
                 alt="Three transaction model options mapped before the final decision."
                 width={1600}
                 height={900}
@@ -503,6 +507,7 @@ export function TransactionsCaseStudyContent() {
           <figure className="m-0 w-full max-w-[min(100dvw,700px)] flex flex-col gap-3">
               <ExpandableImage
                 src={IMG("diagramapriorizacion.png")}
+                zoomable
                 alt="Value vs. effort prioritization matrix."
                 width={1424}
                 height={900}
@@ -538,8 +543,9 @@ export function TransactionsCaseStudyContent() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <figure className="m-0 flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6EEF5] p-3">
-              <Image
+              <ExpandableImage
                 src={IMG("first approach1.png")}
+                zoomable
                 alt="First wireframe approach — unified transactions list."
                 width={1200}
                 height={800}
@@ -553,8 +559,9 @@ export function TransactionsCaseStudyContent() {
           </figure>
           <figure className="m-0 flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6EEF5] p-3">
-              <Image
+              <ExpandableImage
                 src={IMG("first approach2.png")}
+                zoomable
                 alt="First wireframe approach — transaction detail exploration."
                 width={1200}
                 height={800}
@@ -607,9 +614,10 @@ export function TransactionsCaseStudyContent() {
                 { file: "dropdown3.png", label: "Dropdown — option C." },
               ].map(({ file, label }) => (
                 <figure key={file} className="m-0 flex flex-col gap-2">
-                  <Image
+                  <ExpandableImage
                     src={IMG(file)}
                     alt={label}
+                    zoomable
                     width={800}
                     height={600}
                     className="h-auto w-full rounded-xl"
@@ -642,6 +650,7 @@ export function TransactionsCaseStudyContent() {
           <div className="rounded-2xl p-6 flex flex-col md:flex-row items-start gap-6 w-full max-w-[1100px]" style={{ backgroundColor: "#F6EEF5" }}>
             <ExpandableImage
               src={IMG("PaymentFlow.png")}
+              zoomable
               alt="Recorrido del dinero — full payment timeline."
               width={800}
               height={900}
@@ -692,7 +701,7 @@ export function TransactionsCaseStudyContent() {
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(100%,800px)] flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl p-6" style={{ backgroundColor: "#F6EEF5" }}>
-              <Image
+              <ExpandableImage
                 src={IMG("search 1.png")}
                 alt="Search — finding payments by supplier, date, or amount."
                 width={1194}
@@ -721,7 +730,7 @@ export function TransactionsCaseStudyContent() {
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(100%,950px)] flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl px-6 py-1" style={{ background: "linear-gradient(135deg, #E4DDFF 0%, #FFFFFF 100%)" }}>
-              <Image
+              <ExpandableImage
                 src={IMG("mockupfinal1.png")}
                 alt="Transactions final design — main screen."
                 width={1194}
@@ -741,7 +750,7 @@ export function TransactionsCaseStudyContent() {
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(100%,950px)] flex flex-col gap-3 mt-10 md:mt-16">
             <div className="overflow-hidden rounded-2xl px-6 py-1" style={{ background: "linear-gradient(135deg, #E4DDFF 0%, #FFFFFF 100%)" }}>
-              <Image
+              <ExpandableImage
                 src={IMG("trxdetails 1.png")}
                 alt="Transactions final design — detail panel."
                 width={1194}
@@ -783,6 +792,7 @@ export function TransactionsCaseStudyContent() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <ExpandableImage
               src={IMG("analisys1.png")}
+              zoomable
               alt="Amplitude funnel — reprocess flow analysis."
               width={800}
               height={500}
@@ -791,6 +801,7 @@ export function TransactionsCaseStudyContent() {
             />
             <ExpandableImage
               src={IMG("analisys2.png")}
+              zoomable
               alt="Amplitude funnel — search reprocess analysis."
               width={800}
               height={500}
@@ -817,6 +828,7 @@ export function TransactionsCaseStudyContent() {
             <div className="overflow-hidden rounded-2xl p-6 flex flex-col gap-7 md:w-[52%] shrink-0" style={{ backgroundColor: "#F6EEF5" }}>
               <ExpandableImage
                 src={IMG("top events.png")}
+                zoomable
                 alt="Top events — post-launch Amplitude data."
                 width={800}
                 height={500}
@@ -825,6 +837,7 @@ export function TransactionsCaseStudyContent() {
               />
               <ExpandableImage
                 src={IMG("most viewed.png")}
+                zoomable
                 alt="Most viewed screens — post-launch Amplitude data."
                 width={800}
                 height={200}
