@@ -108,9 +108,8 @@ const IMAGE_CONFIG: Pick<
     imageClassName: "object-cover object-left object-top md:object-[18%_center]",
   },
   {
-    image: "comprasimpleiol 1.png",
+    image: "cardcomprasimple.png",
     imageClassName: "object-cover object-center",
-    imageOverlay: "Frame 34809 1.png",
     textColumnClassName: "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
     imageColumnClassName: "bg-lilac",
   },
@@ -189,14 +188,14 @@ export function CaseStudies() {
               </div>
               <div
                 className={[
-                  "relative flex h-[238px] w-full shrink-0 flex-col overflow-hidden bg-card-case p-0 rounded-b-3xl md:h-full md:min-h-0 md:min-w-0 md:w-1/2 md:shrink-0 md:basis-1/2 md:rounded-b-none md:rounded-r-3xl",
+                  "relative flex h-[400px] w-full shrink-0 flex-col overflow-hidden bg-card-case p-0 rounded-b-3xl md:h-full md:min-h-0 md:min-w-0 md:w-1/2 md:shrink-0 md:basis-1/2 md:rounded-b-none md:rounded-r-3xl",
                   item.imageColumnClassName ?? "",
                 ].join(" ")}
               >
                 {item.imageOverlay ? (
                   <>
                     <div className="flex min-h-0 w-full flex-1 flex-col items-center justify-center">
-                      <div className="relative mx-auto h-full w-full max-w-full min-h-[238px] overflow-hidden px-0 md:min-h-0">
+                      <div className="relative mx-auto h-full w-full max-w-full min-h-[400px] overflow-hidden px-0 md:min-h-0">
                         <div
                           className="absolute inset-0 z-0 bg-lilac"
                           style={{
@@ -208,13 +207,13 @@ export function CaseStudies() {
                           aria-hidden
                         />
                         <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center py-8 md:py-12">
-                          <div className="origin-center scale-[1.34] translate-x-5 sm:translate-x-7 md:translate-x-12">
+                          <div className="origin-center scale-[1.34] translate-x-5 sm:translate-x-7 md:translate-x-12 md:w-full md:max-w-[min(85%,390px)]">
                             <Image
                               src={imagePath(item.imageOverlay)}
                               alt=""
                               width={880}
                               height={520}
-                              className="mx-auto h-auto w-full max-w-[min(400px,82vw)] object-contain drop-shadow-2xl md:max-w-[min(420px,40vw)]"
+                              className="mx-auto h-auto w-full max-w-[min(400px,82vw)] object-contain drop-shadow-2xl md:max-w-full"
                               sizes="(max-width: 768px) 88vw, 44vw"
                             />
                           </div>
@@ -223,7 +222,7 @@ export function CaseStudies() {
                     </div>
                   </>
                 ) : item.imageVariant === "mvp" ? (
-                  <div className="relative flex h-[238px] w-full flex-col items-center justify-center gap-4 overflow-hidden px-4 py-8 md:h-full md:min-h-0 md:gap-5 md:px-8 md:py-10">
+                  <div className="relative flex h-[400px] w-full flex-col items-center justify-center gap-4 overflow-hidden px-4 py-5 md:h-full md:min-h-0 md:gap-5 md:px-8 md:py-10">
                     <div
                       className="absolute inset-0 z-0 rounded-none"
                       style={{
@@ -254,7 +253,7 @@ export function CaseStudies() {
                     </div>
                   </div>
                 ) : item.imageVariant === "cauciones" ? (
-                  <div className="grid h-[238px] w-full grid-rows-[1fr_auto] overflow-hidden rounded-none bg-[#C4B5FD] md:h-full md:min-h-0">
+                  <div className="grid h-[400px] w-full grid-rows-[1fr_auto] overflow-hidden rounded-none bg-[#C4B5FD] md:h-full md:min-h-0">
                     <div className="flex min-h-0 items-center justify-center px-4 py-6 md:px-6 md:py-8">
                       {item.caucionesCardImage ? (
                         <Image
@@ -280,7 +279,7 @@ export function CaseStudies() {
                         </div>
                       )}
                     </div>
-                    <div className="relative h-[min(44vh,289px)] w-full shrink-0 overflow-hidden md:h-[min(46%,238px)] md:min-h-[187px]">
+                    <div className="relative h-[200px] w-full shrink-0 overflow-hidden md:h-[min(46%,238px)] md:min-h-[187px]">
                       <Image
                         src={imagePath(item.image)}
                         alt=""

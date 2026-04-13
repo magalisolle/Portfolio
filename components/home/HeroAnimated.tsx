@@ -10,7 +10,7 @@ import { useLanguage } from "@/lib/i18n";
 const RULO_MAX_WIDTH_PX = 991; // 1166 × 0.85 (−15%)
 
 const headlineClass =
-  "font-[family-name:var(--font-bricolage)] text-[clamp(2.25rem,8vw,5rem)] font-medium leading-[1] text-ink";
+  "font-[family-name:var(--font-bricolage)] text-[clamp(2.75rem,8vw,5rem)] font-medium leading-[1] text-ink";
 
 const fadeEase = "easeOut" as const;
 
@@ -86,21 +86,23 @@ export function HeroAnimated({ rulo }: Props) {
             />
           </div>
 
-          <motion.p
-            className={`${headlineClass} relative z-[2] text-left`}
-            style={{ fontFeatureSettings: '"liga" 1' }}
-            {...fadeUp(TIMELINE.line1.delay, TIMELINE.line1.duration)}
-          >
-            {t.line1}
-          </motion.p>
+          <h1 className="contents">
+            <motion.span
+              className={`${headlineClass} relative z-[2] block text-left`}
+              style={{ fontFeatureSettings: '"liga" 1' }}
+              {...fadeUp(TIMELINE.line1.delay, TIMELINE.line1.duration)}
+            >
+              {t.line1}
+            </motion.span>
 
-          <motion.p
-            className={`${headlineClass} relative z-[2] mt-[136px] text-right`}
-            style={{ fontFeatureSettings: '"liga" 1' }}
-            {...fadeUp(TIMELINE.line2.delay, TIMELINE.line2.duration)}
-          >
-            {t.line2}
-          </motion.p>
+            <motion.span
+              className={`${headlineClass} relative z-[2] mt-[136px] block text-right`}
+              style={{ fontFeatureSettings: '"liga" 1' }}
+              {...fadeUp(TIMELINE.line2.delay, TIMELINE.line2.duration)}
+            >
+              {t.line2}
+            </motion.span>
+          </h1>
 
           <motion.p
             className="relative z-[2] ml-auto mt-5 max-w-[min(60rem,calc(100%-1rem))] text-balance text-right text-base font-medium leading-snug text-muted sm:mt-6 sm:text-lg md:text-[clamp(1.125rem,2.2vw,1.75rem)] md:leading-[1.35]"
