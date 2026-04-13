@@ -503,13 +503,14 @@ export function BecomingCaseStudyContent() {
             </div>
 
             {/* Mobile screens side by side */}
-            <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-start sm:justify-center">
+            <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-center">
               <ExpandableImage
                 src={IMG("MOBILEBECOMING 1.png")}
                 alt="Becoming mobile experience"
                 width={227}
                 height={685}
-                className="h-auto w-full rounded-2xl object-cover sm:w-[22%]"
+                containerClassName="w-full sm:w-[22%]"
+                className="h-auto w-full rounded-2xl"
                 sizes="(max-width: 768px) 100vw, 30vw"
               />
               <ExpandableImage
@@ -517,7 +518,8 @@ export function BecomingCaseStudyContent() {
                 alt="Becoming mobile experience 2"
                 width={227}
                 height={491}
-                className="h-auto w-full rounded-2xl object-cover sm:w-[22%]"
+                containerClassName="w-full sm:w-[22%]"
+                className="h-auto w-full rounded-2xl"
                 sizes="(max-width: 768px) 100vw, 30vw"
               />
             </div>
