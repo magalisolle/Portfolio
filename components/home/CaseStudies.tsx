@@ -160,7 +160,7 @@ export function CaseStudies() {
             <article
               key={item.title + item.client}
               id={item.caseStudyHref ? `card-${item.caseStudyHref.replace("/case-studies/", "")}` : undefined}
-              className="flex flex-col overflow-hidden rounded-3xl bg-card-case md:h-[510px] md:min-h-[510px] md:max-h-[510px] md:flex-row md:items-stretch"
+              className="relative flex flex-col overflow-hidden rounded-3xl bg-card-case md:h-[510px] md:min-h-[510px] md:max-h-[510px] md:flex-row md:items-stretch"
             >
               <div
                 className={[
@@ -182,7 +182,7 @@ export function CaseStudies() {
                     {item.description}
                   </p>
                 </div>
-                <a href={item.caseStudyHref ?? "#"} className="btn-tertiary">
+                <a href={item.caseStudyHref ?? "#"} className="btn-tertiary after:absolute after:inset-0 after:content-['']">
                   {t.readCaseStudy}
                   <ArrowRightIcon className="size-4" />
                 </a>
