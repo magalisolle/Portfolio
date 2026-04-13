@@ -128,7 +128,7 @@ export function DinksmartCaseStudyContent() {
       <CaseStudySection id="mockup-create-match">
         <div className="flex flex-col gap-4">
           <ExpandableImage
-            src={IMG("mockup phones.png")}
+            src={IMG("mockup phones.webp")}
             alt="Create a Match flow"
             width={1016}
             height={762}
@@ -156,7 +156,7 @@ export function DinksmartCaseStudyContent() {
       <CaseStudySection id="mockup-notifications">
         <div className="flex flex-col gap-4">
           <ExpandableImage
-            src={IMG("phones3.png")}
+            src={IMG("phones3.webp")}
             alt="Push notification and Match Unavailable screens"
             width={1022}
             height={767}
@@ -200,7 +200,7 @@ export function DinksmartCaseStudyContent() {
       <CaseStudySection id="mockup-home">
         <div className="flex flex-col gap-4">
           <ExpandableImage
-            src={IMG("phones4.png")}
+            src={IMG("phones4.webp")}
             alt="Home Screen, Availability and Cancel Pop Up"
             width={942}
             height={707}

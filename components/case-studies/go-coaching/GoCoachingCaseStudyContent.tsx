@@ -22,7 +22,7 @@ import { useLanguage } from "@/lib/i18n";
 const GO_COACHING_VIDEO_MP4 = imagePath("go coaching 3.mp4");
 const GO_COACHING_VIDEO_MOV = imagePath("go coaching 3.mov");
 
-/** `mockupcoaching 1.png` intrinsic size — overlay % must match this box. */
+/** `mockupcoaching 1.webp` intrinsic size — overlay % must match this box. */
 const MOCKUP_W = 3009;
 const MOCKUP_H = 1842;
 
@@ -31,10 +31,10 @@ const VIDEO_W = 1444;
 const VIDEO_H = 932;
 
 /**
- * Área exacta del frame detectada dentro de `mockupcoaching 1.png` mediante
+ * Área exacta del frame detectada dentro de `mockupcoaching 1.webp` mediante
  * template-matching del sidebar del video contra el mockup (score 0.80).
  * AR screen = 2093/1351 = 1.5492 ≈ AR video 1444/932 = 1.5494 → encaje perfecto.
- * Este rect coincide con el hueco en `mockupcoaching-frame.png`.
+ * Este rect coincide con el hueco en `mockupcoaching-frame.webp`.
  */
 const SCREEN_RECT = {
   left: 452,
@@ -302,7 +302,7 @@ export function GoCoachingCaseStudyContent() {
           >
             {/* Laptop frame (with transparent screen hole) behind the video — same pattern as Cauciones. */}
             <Image
-              src={imagePath("mockupcoaching-frame.png")}
+              src={imagePath("mockupcoaching-frame.webp")}
               alt=""
               fill
               className="pointer-events-none z-0 object-contain object-center select-none"
@@ -540,7 +540,7 @@ export function GoCoachingCaseStudyContent() {
                           aria-hidden
                         />
                         <ExpandableImage
-                          src={imagePath("mockupcoaching 1.png")}
+                          src={imagePath("mockupcoaching 1.webp")}
                           alt="Activity Tracker desktop screen showing daily logging interface."
                           width={3009}
                           height={1842}
@@ -588,7 +588,7 @@ export function GoCoachingCaseStudyContent() {
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(100dvw,1424px)] flex flex-col gap-3">
             <ExpandableImage
-              src={imagePath("mobile-coach view.png")}
+              src={imagePath("mobile-coach view.webp")}
               alt="Mobile coach view — multiple screens showing the Go! Coaching app on iPhone."
               width={3594}
               height={2687}
@@ -628,7 +628,7 @@ export function GoCoachingCaseStudyContent() {
 
             <figure className="m-0 mt-[9rem] flex flex-col gap-3">
               <ExpandableImage
-                src={imagePath("dashboard mobile.png")}
+                src={imagePath("dashboard mobile.webp")}
                 alt="Mobile — Coach View Dashboard."
                 width={1824}
                 height={1170}
@@ -737,7 +737,7 @@ export function GoCoachingCaseStudyContent() {
             <figure className="m-0 mb-[9rem] flex flex-col gap-3">
               <div className="overflow-hidden rounded-2xl">
                 <ExpandableImage
-                  src={imagePath("liam johnson.png")}
+                  src={imagePath("liam johnson.webp")}
                   alt="Referral partner profile and detail views — relationship context, forms, and guardrails in the student experience."
                   width={2757}
                   height={1781}
@@ -774,7 +774,7 @@ export function GoCoachingCaseStudyContent() {
             <figure className="m-0 flex flex-col gap-3">
               <div className="overflow-hidden rounded-2xl">
                 <ExpandableImage
-                  src={imagePath("mobiles.png")}
+                  src={imagePath("mobiles.webp")}
                   alt="Mobile — Student View — Referral Partners."
                   width={1824}
                   height={1170}
