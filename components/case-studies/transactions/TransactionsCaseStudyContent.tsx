@@ -633,6 +633,27 @@ export function TransactionsCaseStudyContent() {
         </div>
       </CaseStudyWideBleed>
 
+      <CaseStudyWideBleed className="!mt-20 md:!mt-28">
+        <div className="flex w-full min-w-0 justify-center">
+          <figure className="m-0 w-full max-w-[min(100%,950px)] flex flex-col gap-3">
+            <div className="overflow-hidden rounded-2xl p-6" style={{ background: "linear-gradient(135deg, #E4DDFF 0%, #FFFFFF 100%)" }}>
+              <ExpandableImage
+                src="/images/screen panel.png"
+                alt="Final Main Screen Transactions."
+                width={1194}
+                height={849}
+                className="h-auto w-full rounded-xl"
+                sizes="(max-width: 1186px) 100vw, 1100px"
+                zoomable
+              />
+            </div>
+            <figcaption className="text-center text-sm leading-snug text-ink/50">
+              Final Main Screen Transactions
+            </figcaption>
+          </figure>
+        </div>
+      </CaseStudyWideBleed>
+
       {/* ── Recorrido del dinero ────────────────────────────────────────── */}
       <CaseStudySection id="money-path">
         <CaseStudyPhaseContent>
@@ -737,6 +758,7 @@ export function TransactionsCaseStudyContent() {
                 height={849}
                 className="h-auto w-full rounded-xl"
                 sizes="(max-width: 1186px) 100vw, 1100px"
+                zoomable
               />
             </div>
             <figcaption className="text-center text-sm leading-snug text-ink/50">
@@ -757,6 +779,7 @@ export function TransactionsCaseStudyContent() {
                 height={849}
                 className="h-auto w-full rounded-xl"
                 sizes="(max-width: 1186px) 100vw, 1100px"
+                zoomable
               />
             </div>
             <figcaption className="text-center text-sm leading-snug text-ink/50">
