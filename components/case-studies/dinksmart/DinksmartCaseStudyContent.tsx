@@ -15,6 +15,16 @@ import { useLanguage } from "@/lib/i18n";
 const IMG = (file: string) =>
   `/images/Dinksmart/${encodeURIComponent(file)}`;
 
+const IPHONE_13_MINI_THIN_FRAME = "/images/iPhone%2013%20mini%20Thin.png";
+const IPHONE_THIN = { w: 540, h: 1096 } as const;
+const SCREEN_INSET_STYLE = {
+  top: `${(11 / IPHONE_THIN.h) * 100}%`,
+  right: `${(21 / IPHONE_THIN.w) * 100}%`,
+  bottom: `${(11 / IPHONE_THIN.h) * 100}%`,
+  left: `${(21 / IPHONE_THIN.w) * 100}%`,
+  position: "absolute" as const,
+};
+
 const COPY = {
   en: {
     eyebrow: "Dinksmart",
@@ -113,14 +123,59 @@ export function DinksmartCaseStudyContent() {
     >
       {/* ── The Context ─────────────────────────────────────────────────── */}
       <CaseStudySection id="context">
-        <CaseStudyPhaseLabel>{t.contextLabel}</CaseStudyPhaseLabel>
         <CaseStudyPhaseContent>
-          <CaseStudyProse>
-            <div className="flex flex-col gap-4">
-              <p>{t.contextP1}</p>
-              <p>{t.contextP2}</p>
+          <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-12">
+            {/* Text */}
+            <div className="min-w-0 flex-1 text-lg leading-[1.56] tracking-[0.03em] text-muted">
+              <CaseStudyPhaseLabel>{t.contextLabel}</CaseStudyPhaseLabel>
+              <div className="flex flex-col gap-4">
+                <p>{t.contextP1}</p>
+                <p>{t.contextP2}</p>
+              </div>
             </div>
-          </CaseStudyProse>
+
+            {/* Splash video in iPhone mockup */}
+            <div className="flex shrink-0 justify-center">
+              <div style={{ width: 220, position: "relative" }}>
+                <div style={{ position: "relative", width: 220, height: Math.round(220 * (1096 / 540)) }}>
+                  <Image
+                    src={IPHONE_13_MINI_THIN_FRAME}
+                    alt=""
+                    fill
+                    className="pointer-events-none object-contain object-center"
+                    style={{ zIndex: 0 }}
+                    sizes="220px"
+                    aria-hidden
+                    draggable={false}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      zIndex: 10,
+                      top: `${(11 / 1096) * 100}%`,
+                      right: `${(21 / 540) * 100}%`,
+                      bottom: `${(11 / 1096) * 100}%`,
+                      left: `${(21 / 540) * 100}%`,
+                      overflow: "hidden",
+                      borderRadius: "1.65rem",
+                    }}
+                  >
+                    <video
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      aria-label="DinkSmart splash screen."
+                    >
+                      <source src={IMG("splash-dinksmart.mp4")} type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </CaseStudyPhaseContent>
       </CaseStudySection>
 
