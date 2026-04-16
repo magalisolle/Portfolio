@@ -497,14 +497,14 @@ export function CompraSimpleCaseStudyContent() {
           </p>
         </div>
         <CaseStudyPhaseContent className="!mt-10 md:!mt-12">
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2">
             {t.stats.map(({ value, label }, i) => (
               <div key={value} className="flex items-center gap-5 rounded-2xl p-9" style={{ backgroundColor: "#f6f9fe" }}>
                 <div className="flex flex-1 flex-col gap-2">
                   <p className="text-5xl font-bold leading-none text-ink">{value}</p>
                   <p className="text-lg font-medium leading-[1.4] text-muted">{label}</p>
                 </div>
-                <img alt="" src={`/images/Compra simple/Shape${i + 1}.svg`} className="h-[124px] w-[134px] shrink-0" />
+                <img alt="" src={`/images/Compra simple/Shape${i + 1}.svg`} className="h-[80px] w-[86px] shrink-0 sm:h-[124px] sm:w-[134px]" />
               </div>
             ))}
           </div>
