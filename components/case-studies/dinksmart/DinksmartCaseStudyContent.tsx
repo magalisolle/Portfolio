@@ -167,6 +167,7 @@ export function DinksmartCaseStudyContent() {
                       loop
                       playsInline
                       preload="auto"
+                      poster={IMG("splash-poster.jpg")}
                       aria-label="DinkSmart splash screen."
                     >
                       <source src={IMG("splash-dinksmart.mp4")} type="video/mp4" />
