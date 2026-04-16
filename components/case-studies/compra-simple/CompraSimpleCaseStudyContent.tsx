@@ -235,6 +235,7 @@ function HeroVideo() {
                 loop
                 playsInline
                 preload="auto"
+                poster={IMG("comprasimple-poster.jpg")}
                 aria-label="Compra Simple — purchase flow."
               >
                 <source src={IMG("CompraSimple2.mp4")} type="video/mp4" />
