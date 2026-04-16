@@ -575,7 +575,7 @@ export function CompraSimpleCaseStudyContent() {
               style={{ backgroundColor: "#c8f4b7" }}
             >
               <p>{t.feedbackText}</p>
-              <p>&ldquo;{t.feedbackQuote}&rdquo;</p>
+              <p>{t.feedbackQuote}</p>
             </div>
             <p className="text-2xl font-medium leading-[1.4] tracking-[0.025em] text-ink md:text-[28px] md:leading-[1.29]">
               {t.coexistenceText}
