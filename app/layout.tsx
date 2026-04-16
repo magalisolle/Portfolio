@@ -23,11 +23,11 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ),
   title: {
-    default: "Magali Solle \u2014 Product Designer",
+    default: "Magali Solle | Product Designer",
     template: "%s · Magali Solle",
   },
   description:
-    "Senior Product Designer with 6+ years of experience in SaaS, fintech, and digital products. Based in Buenos Aires.",
+    "Product Designer specializing in SaaS, fintech, and mobile products.",
   applicationName: "Magas Portfolio",
   icons: {
     icon: "/favicon.png",
