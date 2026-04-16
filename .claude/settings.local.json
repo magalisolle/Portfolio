@@ -3,7 +3,16 @@
     "allow": [
       "mcp__claude_ai_Figma__get_metadata",
       "mcp__claude_ai_Figma__get_variable_defs",
-      "mcp__claude_ai_Figma__get_design_context"
+      "mcp__claude_ai_Figma__get_design_context",
+      "Bash(grep -l \"useLanguage\\\\|COPY\\\\|lang ==\" \"/Users/magalisolle/Desktop/Magas Portfolio/components/home/\"*.tsx)",
+      "Bash(grep -l \"useLanguage\\\\|COPY\\\\|lang ==\" \"/Users/magalisolle/Desktop/Magas Portfolio/components/case-studies/\"**/*.tsx)",
+      "Bash(npx tsc:*)",
+      "Bash(perl -i -0pe ':*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/case-studies/becoming)",
+      "Bash(curl -s -o /dev/null -w \" %{http_code}\" http://localhost:3000/case-studies/higo)",
+      "Bash(curl -s -o /dev/null -w \" %{http_code}\" http://localhost:3000/case-studies/dinksmart)",
+      "Bash(curl -s -o /dev/null -w \" %{http_code}\" http://localhost:3000/case-studies/go-coaching)",
+      "Bash(curl -s -o /dev/null -w \" %{http_code}\" http://localhost:3000/case-studies/transactions)"
     ]
   }
 }
