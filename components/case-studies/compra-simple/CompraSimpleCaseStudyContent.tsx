@@ -374,10 +374,7 @@ export function CompraSimpleCaseStudyContent() {
         <CaseStudyPhaseLabel>{t.solutionLabel}</CaseStudyPhaseLabel>
         <CaseStudyPhaseContent>
           <CaseStudyProse>
-            <div className="flex flex-col gap-4">
-              <p>{t.solutionP1}</p>
-              <p>{t.solutionP2}</p>
-            </div>
+            <p>{t.solutionP1}</p>
           </CaseStudyProse>
         </CaseStudyPhaseContent>
       </CaseStudySection>
@@ -434,6 +431,7 @@ export function CompraSimpleCaseStudyContent() {
       {/* ── Features card ───────────────────────────────────────────────── */}
       <CaseStudySection id="features" className="!mt-10 md:!mt-14">
         <CaseStudyPhaseContent>
+          <p className="mb-4 text-lg leading-[1.56] tracking-[0.03em] text-muted">{t.solutionP2}</p>
           <div className="rounded-2xl p-6" style={{ backgroundColor: "#f6f9fe" }}>
             <div className="flex flex-col gap-3 text-lg font-medium leading-[1.56] tracking-[0.03em] text-ink">
               {t.featuresItems.map((item) => (
