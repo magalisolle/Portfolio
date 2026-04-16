@@ -1,5 +1,15 @@
 "use client";
 import Image from "next/image";
+
+const IPHONE_13_MINI_THIN_FRAME = "/images/iPhone%2013%20mini%20Thin.png";
+const IPHONE_THIN = { w: 540, h: 1096 } as const;
+const SCREEN_INSET_STYLE = {
+  top: `${(11 / IPHONE_THIN.h) * 100}%`,
+  right: `${(21 / IPHONE_THIN.w) * 100}%`,
+  bottom: `${(11 / IPHONE_THIN.h) * 100}%`,
+  left: `${(21 / IPHONE_THIN.w) * 100}%`,
+  position: "absolute" as const,
+};
 import { ExpandableImage } from "@/components/ExpandableImage";
 import { ArrowLeftIcon } from "@/components/icons/ArrowIcons";
 import {
@@ -199,6 +209,48 @@ const COPY = {
   },
 };
 
+function HeroVideo() {
+  return (
+    <CaseStudyWideBleed className="!mt-0">
+      <div className="flex w-full justify-center py-10">
+        <div className="relative w-full max-w-[280px]">
+          <div className="relative isolate aspect-[540/1096] w-full [container-type:inline-size]">
+            <Image
+              src={IPHONE_13_MINI_THIN_FRAME}
+              alt=""
+              fill
+              className="pointer-events-none z-0 object-contain object-center"
+              sizes="280px"
+              aria-hidden
+              draggable={false}
+            />
+            <div
+              className="absolute z-10 overflow-hidden rounded-[min(1.65rem,9.5cqw)]"
+              style={SCREEN_INSET_STYLE}
+            >
+              <video
+                className="h-full w-full origin-center scale-[1.012] object-cover object-center"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                aria-label="Compra Simple — purchase flow."
+              >
+                <source src={IMG("CompraSimple2.mp4")} type="video/mp4" />
+              </video>
+              <div
+                className="pointer-events-none absolute left-1/2 top-0 z-[11] h-[2.8%] w-[38%] -translate-x-1/2 rounded-b-[min(0.85rem,2.8cqw)] bg-[#0a0a0a]"
+                aria-hidden
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </CaseStudyWideBleed>
+  );
+}
+
 export function CompraSimpleCaseStudyContent() {
   const { lang } = useLanguage();
   const t = COPY[lang];
@@ -225,6 +277,9 @@ export function CompraSimpleCaseStudyContent() {
         />
       }
     >
+      {/* ── Hero video ──────────────────────────────────────────────────── */}
+      <HeroVideo />
+
       {/* ── 01. The Problem ─────────────────────────────────────────────── */}
       <CaseStudySection id="the-problem">
         <CaseStudyPhaseLabel>{t.problemLabel}</CaseStudyPhaseLabel>
