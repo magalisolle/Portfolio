@@ -339,6 +339,7 @@ export function CompraSimpleCaseStudyContent() {
                   height={475}
                   className="h-auto w-full rounded-xl"
                   sizes="(max-width: 950px) 100vw, 950px"
+                  zoomable
                 />
               </div>
               <figcaption className="text-center text-sm leading-snug text-muted-soft">
