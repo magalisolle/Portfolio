@@ -104,17 +104,22 @@ const COPY = {
     reproceso1P: "18.4% of users who opened the transactions tab completed a reprocess. That feature didn\u2019t exist before. 18.4% completion on something that previously required a support call is a real number \u2014 it means users are actually handling their own payment failures now.",
     reproceso2Emphasis: "Funnel Search Reprocess.",
     reproceso2P1: "3.54% of users who came through search completed a reprocess \u2014 lower than the direct path, but informative. Users who search are usually exploring, not acting on a specific known problem. That shaped how we thought about the next iteration of search.",
-    reproceso2P2: "The data also surfaced a 56% drop-off between the list and the detail view \u2014 which became the next question: what\u2019s stopping half of users from going deeper? That\u2019s the kind of thing post-launch analysis is supposed to generate.",
+    reproceso2P2: "The data also showed that 44% of users don\u2019t go deeper from the list to the detail view \u2014 which became the next question: what\u2019s stopping almost half of users from going further? That\u2019s the kind of thing post-launch analysis is supposed to generate.",
     outcomeLabel: "06 \u2014 Outcome",
-    outcomeP1: "A transactions panel that people actually open \u2014 because now they know it exists, they can find what they\u2019re looking for, and when something goes wrong, they can handle it themselves.",
-    outcomeP2: "The most concrete signal: reprocessing a rejected payment now has an 18.4% self-service completion rate. For a payments platform, that\u2019s not just a UX win \u2014 it\u2019s a trust signal. Users feel in control of their own money.",
+    outcomeP1: "On a payments platform, visibility over money isn\u2019t a nice-to-have \u2014 it\u2019s operational. Users need to know where their money is to reconcile with their banks and other platforms. A panel that can\u2019t be found, or isn\u2019t understood, isn\u2019t just bad UX: it\u2019s a product trust problem.",
+    outcomeStats: [
+      { value: "371 active users", label: "using the feature, with a usage frequency of 4.76 \u2014 those who use it, come back." },
+      { value: "19,466 tab views", label: "in 30 days \u2014 the transactions section became one of the most accessed areas of the panel." },
+      { value: "18.4% self-service", label: "completion on rejected payment reprocessing \u2014 for the first time, users could resolve it without calling support." },
+    ] as { value: string; label: string }[],
+    outcomeP2: "For a payments platform, that\u2019s not just a UX win \u2014 it\u2019s a trust signal. Users feel in control of their own money.",
     learnedLabel: "07 \u2014 What I Learned",
-    learnedIntro: "What I learned:",
+    learnedIntro: "Retrospective:",
     learnedItems: [
-      "The sharpest insight from this whole project came from a user who didn\u2019t know the feature existed. That quote \u2014 \u201cAre there transactions? I didn\u2019t know\u201d \u2014 changed the frame entirely. It wasn\u2019t a design problem. It was a discoverability and architecture problem that looked like a design problem. Fixing the surface without understanding that would\u2019ve shipped a nicer version of the same invisible feature.",
+      "The sharpest insight from this whole project came from a user who didn\u2019t know the feature existed. That quote \u2014 \u201cAre there transactions? I didn\u2019t know\u201d \u2014 changed the frame entirely. It wasn\u2019t a design problem. It was a discoverability and architecture problem that looked like a design problem.",
       "Testing the concept before the design saved real time. Two rough mockups in round 2 of interviews. If users had pushed back on the unified view, we could\u2019ve pivoted without burning a sprint on high fidelity. Instead we got clear signal and moved fast.",
       "Dev constraints can make your design better. The dropdown performance issue pushed us to a panel-based view that ended up being the right call. I used to think constraints were things to push against \u2014 this project changed that.",
-      "Define success metrics before the first wireframe, not after the last handoff. I built the Amplitude funnels after shipping. That\u2019s backwards. The instrumentation plan comes first \u2014 every time.",
+      "Define success metrics before the first wireframe, not after the last handoff. I built the Amplitude funnels after launch because there was no prior quantitative data \u2014 this redesign was the starting point. But that doesn\u2019t make it the right sequence. I pushed for instrumentation as part of the project, and the takeaway is that the measurement plan has to come in from day one \u2014 every time.",
     ] as string[],
     thankYou: "Thank you for reading!",
     goBack: "Go Back",
@@ -203,17 +208,22 @@ const COPY = {
     reproceso1P: "El 18,4% de los usuarios que abrieron la pesta\u00f1a de transacciones completaron un reproceso. Esa feature no exist\u00eda antes. Un 18,4% de completaci\u00f3n en algo que antes requer\u00eda una llamada a soporte es un n\u00famero real \u2014 significa que los usuarios est\u00e1n manejando sus propios errores de pago.",
     reproceso2Emphasis: "Funnel Search Reprocess.",
     reproceso2P1: "El 3,54% de los usuarios que llegaron por b\u00fasqueda completaron un reproceso \u2014 menor que el camino directo, pero informativo. Los usuarios que buscan generalmente est\u00e1n explorando, no actuando sobre un problema conocido espec\u00edfico. Eso molde\u00f3 c\u00f3mo pensamos la siguiente iteraci\u00f3n de la b\u00fasqueda.",
-    reproceso2P2: "Los datos tambi\u00e9n mostraron un drop-off del 56% entre la lista y la vista de detalle \u2014 que se convirti\u00f3 en la pr\u00f3xima pregunta: \u00bfqu\u00e9 est\u00e1 deteniendo a la mitad de los usuarios de profundizar? Eso es lo que se supone que genera el an\u00e1lisis post-lanzamiento.",
+    reproceso2P2: "Los datos tambi\u00e9n mostraron que el 44% de los usuarios no profundiza de la lista al detalle \u2014 que se convirti\u00f3 en la pr\u00f3xima pregunta: \u00bfqu\u00e9 est\u00e1 deteniendo a casi la mitad de los usuarios de ir m\u00e1s lejos? Eso es lo que se supone que genera el an\u00e1lisis post-lanzamiento.",
     outcomeLabel: "06 \u2014 Resultados",
-    outcomeP1: "Un panel de transacciones que la gente realmente abre \u2014 porque ahora sabe que existe, puede encontrar lo que busca y cuando algo sale mal, puede solucionarlo por su cuenta.",
-    outcomeP2: "La se\u00f1al m\u00e1s concreta: reprocesar un pago rechazado ahora tiene una tasa de completaci\u00f3n self-service del 18,4%. Para una plataforma de pagos, eso no es solo un logro de UX \u2014 es una se\u00f1al de confianza. Los usuarios sienten que tienen el control de su propio dinero.",
+    outcomeP1: "En una plataforma de pagos, la visibilidad del dinero no es un nice-to-have \u2014 es operativa. Los usuarios necesitan saber d\u00f3nde est\u00e1 su dinero para reconciliar con sus bancos y otras plataformas. Un panel que no se encuentra, o que no se entiende, no es solo mala UX: es un problema de confianza en el producto.",
+    outcomeStats: [
+      { value: "371 usuarios activos", label: "usando la feature, con una frecuencia de uso de 4,76 \u2014 quienes la usan, vuelven." },
+      { value: "19.466 vistas de la tab", label: "en 30 d\u00edas \u2014 la secci\u00f3n de transacciones se convirti\u00f3 en una de las m\u00e1s accedidas del panel." },
+      { value: "18,4% self-service", label: "de completaci\u00f3n en reprocesos \u2014 por primera vez los usuarios pod\u00edan resolver un pago rechazado sin llamar a soporte." },
+    ] as { value: string; label: string }[],
+    outcomeP2: "Para una plataforma de pagos, eso no es solo un logro de UX \u2014 es una se\u00f1al de confianza. Los usuarios sienten que tienen el control de su propio dinero.",
     learnedLabel: "07 \u2014 Lo que Aprend\u00ed",
-    learnedIntro: "Lo que aprend\u00ed:",
+    learnedIntro: "Retrospectiva:",
     learnedItems: [
-      "El insight m\u00e1s preciso de todo este proyecto vino de un usuario que no sab\u00eda que la feature exist\u00eda. Esa cita \u2014 \u201c\u00bfHay transacciones? No sab\u00eda\u201d \u2014 cambi\u00f3 el marco por completo. No era un problema de dise\u00f1o. Era un problema de descubribilidad y arquitectura que parec\u00eda un problema de dise\u00f1o. Arreglar la superficie sin entender eso habr\u00eda lanzado una versi\u00f3n m\u00e1s bonita de la misma feature invisible.",
+      "El insight m\u00e1s preciso de todo este proyecto vino de un usuario que no sab\u00eda que la feature exist\u00eda. Esa cita \u2014 \u201c\u00bfHay transacciones? No sab\u00eda\u201d \u2014 cambi\u00f3 el marco por completo. No era un problema de dise\u00f1o. Era un problema de descubribilidad y arquitectura que parec\u00eda un problema de dise\u00f1o.",
       "Testear el concepto antes del dise\u00f1o ahorr\u00f3 tiempo real. Dos mockups borradores en la ronda 2 de entrevistas. Si los usuarios hubieran rechazado la vista unificada, podr\u00edamos haber pivotado sin quemar un sprint en alta fidelidad. En cambio, obtuvimos se\u00f1al clara y avanzamos r\u00e1pido.",
       "Las restricciones de desarrollo pueden mejorar tu dise\u00f1o. El problema de performance con el dropdown nos empuj\u00f3 a una vista basada en panel que result\u00f3 ser la decisi\u00f3n correcta. Antes pensaba que las restricciones eran cosas contra las que empujar \u2014 este proyecto lo cambi\u00f3.",
-      "Definir m\u00e9tricas de \u00e9xito antes del primer wireframe, no despu\u00e9s del \u00faltimo handoff. Constru\u00ed los funnels de Amplitude despu\u00e9s del lanzamiento. Eso est\u00e1 al rev\u00e9s. El plan de instrumentaci\u00f3n va primero \u2014 siempre.",
+      "Definir m\u00e9tricas de \u00e9xito antes del primer wireframe, no despu\u00e9s del \u00faltimo handoff. Constru\u00ed los funnels de Amplitude despu\u00e9s del lanzamiento porque no exist\u00edan datos cuantitativos previos \u2014 este redise\u00f1o fue el punto de partida. Pero eso no lo convierte en la secuencia correcta. Impuls\u00e9 la instrumentaci\u00f3n como parte del proyecto, y el aprendizaje que me llevo es que el plan de medici\u00f3n tiene que entrar desde el d\u00eda uno \u2014 siempre.",
     ] as string[],
     thankYou: "\u00a1Gracias por leer!",
     goBack: "Volver",
@@ -272,7 +282,7 @@ export function TransactionsCaseStudyContent() {
         <CaseStudyPhaseContent>
           <CaseStudyProse>
             <p>{t.problemP1}</p>
-            <p>{t.problemP2}</p>
+            <p className="font-medium text-ink">{t.problemP2}</p>
           </CaseStudyProse>
         </CaseStudyPhaseContent>
       </CaseStudySection>
@@ -837,18 +847,23 @@ export function TransactionsCaseStudyContent() {
 
       {/* ── 06 Outcome ──────────────────────────────────────────────────── */}
       <CaseStudySection id="outcome">
-        <CaseStudyPhaseLabel>{t.outcomeLabel}</CaseStudyPhaseLabel>
-        <CaseStudyPhaseContent>
-          <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-6">
+        <CaseStudyWideBleed>
+          <div className="mx-auto w-full max-w-[1300px] flex flex-col gap-6 md:flex-row md:items-start md:gap-6">
             {/* Left — text */}
             <div className="flex flex-col gap-6 md:flex-1">
-              <div className="flex flex-col gap-2 text-lg leading-[1.56] tracking-[0.03em] text-muted">
+              <CaseStudyPhaseLabel>{t.outcomeLabel}</CaseStudyPhaseLabel>
+              <div className="flex flex-col gap-4 text-lg leading-[1.56] tracking-[0.03em] text-muted">
                 <p>{t.outcomeP1}</p>
+                <ul className="flex flex-col gap-2">
+                  {t.outcomeStats.map(({ value, label }) => (
+                    <li key={value} className="flex gap-2"><span className="shrink-0">&rarr;</span><span><span className="font-medium text-ink">{value}</span> {label}</span></li>
+                  ))}
+                </ul>
                 <p>{t.outcomeP2}</p>
               </div>
             </div>
             {/* Right — images card */}
-            <div className="overflow-hidden rounded-2xl p-6 flex flex-col gap-7 md:w-[52%] shrink-0" style={{ backgroundColor: "#F6EEF5" }}>
+            <div className="overflow-hidden rounded-2xl p-6 flex flex-col gap-7 md:w-[42%] shrink-0" style={{ backgroundColor: "#F6EEF5" }}>
               <ExpandableImage
                 src={IMG("top events.png")}
                 zoomable
@@ -869,32 +884,32 @@ export function TransactionsCaseStudyContent() {
               />
             </div>
           </div>
-        </CaseStudyPhaseContent>
+        </CaseStudyWideBleed>
       </CaseStudySection>
 
       {/* ── 07 What I Learned ───────────────────────────────────────────── */}
       <CaseStudySection id="what-i-learned">
         <CaseStudyPhaseLabel>{t.learnedLabel}</CaseStudyPhaseLabel>
         <CaseStudyPhaseContent>
-          <div>
-            <div className="mt-9 flex flex-col gap-4">
-              <p className="text-lg font-medium leading-[1.56] tracking-[0.03em] text-ink">
-                {t.learnedIntro}
-              </p>
-              {t.learnedItems.map((lesson) => (
-                <p key={lesson}>{lesson}</p>
-              ))}
-            </div>
+          <CaseStudyProse>
+            <CaseStudyHeadingBlock>
+              <CaseStudyEmphasis>{t.learnedIntro}</CaseStudyEmphasis>
+              <div className="flex flex-col gap-4">
+                {t.learnedItems.map((lesson) => (
+                  <p key={lesson}>{lesson}</p>
+                ))}
+              </div>
+            </CaseStudyHeadingBlock>
+          </CaseStudyProse>
 
-            <div className="mt-16 flex flex-col items-center gap-6 text-center md:mt-24">
-              <p className="font-[family-name:var(--font-general-sans)] text-2xl font-semibold text-heading-case">
-                {t.thankYou}
-              </p>
-              <Link href="/#card-transactions" className="btn-primary">
-                <ArrowLeftIcon className="size-4" aria-hidden />
-                {t.goBack}
-              </Link>
-            </div>
+          <div className="mt-16 flex flex-col items-center gap-6 text-center md:mt-24">
+            <p className="font-[family-name:var(--font-general-sans)] text-2xl font-semibold text-heading-case">
+              {t.thankYou}
+            </p>
+            <Link href="/#card-transactions" className="btn-primary">
+              <ArrowLeftIcon className="size-4" aria-hidden />
+              {t.goBack}
+            </Link>
           </div>
         </CaseStudyPhaseContent>
       </CaseStudySection>
