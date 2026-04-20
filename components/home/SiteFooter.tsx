@@ -85,7 +85,7 @@ function ResumePopover({ label }: { label: string }) {
       <button
         ref={btnRef}
         type="button"
-        onClick={() => setPopoverOpen((v) => !v)}
+        onClick={() => setPopoverOpen(true)}
         className="flex items-center gap-2 font-[family-name:var(--font-general-sans)] text-sm font-semibold leading-4 tracking-[0.025em] text-[#fdfdfd] transition-opacity hover:opacity-75"
       >
         {label}
@@ -109,7 +109,6 @@ function ResumePopover({ label }: { label: string }) {
           <a
             href="/Magali-Solle-CV-EN.pdf"
             download
-            onClick={() => setPopoverOpen(false)}
             className="flex items-center justify-between gap-3 px-4 py-3 font-[family-name:var(--font-general-sans)] text-sm font-semibold text-[#181818] transition-colors hover:bg-black/10"
           >
             Download in English
@@ -121,7 +120,6 @@ function ResumePopover({ label }: { label: string }) {
           <a
             href="/Magali-Solle-CV-ES.pdf"
             download
-            onClick={() => setPopoverOpen(false)}
             className="flex items-center justify-between gap-3 px-4 py-3 font-[family-name:var(--font-general-sans)] text-sm font-semibold text-[#181818] transition-colors hover:bg-black/10"
           >
             Descargar en Español
