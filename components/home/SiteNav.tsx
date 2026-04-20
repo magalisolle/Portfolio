@@ -14,7 +14,7 @@ const NAV_LINKS = {
   ],
   es: [
     { href: "/#case-studies", label: "Casos de Estudio" },
-    { href: "/#side-projects", label: "Proyectos Personales" },
+    { href: "/#side-projects", label: "Otros Proyectos" },
     { href: "/#ai-workflow", label: "IA en mi trabajo" },
     { href: "/#about", label: "Sobre mí" },
   ],

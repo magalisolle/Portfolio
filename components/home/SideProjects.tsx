@@ -79,7 +79,7 @@ const PROJECTS = {
 
 const T = {
   en: { sectionTitle: "Side Projects" },
-  es: { sectionTitle: "Proyectos Personales" },
+  es: { sectionTitle: "Otros Proyectos" },
 };
 
 export function SideProjects() {
