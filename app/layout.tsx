@@ -40,7 +40,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={generalSans.variable}>
+    <html lang="en" translate="no" className={generalSans.variable}>
+      <head>
+        <meta name="google" content="notranslate" />
+      </head>
       <body
         className={`${bricolage.variable} ${poppins.variable} bg-mint text-ink antialiased`}
       >
