@@ -102,6 +102,7 @@ export function DinksmartCaseStudyContent() {
 
   return (
     <CaseStudyLayout
+      backHref="/#card-dinksmart"
       pageBgClassName="bg-[#faffe6]"
       ringOffsetClassName="focus-visible:ring-offset-[#faffe6]"
       intro={

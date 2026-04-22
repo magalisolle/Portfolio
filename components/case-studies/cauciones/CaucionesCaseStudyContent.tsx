@@ -220,6 +220,7 @@ export function CaucionesCaseStudyContent() {
 
   return (
     <CaseStudyLayout
+      backHref="/#card-cauciones"
       intro={
         <CaseStudyProjectHero
           eyebrow={t.eyebrow}

@@ -238,6 +238,7 @@ export function TransactionsCaseStudyContent() {
 
   return (
     <CaseStudyLayout
+      backHref="/#card-transactions"
       pageBgClassName="bg-[#FBF8FB]"
       ringOffsetClassName="focus-visible:ring-offset-[#FBF8FB]"
       intro={

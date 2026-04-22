@@ -150,6 +150,7 @@ export function HigoCaseStudyContent() {
 
   return (
     <CaseStudyLayout
+      backHref="/#card-higo"
       pageBgClassName="bg-[#e8effd]"
       ringOffsetClassName="focus-visible:ring-offset-[#e8effd]"
       intro={

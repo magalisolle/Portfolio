@@ -270,6 +270,7 @@ export function GoCoachingCaseStudyContent() {
 
   return (
     <CaseStudyLayout
+      backHref="/#card-go-coaching"
       pageBgClassName="bg-[#E8EFFD]"
       ringOffsetClassName="focus-visible:ring-offset-[#E8EFFD]"
       intro={

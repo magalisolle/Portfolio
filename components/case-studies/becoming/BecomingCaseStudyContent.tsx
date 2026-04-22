@@ -156,6 +156,7 @@ export function BecomingCaseStudyContent() {
 
   return (
     <CaseStudyLayout
+      backHref="/#card-becoming"
       pageBgClassName="bg-[#fdfdfd]"
       ringOffsetClassName="focus-visible:ring-offset-[#fdfdfd]"
       intro={

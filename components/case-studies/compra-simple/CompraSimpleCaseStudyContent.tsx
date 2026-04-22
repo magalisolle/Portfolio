@@ -258,6 +258,7 @@ export function CompraSimpleCaseStudyContent() {
 
   return (
     <CaseStudyLayout
+      backHref="/#card-compra-simple"
       pageBgClassName="bg-[#ededfa]"
       ringOffsetClassName="focus-visible:ring-offset-[#ededfa]"
       intro={
