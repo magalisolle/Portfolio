@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/home/SiteFooter";
 import { SiteNav } from "@/components/home/SiteNav";
 import { ArrowLeftIcon } from "@/components/icons/ArrowIcons";
 import { useLanguage } from "@/lib/i18n";
+import { FloatingBackButton } from "@/components/case-studies/FloatingBackButton";
 
 export type CaseStudyMeta = {
   title: string;
@@ -110,6 +111,7 @@ export function CaseStudyLayout({
         )}
       </article>
       <SiteFooter />
+      <FloatingBackButton href={backHref} />
     </div>
   );
 }
