@@ -31,8 +31,11 @@ const COPY = {
     factTeam: "Team", factTeamVal: "PM, 2 backends, 1 frontend",
     heroVideoLabel: "Payana transactions experience walkthrough.",
     problemLabel: "01 \u2014 The Problem",
-    problemP1: "Payana handles supplier payments, payroll, and collections for businesses. Transactions \u2014 the record of every payment made or received \u2014 were scattered across different modules, with no unified view. And if a payment got rejected, users had zero way to fix it themselves. Someone at the back office had to step in.",
-    problemP2: "The result: nobody was using the transactions panel. Not because they didn\u2019t need it. Because they didn\u2019t know it was there.",
+    problemP1: "Payana handles supplier payments, payroll, and collections for businesses. But to understand why the transactions panel was broken, you first need to understand how payments actually work on the platform.",
+    problemP2: "Users don\u2019t pay suppliers one by one. They go to Accounts payable, select multiple invoices from different suppliers, and hit \u201cPay now.\u201d That single action creates one batch \u2014 but Payana then generates one individual disbursement per supplier, all processed through Cobre, their external payment provider. Once the payment left Payana\u2019s hands, they lost visibility entirely. They had to wait for Cobre\u2019s response to know if it went through or got rejected.",
+    problemP3: "One user action. Multiple bank transfers. That gap between what Payana showed and what the bank recorded is where everything broke down.",
+    problemP4: "A user who paid 10 suppliers in one batch saw 10 separate transfers on their bank statement \u2014 with no way to reconcile them inside Payana. And if any disbursement got rejected, they had no idea. No error message, no notification. Someone at the back office had to step in.",
+    problemP5: "The result: nobody was using the transactions panel. Not because they didn\u2019t need it. Because they didn\u2019t know it was there \u2014 and when they did find it, it didn\u2019t tell them anything useful.",
     oldTrxListCaption: "Previous experience \u2014 Transactions list.",
     oldTrxDetailCaption: "Previous experience \u2014 Transaction detail.",
     quoteText: "\u201cAre there transactions? I didn\u2019t know.\u201d",
@@ -136,8 +139,11 @@ const COPY = {
     factTeam: "Equipo", factTeamVal: "PM, 2 backends, 1 frontend",
     heroVideoLabel: "Recorrido por la experiencia de transacciones de Payana.",
     problemLabel: "01 \u2014 El Problema",
-    problemP1: "Payana maneja pagos a proveedores, n\u00f3mina y cobranzas para empresas. Las transacciones \u2014 el registro de cada pago realizado o recibido \u2014 estaban dispersas en diferentes m\u00f3dulos, sin ninguna vista unificada. Y si un pago era rechazado, los usuarios no ten\u00edan forma de solucionarlo por su cuenta. Alguien del back office ten\u00eda que intervenir.",
-    problemP2: "El resultado: nadie usaba el panel de transacciones. No porque no lo necesitaran. Porque no sab\u00edan que exist\u00eda.",
+    problemP1: "Payana maneja pagos a proveedores, n\u00f3mina y cobranzas para empresas. Pero para entender por qu\u00e9 el panel de transacciones estaba roto, primero hay que entender c\u00f3mo funcionan realmente los pagos en la plataforma.",
+    problemP2: "Los usuarios no pagan a los proveedores de a uno. Van a Cuentas a pagar, seleccionan m\u00faltiples facturas de distintos proveedores y hacen clic en \u201cPagar ahora.\u201d Esa \u00fanica acci\u00f3n crea un lote \u2014 pero Payana luego genera un desembolso individual por proveedor, todos procesados a trav\u00e9s de Cobre, su proveedor de pagos externo. Una vez que el pago sal\u00eda de manos de Payana, perd\u00edan visibilidad por completo. Ten\u00edan que esperar la respuesta de Cobre para saber si el pago hab\u00eda pasado o hab\u00eda sido rechazado.",
+    problemP3: "Una acci\u00f3n del usuario. M\u00faltiples transferencias bancarias. Esa brecha entre lo que Payana mostraba y lo que registraba el banco es donde todo se rompía.",
+    problemP4: "Un usuario que pagaba a 10 proveedores en un lote ve\u00eda 10 transferencias separadas en su extracto bancario \u2014 sin forma de conciliarlas dentro de Payana. Y si alg\u00fan desembolso era rechazado, no ten\u00eda idea. Sin mensaje de error, sin notificaci\u00f3n. Alguien del back office ten\u00eda que intervenir.",
+    problemP5: "El resultado: nadie usaba el panel de transacciones. No porque no lo necesitaran. Porque no sab\u00edan que estaba ah\u00ed \u2014 y cuando lo encontraban, no les dec\u00eda nada \u00fatil.",
     oldTrxListCaption: "Experiencia anterior \u2014 Lista de transacciones.",
     oldTrxDetailCaption: "Experiencia anterior \u2014 Detalle de transacci\u00f3n.",
     quoteText: "\u201c\u00bfHay transacciones? No sab\u00eda.\u201d",
@@ -285,10 +291,34 @@ export function TransactionsCaseStudyContent() {
         <CaseStudyPhaseContent>
           <CaseStudyProse>
             <p>{t.problemP1}</p>
-            <p className="font-medium text-ink">{t.problemP2}</p>
+            <p>{t.problemP2}</p>
           </CaseStudyProse>
         </CaseStudyPhaseContent>
       </CaseStudySection>
+
+      <CaseStudyWideBleed className="!mt-10 md:!mt-14">
+        <figure className="m-0 flex flex-col gap-3">
+          <div className="overflow-hidden rounded-2xl bg-[#F6EEF5] p-4 md:p-6">
+            <ExpandableImage
+              src={`/images/${encodeURIComponent("Payments Flow.png")}`}
+              zoomable
+              alt="Payana payment flow — from a single user action to individual bank disbursements via Cobre."
+              width={1600}
+              height={900}
+              className="h-auto w-full rounded-xl"
+              sizes="(max-width: 1424px) 100vw, 1424px"
+            />
+          </div>
+        </figure>
+      </CaseStudyWideBleed>
+
+      <section className="mt-10 flex flex-col md:mt-12">
+        <CaseStudyProse>
+          <p>{t.problemP3}</p>
+          <p>{t.problemP4}</p>
+          <p className="font-medium text-ink">{t.problemP5}</p>
+        </CaseStudyProse>
+      </section>
 
       <CaseStudyWideBleed className="!mt-10 md:!mt-14">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
