@@ -289,10 +289,10 @@ export function TransactionsCaseStudyContent() {
       <CaseStudySection id="the-problem">
         <CaseStudyPhaseLabel>{t.problemLabel}</CaseStudyPhaseLabel>
         <CaseStudyPhaseContent>
-          <CaseStudyProse>
+          <div className="min-w-0 space-y-6 text-lg leading-[1.56] tracking-[0.03em] text-muted">
             <p>{t.problemP1}</p>
             <p>{t.problemP2}</p>
-          </CaseStudyProse>
+          </div>
         </CaseStudyPhaseContent>
       </CaseStudySection>
 
@@ -312,15 +312,15 @@ export function TransactionsCaseStudyContent() {
         </figure>
       </CaseStudyWideBleed>
 
-      <section className="mt-10 flex flex-col md:mt-12">
-        <CaseStudyProse>
+      <section className="mt-28 flex flex-col md:mt-32">
+        <div className="min-w-0 space-y-6 text-lg leading-[1.56] tracking-[0.03em] text-muted">
           <p>{t.problemP3}</p>
           <p>{t.problemP4}</p>
           <p className="font-medium text-ink">{t.problemP5}</p>
-        </CaseStudyProse>
+        </div>
       </section>
 
-      <CaseStudyWideBleed className="!mt-10 md:!mt-14">
+      <CaseStudyWideBleed className="!mt-28 md:!mt-32">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <figure className="m-0 flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6EEF5] p-3">
@@ -357,7 +357,7 @@ export function TransactionsCaseStudyContent() {
         </div>
       </CaseStudyWideBleed>
 
-      <CaseStudyWideBleed className="!mt-10 md:!mt-14">
+      <CaseStudyWideBleed className="!mt-32 md:!mt-36">
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(100%,900px)] flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#FFCACA] px-8 py-10 flex items-center justify-center">
