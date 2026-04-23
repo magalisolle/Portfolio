@@ -37,7 +37,7 @@ const COPY = {
     problemP4: "A user who paid 10 suppliers in one batch saw 10 separate transfers on their bank statement \u2014 with no way to reconcile them inside Payana. And if any disbursement got rejected, they had no idea. No error message, no notification. Someone at the back office had to step in.",
     problemP5: "The result: nobody was using the transactions panel. Not because they didn\u2019t need it. Because they didn\u2019t know it was there \u2014 and when they did find it, it didn\u2019t tell them anything useful.",
     oldTrxListCaption: "Previous experience \u2014 Transactions list.",
-    oldTrxDetailCaption: "Previous experience \u2014 Transaction detail.",
+    oldTrxDetailCaption: "Previous experience \u2014 Transactions Invoices.",
     quoteText: "\u201cAre there transactions? I didn\u2019t know.\u201d",
     quoteCaption: "A real user interview quote that redefined the scope of the entire project.",
     researchLabel: "02 \u2014 Research & Discovery",
@@ -145,7 +145,7 @@ const COPY = {
     problemP4: "Un usuario que pagaba a 10 proveedores en un lote ve\u00eda 10 transferencias separadas en su extracto bancario \u2014 sin forma de conciliarlas dentro de Payana. Y si alg\u00fan desembolso era rechazado, no ten\u00eda idea. Sin mensaje de error, sin notificaci\u00f3n. Alguien del back office ten\u00eda que intervenir.",
     problemP5: "El resultado: nadie usaba el panel de transacciones. No porque no lo necesitaran. Porque no sab\u00edan que estaba ah\u00ed \u2014 y cuando lo encontraban, no les dec\u00eda nada \u00fatil.",
     oldTrxListCaption: "Experiencia anterior \u2014 Lista de transacciones.",
-    oldTrxDetailCaption: "Experiencia anterior \u2014 Detalle de transacci\u00f3n.",
+    oldTrxDetailCaption: "Experiencia anterior \u2014 Facturas de transacciones.",
     quoteText: "\u201c\u00bfHay transacciones? No sab\u00eda.\u201d",
     quoteCaption: "Una cita real de entrevista de usuario que redefini\u00f3 el alcance de todo el proyecto.",
     researchLabel: "02 \u2014 Investigaci\u00f3n y Descubrimiento",
@@ -319,8 +319,26 @@ export function TransactionsCaseStudyContent() {
         <div className="min-w-0 space-y-6 text-lg leading-[1.56] tracking-[0.03em] text-muted">
           <p>{t.problemP3}</p>
           <p>{t.problemP4}</p>
-          <p className="font-medium text-ink">{t.problemP5}</p>
         </div>
+      </section>
+
+      <CaseStudyWideBleed className="!mt-32 md:!mt-36">
+        <div className="flex w-full min-w-0 justify-center">
+          <figure className="m-0 w-full max-w-[min(100%,900px)] flex flex-col gap-3">
+            <div className="overflow-hidden rounded-2xl bg-[#FFCACA] px-8 py-10 flex items-center justify-center">
+              <p className="text-center text-2xl font-medium leading-snug tracking-tight text-[#3c3c3c] md:text-3xl">
+                {t.quoteText}
+              </p>
+            </div>
+            <figcaption className="text-center text-sm leading-snug text-ink/50">
+              {t.quoteCaption}
+            </figcaption>
+          </figure>
+        </div>
+      </CaseStudyWideBleed>
+
+      <section className="mt-16 flex flex-col md:mt-20">
+        <p className="min-w-0 text-lg font-medium leading-[1.56] tracking-[0.03em] text-ink">{t.problemP5}</p>
       </section>
 
       <CaseStudyWideBleed className="!mt-28 md:!mt-32">
@@ -355,21 +373,6 @@ export function TransactionsCaseStudyContent() {
             </div>
             <figcaption className="text-center text-sm leading-snug text-ink/50">
               {t.oldTrxDetailCaption}
-            </figcaption>
-          </figure>
-        </div>
-      </CaseStudyWideBleed>
-
-      <CaseStudyWideBleed className="!mt-32 md:!mt-36">
-        <div className="flex w-full min-w-0 justify-center">
-          <figure className="m-0 w-full max-w-[min(100%,900px)] flex flex-col gap-3">
-            <div className="overflow-hidden rounded-2xl bg-[#FFCACA] px-8 py-10 flex items-center justify-center">
-              <p className="text-center text-2xl font-medium leading-snug tracking-tight text-[#3c3c3c] md:text-3xl">
-                {t.quoteText}
-              </p>
-            </div>
-            <figcaption className="text-center text-sm leading-snug text-ink/50">
-              {t.quoteCaption}
             </figcaption>
           </figure>
         </div>
