@@ -309,6 +309,9 @@ export function TransactionsCaseStudyContent() {
               sizes="(max-width: 1424px) 100vw, 1424px"
             />
           </div>
+          <figcaption className="text-center text-sm leading-snug text-ink/50">
+            How a payment works in Payana — from one action to multiple transfers
+          </figcaption>
         </figure>
       </CaseStudyWideBleed>
 
