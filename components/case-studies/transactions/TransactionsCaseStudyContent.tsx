@@ -625,7 +625,7 @@ export function TransactionsCaseStudyContent() {
         </div>
       </CaseStudyWideBleed>
 
-      <CaseStudySection id="design-execution-iterations" className="!mt-10 md:!mt-14">
+      <CaseStudySection id="design-execution-iterations">
         <CaseStudyPhaseContent>
           <div className="flex flex-col gap-3">
             <p className="text-lg font-medium leading-[1.4] tracking-[0.03em] text-muted">
@@ -658,7 +658,7 @@ export function TransactionsCaseStudyContent() {
           <div className="w-full max-w-[min(100dvw,700px)]">
             <div className="overflow-hidden rounded-2xl p-6 flex flex-col gap-4" style={{ backgroundColor: "#F6EEF5" }}>
               {[
-                { file: "dropdown1.png", label: "Dropdown — option A." },
+                { file: "dropwdown1.png", label: "Dropdown — option A." },
                 { file: "dropdown2.png", label: "Dropdown — option B." },
                 { file: "dropdown3.png", label: "Dropdown — option C." },
               ].map(({ file, label }) => (
