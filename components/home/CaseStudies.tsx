@@ -39,11 +39,11 @@ const CASES = {
       caseStudyHref: "/case-studies/transactions",
     },
     {
-      client: "IOL Inversiones (2023)",
-      title: "Design of Simple Purchase",
+      client: "Rootstrap (2025)",
+      title: "MVP of Go! Coaching",
       description:
-        "A faster parallel purchase flow that let experienced users buy in two taps — driving +12% conversion and +14% approval rate improvement.",
-      caseStudyHref: "/case-studies/compra-simple",
+        "A sales performance platform that replaced 6 spreadsheets with a single connected system for loan officers and their coaches.",
+      caseStudyHref: "/case-studies/go-coaching",
     },
     {
       client: "IOL Inversiones (2023)",
@@ -53,11 +53,11 @@ const CASES = {
       caseStudyHref: "/case-studies/cauciones",
     },
     {
-      client: "Rootstrap (2025)",
-      title: "MVP of Go! Coaching",
+      client: "IOL Inversiones (2023)",
+      title: "Design of Simple Purchase",
       description:
-        "A sales performance platform that replaced 6 spreadsheets with a single connected system for loan officers and their coaches.",
-      caseStudyHref: "/case-studies/go-coaching",
+        "A faster parallel purchase flow that let experienced users buy in two taps — driving +12% conversion and +14% approval rate improvement.",
+      caseStudyHref: "/case-studies/compra-simple",
     },
   ],
   es: [
@@ -69,11 +69,11 @@ const CASES = {
       caseStudyHref: "/case-studies/transactions",
     },
     {
-      client: "IOL Inversiones (2023)",
-      title: "Diseño de Compra Simple",
+      client: "Rootstrap (2025)",
+      title: "MVP de Go! Coaching",
       description:
-        "Un flujo de compra paralelo y más rápido que permitía a los usuarios experimentados comprar en dos toques — generando +12% de conversión y +14% de mejora en la tasa de aprobación.",
-      caseStudyHref: "/case-studies/compra-simple",
+        "Una plataforma de rendimiento de ventas que reemplazó 6 planillas con un sistema conectado para asesores de crédito y sus coaches.",
+      caseStudyHref: "/case-studies/go-coaching",
     },
     {
       client: "IOL Inversiones (2023)",
@@ -83,11 +83,11 @@ const CASES = {
       caseStudyHref: "/case-studies/cauciones",
     },
     {
-      client: "Rootstrap (2025)",
-      title: "MVP de Go! Coaching",
+      client: "IOL Inversiones (2023)",
+      title: "Diseño de Compra Simple",
       description:
-        "Una plataforma de rendimiento de ventas que reemplazó 6 planillas con un sistema conectado para asesores de crédito y sus coaches.",
-      caseStudyHref: "/case-studies/go-coaching",
+        "Un flujo de compra paralelo y más rápido que permitía a los usuarios experimentados comprar en dos toques — generando +12% de conversión y +14% de mejora en la tasa de aprobación.",
+      caseStudyHref: "/case-studies/compra-simple",
     },
   ],
 };
@@ -103,16 +103,19 @@ const IMAGE_CONFIG: Pick<
   | "caucionesCardImage"
   | "mvpStreakImage"
 >[] = [
+  // 0 — Transactions
   {
     image: "Rectangle 1.png",
     imageClassName: "object-cover object-left object-top md:object-[18%_center]",
   },
+  // 1 — Go! Coaching
   {
-    image: "cardcomprasimple.png",
-    imageClassName: "object-cover object-center",
-    textColumnClassName: "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
-    imageColumnClassName: "bg-lilac",
+    image: "Week Activity Panel.png",
+    imageClassName: "object-contain object-top",
+    imageVariant: "mvp",
+    mvpStreakImage: "Streak.png",
   },
+  // 2 — Cauciones
   {
     caucionesCardImage: "caucioness.png",
     image: "ilustraciones_app.png",
@@ -121,11 +124,12 @@ const IMAGE_CONFIG: Pick<
     textColumnClassName: "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
     imageColumnClassName: "!bg-[#C4B5FD]",
   },
+  // 3 — Compra Simple
   {
-    image: "Week Activity Panel.png",
-    imageClassName: "object-contain object-top",
-    imageVariant: "mvp",
-    mvpStreakImage: "Streak.png",
+    image: "cardcomprasimple.png",
+    imageClassName: "object-cover object-center",
+    textColumnClassName: "bg-card-case rounded-t-3xl md:rounded-t-none md:rounded-l-3xl",
+    imageColumnClassName: "bg-lilac",
   },
 ];
 
