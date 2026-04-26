@@ -594,7 +594,7 @@ export function CompraSimpleCaseStudyContent() {
                   <p className="text-5xl font-bold leading-none text-ink">{value}</p>
                   <p className="text-lg font-medium leading-[1.4] text-muted">{label}</p>
                 </div>
-                <img alt="" src={`/images/Compra simple/Shape${i + 1}.svg`} className="h-[80px] w-[86px] shrink-0 sm:h-[124px] sm:w-[134px]" />
+                <img alt="" src={`/images/Compra simple/Shape${i + 1}.svg`} className="h-[60px] w-[65px] shrink-0 sm:h-[90px] sm:w-[97px]" />
               </div>
             ))}
           </div>
@@ -622,9 +622,9 @@ export function CompraSimpleCaseStudyContent() {
       {/* ── Conversion + image ──────────────────────────────────────────── */}
       <CaseStudySection id="outcome-conversion">
         <CaseStudyPhaseContent>
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-6">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-6 md:justify-center">
             {/* Left — +12% / +14% stacked cards */}
-            <div className="flex shrink-0 flex-col gap-4 md:w-[340px]">
+            <div className="flex shrink-0 flex-col gap-4 md:w-[240px]">
               {t.conversionCards.map(({ value, label }) => (
                 <div key={value} className="rounded-2xl px-7 py-5" style={{ backgroundColor: "#f6f9fe" }}>
                   <p className="text-4xl font-semibold leading-tight text-heading-case">{value}</p>
@@ -633,7 +633,7 @@ export function CompraSimpleCaseStudyContent() {
               ))}
             </div>
             {/* Right — phone screenshot */}
-            <div className="min-w-0 flex-1 overflow-hidden rounded-3xl md:max-w-[480px]">
+            <div className="min-w-0 flex-1 overflow-hidden rounded-3xl md:max-w-[320px]">
               <ExpandableImage
                 src={IMG("comprasimpleiol 1.png")}
                 alt="Compra Simple — outcome screenshot"
