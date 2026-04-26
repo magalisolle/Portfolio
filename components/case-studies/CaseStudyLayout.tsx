@@ -68,13 +68,13 @@ export function CaseStudyLayout({
             </div>
             {/* Outer band matches hero (`max-w` + `px`); inner column keeps body copy measure (same 1186 + body padding as before). */}
             <div className="case-study-body-band case-study-hero-band-inner mx-auto mt-12 w-full max-w-[min(100%,1424px)] md:mt-16">
-              <div className="case-study-body-inner mx-auto w-full max-w-[1186px]">
+              <div className="case-study-body-inner mx-auto w-full max-w-[960px]">
                 {children}
               </div>
             </div>
           </>
         ) : (
-          <div className="case-study-body-inner mx-auto max-w-[1186px]">
+          <div className="case-study-body-inner mx-auto max-w-[960px]">
             <Link
               href={backHref}
               className={`inline-flex size-12 shrink-0 items-center justify-center rounded-full bg-[var(--color-button-primary-bg)] text-[var(--color-button-primary-fg)] transition-colors hover:bg-[var(--color-button-primary-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/30 focus-visible:ring-offset-2 ${ringOffsetClassName}`.trim()}

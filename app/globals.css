@@ -158,7 +158,7 @@
   }
 
   /*
-   * Case study body column (max 1186): must match Tailwind px-4 md:px-8 lg:px-[131px] exactly.
+   * Case study body column (max 960): must match Tailwind px-4 md:px-8 lg:px-[131px] exactly.
    * CaseStudyWideBleed pulls to column edges with the inverse margin — same breakpoints/values.
    */
   .case-study-body-inner {
@@ -177,8 +177,8 @@
 
   /*
    * Wide bleed sits inside .case-study-body-inner: old margins only undid body padding,
-   * not the side gap that centers max-w-[1186px]. Parent .case-study-body-band sets
-   * container-type so we can pull by max(0, (100cqi - 1186px) / 2) + body padding.
+   * not the side gap that centers max-w-[960px]. Parent .case-study-body-band sets
+   * container-type so we can pull by max(0, (100cqi - 960px) / 2) + body padding.
    */
   .case-study-body-band {
     container-type: inline-size;
@@ -222,36 +222,36 @@
   @supports (container-type: inline-size) {
     .case-study-wide-bleed-outer {
       margin-inline: calc(
-        -1 * (max(0px, (100cqi - 1186px) / 2) + 1rem)
+        -1 * (max(0px, (100cqi - 960px) / 2) + 1rem)
       );
     }
     @media (min-width: 768px) {
       .case-study-wide-bleed-outer {
         margin-inline: calc(
-          -1 * (max(0px, (100cqi - 1186px) / 2) + 2rem)
+          -1 * (max(0px, (100cqi - 960px) / 2) + 2rem)
         );
       }
     }
     @media (min-width: 1024px) {
       .case-study-wide-bleed-outer {
         margin-inline: calc(
-          -1 * (max(0px, (100cqi - 1186px) / 2) + 131px)
+          -1 * (max(0px, (100cqi - 960px) / 2) + 131px)
         );
       }
     }
 
     /* Title line aligns with body copy; figure stays full bleed width below. */
     .case-study-wide-bleed-align-text {
-      padding-inline: calc(max(0px, (100cqi - 1186px) / 2) + 1rem);
+      padding-inline: calc(max(0px, (100cqi - 960px) / 2) + 1rem);
     }
     @media (min-width: 768px) {
       .case-study-wide-bleed-align-text {
-        padding-inline: calc(max(0px, (100cqi - 1186px) / 2) + 2rem);
+        padding-inline: calc(max(0px, (100cqi - 960px) / 2) + 2rem);
       }
     }
     @media (min-width: 1024px) {
       .case-study-wide-bleed-align-text {
-        padding-inline: calc(max(0px, (100cqi - 1186px) / 2) + 131px);
+        padding-inline: calc(max(0px, (100cqi - 960px) / 2) + 131px);
       }
     }
   }
