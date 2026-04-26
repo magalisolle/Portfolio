@@ -279,20 +279,55 @@ export function CompraSimpleCaseStudyContent() {
         />
       }
     >
-      {/* ── Hero video ──────────────────────────────────────────────────── */}
-      <HeroVideo />
-
-      {/* ── 01. The Problem ─────────────────────────────────────────────── */}
+      {/* ── 01. The Problem (with inline phone mockup) ──────────────────── */}
       <CaseStudySection id="the-problem">
-        <CaseStudyPhaseLabel>{t.problemLabel}</CaseStudyPhaseLabel>
         <CaseStudyPhaseContent>
-          <CaseStudyProse>
-            <div className="flex flex-col gap-4">
-              <p>{t.problemP1}</p>
-              <p>{t.problemP2}</p>
-              <p>{t.problemP3}</p>
+          <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-28">
+            {/* Text */}
+            <div className="min-w-0 flex-1 space-y-6 text-lg leading-[1.56] tracking-[0.03em] text-muted">
+              <CaseStudyPhaseLabel>{t.problemLabel}</CaseStudyPhaseLabel>
+              <div className="mt-4 space-y-6 md:mt-0">
+                <p>{t.problemP1}</p>
+                <p>{t.problemP2}</p>
+                <p>{t.problemP3}</p>
+              </div>
             </div>
-          </CaseStudyProse>
+            {/* iPhone mockup */}
+            <div className="mx-auto w-full max-w-[220px] shrink-0 md:mx-0">
+              <div className="relative isolate aspect-[540/1096] w-full [container-type:inline-size]">
+                <Image
+                  src={IPHONE_13_MINI_THIN_FRAME}
+                  alt=""
+                  fill
+                  className="pointer-events-none z-0 object-contain object-center"
+                  sizes="220px"
+                  aria-hidden
+                  draggable={false}
+                />
+                <div
+                  className="absolute z-10 overflow-hidden rounded-[min(1.65rem,9.5cqw)]"
+                  style={SCREEN_INSET_STYLE}
+                >
+                  <video
+                    className="h-full w-full origin-center scale-[1.012] object-cover object-center"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    poster={IMG("comprasimple-poster.jpg")}
+                    aria-label="Compra Simple — purchase flow."
+                  >
+                    <source src={IMG("CompraSimple2.mp4")} type="video/mp4" />
+                  </video>
+                  <div
+                    className="pointer-events-none absolute left-1/2 top-0 z-[11] h-[2.8%] w-[38%] -translate-x-1/2 rounded-b-[min(0.85rem,2.8cqw)] bg-[#0a0a0a]"
+                    aria-hidden
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </CaseStudyPhaseContent>
       </CaseStudySection>
 

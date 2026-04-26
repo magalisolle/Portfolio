@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
  */
 export function CaseStudyPhaseLabel({ children }: { children: ReactNode }) {
   return (
-    <h2 className="mb-4 font-[family-name:var(--font-general-sans)] text-2xl font-medium leading-tight tracking-tight text-ink md:text-[28px] md:leading-[1.29]">
+    <h2 className="mb-8 border-b-2 border-ink/10 pb-3 font-[family-name:var(--font-general-sans)] text-2xl font-medium leading-tight tracking-tight text-ink md:text-[28px] md:leading-[1.29]">
       {children}
     </h2>
   );
