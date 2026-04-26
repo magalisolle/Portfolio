@@ -474,9 +474,14 @@ export function TransactionsCaseStudyContent() {
               <p>{t.modelP3}</p>
             </CaseStudyHeadingBlock>
 
-            <p><strong>Option 1:</strong> {t.modelOption1}</p>
-            <p><strong>Option 2:</strong> {t.modelOption2}</p>
-            <p><strong>Option 3 (chosen):</strong> {t.modelOption3}</p>
+            {[t.modelOption1, t.modelOption2, t.modelOption3].map((opt) => {
+              const i = opt.indexOf(": ");
+              return (
+                <p key={opt}>
+                  <strong>{opt.slice(0, i + 1)}</strong>{opt.slice(i + 1)}
+                </p>
+              );
+            })}
           </CaseStudyProse>
         </CaseStudyPhaseContent>
       </CaseStudySection>
