@@ -624,7 +624,7 @@ export function CompraSimpleCaseStudyContent() {
         <CaseStudyPhaseContent>
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:gap-6 md:justify-center">
             {/* Left — +12% / +14% stacked cards */}
-            <div className="flex shrink-0 flex-col gap-4 md:w-[240px]">
+            <div className="flex shrink-0 flex-col gap-4 md:w-[340px]">
               {t.conversionCards.map(({ value, label }) => (
                 <div key={value} className="rounded-2xl px-7 py-5" style={{ backgroundColor: "#f6f9fe" }}>
                   <p className="text-4xl font-semibold leading-tight text-heading-case">{value}</p>
