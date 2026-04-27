@@ -290,7 +290,7 @@
 
 /* More breathing room after a wide-bleed image before the next title/block. */
 .cs-prose > .case-study-wide-bleed-outer:not(:last-child) {
-  margin-block-end: 14rem;
+  margin-block-end: 9rem;
 }
 
 @layer base {
