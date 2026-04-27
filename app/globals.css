@@ -282,6 +282,12 @@
   }
 }
 
+/* Plain paragraphs direct children of cs-prose get tighter spacing than block gaps.
+   Targets margin-block-end because that's what Tailwind v4 space-y uses. */
+.cs-prose > p:not(:last-child) {
+  margin-block-end: 2rem;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

@@ -58,7 +58,7 @@ export function CaseStudySection({
  */
 export function CaseStudyProse({ children }: { children: ReactNode }) {
   return (
-    <div className="min-w-0 space-y-[7rem] text-lg leading-[1.56] tracking-[0.03em] text-muted">
+    <div className="cs-prose min-w-0 space-y-[7rem] text-lg leading-[1.56] tracking-[0.03em] text-muted">
       {children}
     </div>
   );
