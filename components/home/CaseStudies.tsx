@@ -148,6 +148,7 @@ export function CaseStudies() {
   const cases = CASES[lang];
   const t = T[lang];
   const [sectionBg, setSectionBg] = useState<string>("transparent");
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
   const cardRefs = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
@@ -175,6 +176,25 @@ export function CaseStudies() {
     return () => observers.forEach((o) => o.disconnect());
   }, []);
 
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    cardRefs.current.forEach((el, i) => {
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleCards((prev) => new Set([...prev, i]));
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -80px 0px" }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
   const items: CaseStudyItem[] = cases.map((c, i) => ({
     ...c,
     ...IMAGE_CONFIG[i],
@@ -198,6 +218,11 @@ export function CaseStudies() {
               ref={(el) => { cardRefs.current[items.indexOf(item)] = el; }}
               id={item.caseStudyHref ? `card-${item.caseStudyHref.replace("/case-studies/", "")}` : undefined}
               className="relative flex flex-col overflow-hidden rounded-3xl bg-card-case xl:flex-row xl:items-stretch xl:h-[340px]"
+              style={{
+                opacity: visibleCards.has(items.indexOf(item)) ? 1 : 0,
+                transform: visibleCards.has(items.indexOf(item)) ? "translateY(0)" : "translateY(24px)",
+                transition: "opacity 0.6s ease, transform 0.6s ease",
+              }}
             >
               <div
                 className={[
