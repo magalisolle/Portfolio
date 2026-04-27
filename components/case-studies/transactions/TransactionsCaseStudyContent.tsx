@@ -498,7 +498,7 @@ export function TransactionsCaseStudyContent() {
                 width={1600}
                 height={900}
                 className="h-auto w-full rounded-xl"
-                sizes="(max-width: 1186px) 100vw, 900px"
+                sizes="(max-width: 1424px) 100vw, 1424px"
               />
             </div>
             <figcaption className="text-center text-sm leading-snug text-ink/50">
