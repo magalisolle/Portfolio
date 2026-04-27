@@ -109,7 +109,7 @@ const COPY = {
     visualEmphasis: "Choosing an aesthetic that felt like the product.",
     visualP1: "Before any UI work started, I put together three moodboard directions for the client to evaluate. The goal wasn\u2019t to pick a color palette \u2014 it was to align on the emotional register of the product. A performance platform for competitive loan officers needs to feel different from a generic SaaS dashboard.",
     visualP2: "They chose the spatial, high-contrast direction: dark backgrounds, glowing data visualizations, a sense of precision and ambition. It matched the competitive culture of the program and the aspirational identity of the users \u2014 people who track their numbers because they want to win.",
-    moodboardsCaption: "Three visual directions were presented to the client. The chosen direction \u2014 spatial, dark, high-contrast \u2014 aligned with the competitive culture of the program and became the foundation of the design system.",
+    moodboardsCaption: "Three visual directions were presented to the client.",
     dashboardCaption: "Mobile \u2014 Coach View \u00b7 Dashboard",
     solutionLabel: "05 \u2014 The Solution",
     solutionIntro: "The platform was designed around two distinct experiences:",
@@ -210,7 +210,7 @@ const COPY = {
     visualEmphasis: "Elegir una est\u00e9tica que se sintiera como el producto.",
     visualP1: "Antes de cualquier trabajo de UI, arm\u00e9 tres direcciones de moodboard para que el cliente evaluara. El objetivo no era elegir una paleta de colores \u2014 era alinearse en el registro emocional del producto. Una plataforma de performance para loan officers competitivos tiene que sentirse diferente a un dashboard gen\u00e9rico de SaaS.",
     visualP2: "Eligieron la direcci\u00f3n espacial y de alto contraste: fondos oscuros, visualizaciones de datos luminosas, sensaci\u00f3n de precisi\u00f3n y ambici\u00f3n. Correspond\u00eda con la cultura competitiva del programa y la identidad aspiracional de los usuarios \u2014 personas que monitorean sus n\u00fameros porque quieren ganar.",
-    moodboardsCaption: "Se presentaron tres direcciones visuales al cliente. La elegida \u2014 espacial, oscura, alto contraste \u2014 se aline\u00f3 con la cultura competitiva del programa y se convirti\u00f3 en la base del design system.",
+    moodboardsCaption: "Se presentaron tres direcciones visuales al cliente.",
     dashboardCaption: "Mobile \u2014 Vista Coach \u00b7 Dashboard",
     solutionLabel: "05 \u2014 La Soluci\u00f3n",
     solutionIntro: "La plataforma fue dise\u00f1ada alrededor de dos experiencias distintas:",
@@ -604,29 +604,36 @@ export function GoCoachingCaseStudyContent() {
       </CaseStudyWideBleed>
 
       <CaseStudySection id="visual-direction">
-        <CaseStudyPhaseLabel>{t.visualLabel}</CaseStudyPhaseLabel>
-        <CaseStudyPhaseContent>
-          <CaseStudyProse>
-            <CaseStudyHeadingBlock>
+        <CaseStudyWideBleed className="!mt-0">
+          <CaseStudyPhaseLabel>{t.visualLabel}</CaseStudyPhaseLabel>
+          <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-stretch md:gap-36">
+            {/* Text */}
+            <div className="min-w-0 flex-1 flex flex-col justify-center space-y-4">
               <CaseStudyEmphasis>{t.visualEmphasis}</CaseStudyEmphasis>
-              <p>{t.visualP1}</p>
-              <p>{t.visualP2}</p>
-            </CaseStudyHeadingBlock>
-
-            <figure className="m-0 flex flex-col gap-3 overflow-hidden rounded-2xl">
+              <p className="text-lg leading-[1.56] tracking-[0.03em] text-muted">{t.visualP1}</p>
+              <p className="text-lg leading-[1.56] tracking-[0.03em] text-muted">{t.visualP2}</p>
+            </div>
+            {/* Moodboard */}
+            <figure className="m-0 min-w-0 flex-1 flex flex-col gap-3 overflow-hidden rounded-2xl">
               <ExpandableImage
                 src={imagePath("moodboards.png")}
                 alt="Three moodboard directions; the chosen spatial, dark, high-contrast direction became the design system foundation."
                 width={1824}
                 height={1170}
                 className="h-auto w-full rounded-2xl"
-                sizes="(max-width: 1186px) 100vw, 1186px"
+                sizes="(max-width: 1424px) 100vw, 1424px"
               />
               <figcaption className="text-center text-sm leading-relaxed text-muted-soft">
                 {t.moodboardsCaption}
               </figcaption>
             </figure>
+          </div>
+        </CaseStudyWideBleed>
+      </CaseStudySection>
 
+      <CaseStudySection id="visual-direction-dashboard">
+          <CaseStudyPhaseContent>
+            <CaseStudyProse>
             <figure className="m-0 mt-[9rem] flex flex-col gap-3">
               <ExpandableImage
                 src={imagePath("dashboard mobile.webp")}
