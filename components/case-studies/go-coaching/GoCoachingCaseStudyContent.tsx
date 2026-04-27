@@ -651,11 +651,6 @@ export function GoCoachingCaseStudyContent() {
               </div>
 
               <CaseStudyHeadingBlock>
-                <CaseStudyEmphasis>{t.solutionActivityEmphasis}</CaseStudyEmphasis>
-                <p>{t.solutionActivityP}</p>
-              </CaseStudyHeadingBlock>
-
-              <CaseStudyHeadingBlock>
                 <CaseStudyEmphasis>{t.solutionAutoEmphasis}</CaseStudyEmphasis>
                 <p>{t.solutionAutoP}</p>
               </CaseStudyHeadingBlock>
@@ -703,10 +698,29 @@ export function GoCoachingCaseStudyContent() {
               </div>
             </CaseStudyWideBleed>
 
-            <CaseStudyHeadingBlock>
-              <CaseStudyEmphasis>{t.solutionRelEmphasis}</CaseStudyEmphasis>
-              <p>{t.solutionRelP}</p>
-            </CaseStudyHeadingBlock>
+            <CaseStudyWideBleed>
+              <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-12">
+                <div className="min-w-0 flex-1 flex flex-col justify-center space-y-4">
+                  <CaseStudyEmphasis>{t.solutionRelEmphasis}</CaseStudyEmphasis>
+                  <p className="text-lg leading-[1.56] tracking-[0.03em] text-muted">{t.solutionRelP}</p>
+                </div>
+                <figure className="m-0 min-w-0 flex-1 flex flex-col gap-3">
+                  <div className="overflow-hidden rounded-2xl">
+                    <ExpandableImage
+                      src={imagePath("liam johnson.webp")}
+                      alt="Referral partner profile and detail views — relationship context, forms, and guardrails in the student experience."
+                      width={2757}
+                      height={1781}
+                      className="h-auto w-full"
+                      sizes="(max-width: 1424px) 50vw, 712px"
+                    />
+                  </div>
+                  <figcaption className="text-center text-sm leading-snug text-ink/50">
+                    {t.referralDetailCaption}
+                  </figcaption>
+                </figure>
+              </div>
+            </CaseStudyWideBleed>
 
             <CaseStudyHeadingBlock>
               <CaseStudyEmphasis>{t.solutionGuardrailsEmphasis}</CaseStudyEmphasis>
@@ -722,22 +736,6 @@ export function GoCoachingCaseStudyContent() {
               <CaseStudyEmphasis>{t.solutionGamEmphasis}</CaseStudyEmphasis>
               <p>{t.solutionGamP}</p>
             </CaseStudyHeadingBlock>
-
-            <figure className="m-0 mb-[9rem] flex flex-col gap-3">
-              <div className="overflow-hidden rounded-2xl">
-                <ExpandableImage
-                  src={imagePath("liam johnson.webp")}
-                  alt="Referral partner profile and detail views — relationship context, forms, and guardrails in the student experience."
-                  width={2757}
-                  height={1781}
-                  className="h-auto w-full"
-                  sizes="(max-width: 1186px) 100vw, 1186px"
-                />
-              </div>
-              <figcaption className="text-center text-sm leading-snug text-ink/50">
-                {t.referralDetailCaption}
-              </figcaption>
-            </figure>
 
             {/* Coach Experience */}
             <div className="flex flex-col gap-4 py-16 md:py-24">

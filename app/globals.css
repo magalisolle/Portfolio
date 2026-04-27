@@ -288,6 +288,11 @@
   margin-block-end: 2rem;
 }
 
+/* More breathing room after a wide-bleed image before the next title/block. */
+.cs-prose > .case-study-wide-bleed-outer:not(:last-child) {
+  margin-block-end: 14rem;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

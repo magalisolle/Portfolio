@@ -45,7 +45,7 @@ export function CaseStudySection({
   return (
     <section
       id={id}
-      className={`mt-44 flex flex-col md:mt-52 first:mt-14 first:md:mt-16 ${className}`}
+      className={`mt-60 flex flex-col md:mt-72 first:mt-14 first:md:mt-16 ${className}`}
     >
       {children}
     </section>
