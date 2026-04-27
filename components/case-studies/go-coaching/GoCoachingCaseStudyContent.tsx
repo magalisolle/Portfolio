@@ -631,25 +631,6 @@ export function GoCoachingCaseStudyContent() {
         </CaseStudyWideBleed>
       </CaseStudySection>
 
-      <CaseStudySection id="visual-direction-dashboard">
-          <CaseStudyPhaseContent>
-            <CaseStudyProse>
-            <figure className="m-0 mt-[9rem] flex flex-col gap-3">
-              <ExpandableImage
-                src={imagePath("dashboard mobile.webp")}
-                alt="Mobile — Coach View Dashboard."
-                width={1824}
-                height={1170}
-                className="h-auto w-full rounded-2xl"
-                sizes="(max-width: 1186px) 100vw, 1186px"
-              />
-              <figcaption className="text-center text-sm leading-snug text-ink/50">
-                {t.dashboardCaption}
-              </figcaption>
-            </figure>
-          </CaseStudyProse>
-        </CaseStudyPhaseContent>
-      </CaseStudySection>
 
       {/* ── 05 The Solution ─────────────────────────────────────────────── */}
       <CaseStudySection id="the-solution">
@@ -768,36 +749,62 @@ export function GoCoachingCaseStudyContent() {
               </p>
             </div>
 
-            <CaseStudyHeadingBlock>
-              <CaseStudyEmphasis>{t.coachViewEmphasis}</CaseStudyEmphasis>
-              <p>{t.coachViewP1}</p>
-              <p>{t.coachViewP2}</p>
-            </CaseStudyHeadingBlock>
+          </CaseStudyProse>
+        </CaseStudyPhaseContent>
+      </CaseStudySection>
 
+      <CaseStudyWideBleed className="!mt-32 md:!mt-36">
+        <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-36">
+          <div className="min-w-0 flex-1 flex flex-col justify-center space-y-4">
+            <CaseStudyEmphasis>{t.coachViewEmphasis}</CaseStudyEmphasis>
+            <p className="text-lg leading-[1.56] tracking-[0.03em] text-muted">{t.coachViewP1}</p>
+            <p className="text-lg leading-[1.56] tracking-[0.03em] text-muted">{t.coachViewP2}</p>
+          </div>
+          <figure className="m-0 min-w-0 flex-1 flex flex-col gap-3 overflow-hidden rounded-2xl">
+            <ExpandableImage
+              src={imagePath("dashboard mobile.webp")}
+              alt="Mobile — Coach View Dashboard."
+              width={1824}
+              height={1170}
+              className="h-auto w-full rounded-2xl"
+              sizes="(max-width: 1424px) 100vw, 1424px"
+            />
+            <figcaption className="text-center text-sm leading-snug text-ink/50">
+              {t.dashboardCaption}
+            </figcaption>
+          </figure>
+        </div>
+      </CaseStudyWideBleed>
+
+      <CaseStudySection id="coach-view-weekly">
+        <CaseStudyPhaseContent>
+          <CaseStudyProse>
             <CaseStudyHeadingBlock>
               <CaseStudyEmphasis>{t.coachWeeklyEmphasis}</CaseStudyEmphasis>
               <p>{t.coachWeeklyP}</p>
             </CaseStudyHeadingBlock>
 
-            <figure className="m-0 flex flex-col gap-3">
-              <div className="overflow-hidden rounded-2xl">
-                <ExpandableImage
-                  src={imagePath("mobiles.webp")}
-                  alt="Mobile — Student View — Referral Partners."
-                  width={1824}
-                  height={1170}
-                  className="h-auto w-full"
-                  sizes="(max-width: 1186px) 100vw, 1186px"
-                />
-              </div>
-              <figcaption className="text-center text-sm leading-snug text-ink/50">
-                {t.mobilesCaption}
-              </figcaption>
-            </figure>
-
           </CaseStudyProse>
         </CaseStudyPhaseContent>
       </CaseStudySection>
+
+      <CaseStudyWideBleed className="!mt-10 md:!mt-14">
+        <figure className="m-0 flex flex-col gap-3">
+          <div className="overflow-hidden rounded-2xl">
+            <ExpandableImage
+              src={imagePath("mobiles.webp")}
+              alt="Mobile — Student View — Referral Partners."
+              width={1824}
+              height={1170}
+              className="h-auto w-full"
+              sizes="(max-width: 1424px) 100vw, 1424px"
+            />
+          </div>
+          <figcaption className="text-center text-sm leading-snug text-ink/50">
+            {t.mobilesCaption}
+          </figcaption>
+        </figure>
+      </CaseStudyWideBleed>
 
       {/* ── 06 Closing ──────────────────────────────────────────────────── */}
       <CaseStudySection id="closing">
