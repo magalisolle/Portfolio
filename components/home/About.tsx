@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { imagePath } from "@/lib/image-path";
 import { useLanguage } from "@/lib/i18n";
 
@@ -56,6 +57,58 @@ const T = {
   es: { sectionTitle: "Sobre mí" },
 };
 
+function AnimatedCard({ card, index }: { card: (typeof CARDS.en)[0]; index: number }) {
+  const ref = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -120px 0px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <article
+      ref={ref}
+      key={card.title}
+      className="flex flex-col gap-4 rounded-2xl bg-[#FDFDFD] p-4 md:flex-row md:items-center md:gap-4 md:px-5 md:py-4"
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(20px)",
+        transition: `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`,
+      }}
+    >
+      <div className="relative mx-auto h-[90px] w-[90px] shrink-0 overflow-hidden rounded-lg md:mx-0">
+        <Image
+          src={imagePath(card.image)}
+          alt=""
+          fill
+          className="object-contain"
+          sizes="90px"
+        />
+      </div>
+      <div className="min-w-0 space-y-1">
+        <h3 className="text-xl font-medium leading-snug text-ink">
+          {card.title}
+        </h3>
+        <p className="text-base leading-relaxed text-muted md:text-[14px] md:leading-[1.71]">
+          {card.body}
+        </p>
+      </div>
+    </article>
+  );
+}
+
 export function About() {
   const { lang } = useLanguage();
   const cards = CARDS[lang];
@@ -71,29 +124,8 @@ export function About() {
           {t.sectionTitle}
         </h2>
         <div className="flex min-w-0 flex-1 flex-col gap-4">
-          {cards.map((card) => (
-            <article
-              key={card.title}
-              className="flex flex-col gap-4 rounded-2xl bg-[#FDFDFD] p-4 md:flex-row md:items-center md:gap-4 md:px-5 md:py-4"
-            >
-              <div className="relative mx-auto h-[90px] w-[90px] shrink-0 overflow-hidden rounded-lg md:mx-0">
-                <Image
-                  src={imagePath(card.image)}
-                  alt=""
-                  fill
-                  className="object-contain"
-                  sizes="90px"
-                />
-              </div>
-              <div className="min-w-0 space-y-1">
-                <h3 className="text-xl font-medium leading-snug text-ink">
-                  {card.title}
-                </h3>
-                <p className="text-base leading-relaxed text-muted md:text-[14px] md:leading-[1.71]">
-                  {card.body}
-                </p>
-              </div>
-            </article>
+          {cards.map((card, i) => (
+            <AnimatedCard key={card.title} card={card} index={i} />
           ))}
         </div>
       </div>
