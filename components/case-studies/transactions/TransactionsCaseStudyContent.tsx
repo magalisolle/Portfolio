@@ -469,19 +469,20 @@ export function TransactionsCaseStudyContent() {
               <p>{t.modelP2}</p>
             </CaseStudyHeadingBlock>
 
-            <CaseStudyHeadingBlock>
+            <div className="flex flex-col gap-4">
               <CaseStudyEmphasis>{t.modelEmphasis2}</CaseStudyEmphasis>
               <p>{t.modelP3}</p>
-            </CaseStudyHeadingBlock>
-
-            {[t.modelOption1, t.modelOption2, t.modelOption3].map((opt) => {
-              const i = opt.indexOf(": ");
-              return (
-                <p key={opt}>
-                  <strong>{opt.slice(0, i + 1)}</strong>{opt.slice(i + 1)}
-                </p>
-              );
-            })}
+              <div className="flex flex-col gap-3">
+                {[t.modelOption1, t.modelOption2, t.modelOption3].map((opt) => {
+                  const i = opt.indexOf(": ");
+                  return (
+                    <p key={opt}>
+                      <strong>{opt.slice(0, i + 1)}</strong>{opt.slice(i + 1)}
+                    </p>
+                  );
+                })}
+              </div>
+            </div>
           </CaseStudyProse>
         </CaseStudyPhaseContent>
       </CaseStudySection>
@@ -491,7 +492,7 @@ export function TransactionsCaseStudyContent() {
           <figure className="m-0 w-full max-w-[min(100dvw,1424px)] flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6EEF5] p-6">
               <ExpandableImage
-                src={IMG("opciones.png")}
+                src={IMG("opciones2.png")}
                 zoomable
                 alt="Three transaction model options mapped before the final decision."
                 width={1600}
