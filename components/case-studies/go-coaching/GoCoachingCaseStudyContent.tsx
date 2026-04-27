@@ -754,28 +754,31 @@ export function GoCoachingCaseStudyContent() {
         </CaseStudyPhaseContent>
       </CaseStudySection>
 
-      <CaseStudyWideBleed className="!mt-32 md:!mt-36">
-        <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12">
-          <div className="min-w-0 flex-1 flex flex-col justify-center space-y-4">
-            <CaseStudyEmphasis>{t.coachViewEmphasis}</CaseStudyEmphasis>
-            <p className="text-lg leading-[1.56] tracking-[0.03em] text-muted">{t.coachViewP1}</p>
-            <p className="text-lg leading-[1.56] tracking-[0.03em] text-muted">{t.coachViewP2}</p>
+      <div className="relative mt-32 md:mt-36">
+        <div className="absolute left-1/2 h-full w-screen -translate-x-1/2" style={{ background: "#F0F5FE" }} aria-hidden />
+        <CaseStudyWideBleed className="relative py-16 md:py-20">
+          <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12">
+            <div className="min-w-0 flex-1 flex flex-col justify-center space-y-4">
+              <CaseStudyEmphasis>{t.coachViewEmphasis}</CaseStudyEmphasis>
+              <p className="text-lg leading-[1.56] tracking-[0.03em] text-ink/70">{t.coachViewP1}</p>
+              <p className="text-lg leading-[1.56] tracking-[0.03em] text-ink/70">{t.coachViewP2}</p>
+            </div>
+            <figure className="m-0 min-w-0 flex-1 flex flex-col gap-3 overflow-hidden rounded-2xl">
+              <ExpandableImage
+                src={imagePath("dashboard mobile.webp")}
+                alt="Mobile — Coach View Dashboard."
+                width={1824}
+                height={1170}
+                className="h-auto w-full rounded-2xl"
+                sizes="(max-width: 1424px) 100vw, 1424px"
+              />
+              <figcaption className="text-center text-sm leading-snug text-ink/70">
+                {t.dashboardCaption}
+              </figcaption>
+            </figure>
           </div>
-          <figure className="m-0 min-w-0 flex-1 flex flex-col gap-3 overflow-hidden rounded-2xl">
-            <ExpandableImage
-              src={imagePath("dashboard mobile.webp")}
-              alt="Mobile — Coach View Dashboard."
-              width={1824}
-              height={1170}
-              className="h-auto w-full rounded-2xl"
-              sizes="(max-width: 1424px) 100vw, 1424px"
-            />
-            <figcaption className="text-center text-sm leading-snug text-ink/50">
-              {t.dashboardCaption}
-            </figcaption>
-          </figure>
-        </div>
-      </CaseStudyWideBleed>
+        </CaseStudyWideBleed>
+      </div>
 
       <CaseStudySection id="coach-view-weekly">
         <CaseStudyPhaseContent>
