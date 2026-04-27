@@ -45,7 +45,7 @@ export function CaseStudySection({
   return (
     <section
       id={id}
-      className={`mt-32 flex flex-col md:mt-36 first:mt-14 first:md:mt-16 ${className}`}
+      className={`mt-44 flex flex-col md:mt-52 first:mt-14 first:md:mt-16 ${className}`}
     >
       {children}
     </section>
@@ -58,7 +58,7 @@ export function CaseStudySection({
  */
 export function CaseStudyProse({ children }: { children: ReactNode }) {
   return (
-    <div className="min-w-0 space-y-[4.5rem] text-lg leading-[1.56] tracking-[0.03em] text-muted">
+    <div className="min-w-0 space-y-[7rem] text-lg leading-[1.56] tracking-[0.03em] text-muted">
       {children}
     </div>
   );

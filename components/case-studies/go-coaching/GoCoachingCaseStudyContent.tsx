@@ -351,7 +351,7 @@ export function GoCoachingCaseStudyContent() {
         </CaseStudyPhaseContent>
       </CaseStudySection>
 
-      <CaseStudyWideBleed className="!mt-12 md:!mt-16">
+      <CaseStudyWideBleed className="!mt-20 md:!mt-24">
         <div className="flex flex-col gap-6 md:flex-row md:gap-8">
           <figure className="m-0 flex min-w-0 flex-1 flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3">
@@ -402,7 +402,7 @@ export function GoCoachingCaseStudyContent() {
         </CaseStudyPhaseContent>
       </CaseStudySection>
 
-      <CaseStudyWideBleed className="!mt-12 md:!mt-16">
+      <CaseStudyWideBleed className="!mt-20 md:!mt-24">
         <div className="flex flex-col gap-4 md:flex-row md:gap-4 md:items-start">
           {/* Left box — single image, hugs content */}
           <figure className="m-0 flex min-w-0 flex-[7] flex-col gap-3">
@@ -482,7 +482,7 @@ export function GoCoachingCaseStudyContent() {
         </CaseStudyPhaseContent>
       </CaseStudySection>
 
-      <CaseStudyWideBleed className="!mt-10 md:!mt-14 !overflow-x-visible">
+      <CaseStudyWideBleed className="!mt-20 md:!mt-24 !overflow-x-visible">
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(70dvw,997px)] flex flex-col gap-3">
             <div className="overflow-hidden rounded-2xl bg-[#F6F9FE] p-3">
@@ -585,7 +585,7 @@ export function GoCoachingCaseStudyContent() {
         </CaseStudyPhaseContent>
       </CaseStudySection>
 
-      <CaseStudyWideBleed className="!mt-10 md:!mt-14 !overflow-x-visible">
+      <CaseStudyWideBleed className="!mt-20 md:!mt-24 !overflow-x-visible">
         <div className="flex w-full min-w-0 justify-center">
           <figure className="m-0 w-full max-w-[min(100dvw,1424px)] flex flex-col gap-3">
             <ExpandableImage
@@ -604,7 +604,7 @@ export function GoCoachingCaseStudyContent() {
       </CaseStudyWideBleed>
 
       <CaseStudySection id="visual-direction">
-        <CaseStudyWideBleed className="!mt-0">
+        <CaseStudyWideBleed>
           <CaseStudyPhaseLabel>{t.visualLabel}</CaseStudyPhaseLabel>
           <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-stretch md:gap-36">
             {/* Text */}
@@ -740,7 +740,7 @@ export function GoCoachingCaseStudyContent() {
             </figure>
 
             {/* Coach Experience */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 py-16 md:py-24">
               <p className="text-xl font-medium leading-[1.4] tracking-[0.02em] text-ink md:text-2xl">
                 {t.coachExpTitle}
               </p>
@@ -754,7 +754,7 @@ export function GoCoachingCaseStudyContent() {
       </CaseStudySection>
 
       <CaseStudyWideBleed className="!mt-32 md:!mt-36">
-        <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-36">
+        <div className="flex flex-col gap-8 md:flex-row md:items-stretch md:gap-12">
           <div className="min-w-0 flex-1 flex flex-col justify-center space-y-4">
             <CaseStudyEmphasis>{t.coachViewEmphasis}</CaseStudyEmphasis>
             <p className="text-lg leading-[1.56] tracking-[0.03em] text-muted">{t.coachViewP1}</p>
@@ -788,7 +788,7 @@ export function GoCoachingCaseStudyContent() {
         </CaseStudyPhaseContent>
       </CaseStudySection>
 
-      <CaseStudyWideBleed className="!mt-10 md:!mt-14">
+      <CaseStudyWideBleed className="!mt-20 md:!mt-24">
         <figure className="m-0 flex flex-col gap-3">
           <div className="overflow-hidden rounded-2xl">
             <ExpandableImage
