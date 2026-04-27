@@ -896,7 +896,7 @@ export function TransactionsCaseStudyContent() {
       {/* ── 06 Outcome ──────────────────────────────────────────────────── */}
       <CaseStudySection id="outcome">
         <CaseStudyWideBleed>
-          <div className="mx-auto w-full max-w-[1300px] flex flex-col gap-6 md:flex-row md:items-start md:gap-6">
+          <div className="mx-auto w-full max-w-[1300px] flex flex-col gap-6 md:flex-row md:items-center md:gap-16">
             {/* Left — text */}
             <div className="flex flex-col gap-6 md:flex-1">
               <CaseStudyPhaseLabel>{t.outcomeLabel}</CaseStudyPhaseLabel>
