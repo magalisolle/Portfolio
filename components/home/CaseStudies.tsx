@@ -197,7 +197,7 @@ export function CaseStudies() {
               key={item.title + item.client}
               ref={(el) => { cardRefs.current[items.indexOf(item)] = el; }}
               id={item.caseStudyHref ? `card-${item.caseStudyHref.replace("/case-studies/", "")}` : undefined}
-              className="relative flex flex-col overflow-hidden rounded-3xl bg-card-case xl:flex-row xl:items-stretch xl:min-h-[340px]"
+              className="relative flex flex-col overflow-hidden rounded-3xl bg-card-case xl:flex-row xl:items-stretch xl:h-[340px]"
             >
               <div
                 className={[
