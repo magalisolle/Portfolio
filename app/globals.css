@@ -285,6 +285,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: #3c3c3c;
   }
   body {
     font-family: var(--font-sans);

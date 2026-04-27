@@ -103,28 +103,28 @@ function ResumePopover({ label }: { label: string }) {
 
       {popoverOpen && (
         <div
-          className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-50 rounded-2xl border border-white/10 bg-[#93bf80] shadow-lg overflow-hidden"
+          className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-50 rounded-2xl border border-white/10 bg-[#2e2e2e] shadow-lg overflow-hidden"
           style={popoverWidth ? { width: popoverWidth + 48 } : undefined}
         >
           <a
             href="/Magali-Solle-CV-EN.pdf"
             download
-            className="flex items-center justify-between gap-3 px-4 py-3 font-[family-name:var(--font-general-sans)] text-sm font-semibold text-[#181818] transition-colors hover:bg-black/10"
+            className="flex items-center justify-between gap-3 px-4 py-3 font-[family-name:var(--font-general-sans)] text-sm font-semibold text-[#fdfdfd] transition-colors hover:bg-white/10"
           >
             Download in English
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-              <path d="M7 1v8M7 9l-3-3M7 9l3-3M1 12h12" stroke="#181818" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M7 1v8M7 9l-3-3M7 9l3-3M1 12h12" stroke="#fdfdfd" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
-          <div className="mx-4 border-t border-black/10" />
+          <div className="mx-4 border-t border-white/10" />
           <a
             href="/Magali-Solle-CV-ES.pdf"
             download
-            className="flex items-center justify-between gap-3 px-4 py-3 font-[family-name:var(--font-general-sans)] text-sm font-semibold text-[#181818] transition-colors hover:bg-black/10"
+            className="flex items-center justify-between gap-3 px-4 py-3 font-[family-name:var(--font-general-sans)] text-sm font-semibold text-[#fdfdfd] transition-colors hover:bg-white/10"
           >
             Descargar en Español
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-              <path d="M7 1v8M7 9l-3-3M7 9l3-3M1 12h12" stroke="#181818" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M7 1v8M7 9l-3-3M7 9l3-3M1 12h12" stroke="#fdfdfd" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
         </div>
