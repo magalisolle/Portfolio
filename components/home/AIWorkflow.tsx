@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { imagePath } from "@/lib/image-path";
 import { useLanguage } from "@/lib/i18n";
 
@@ -46,19 +47,76 @@ const T = {
   es: { sectionTitle: "IA en mi trabajo" },
 };
 
+const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%&";
+
+function useScramble(target: string, triggered: boolean) {
+  const [display, setDisplay] = useState(target);
+  const frameRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    if (!triggered) return;
+    let frame = 0;
+    const totalFrames = 45;
+
+    frameRef.current = setInterval(() => {
+      const revealed = Math.floor((frame / totalFrames) * target.length);
+      setDisplay(
+        target
+          .split("")
+          .map((char, i) => {
+            if (char === " ") return " ";
+            if (i < revealed) return char;
+            return CHARS[Math.floor(Math.random() * CHARS.length)];
+          })
+          .join("")
+      );
+      frame++;
+      if (frame > totalFrames + 4) {
+        clearInterval(frameRef.current!);
+        setDisplay(target);
+      }
+    }, 55);
+
+    return () => { if (frameRef.current) clearInterval(frameRef.current); };
+  }, [target, triggered]);
+
+  return display;
+}
+
 export function AIWorkflow() {
   const { lang } = useLanguage();
   const cards = CARDS[lang];
   const t = T[lang];
+  const [triggered, setTriggered] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTriggered(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const scrambled = useScramble(t.sectionTitle, triggered);
 
   return (
     <section
+      ref={sectionRef}
       id="ai-workflow"
       className="bg-lilac px-4 py-24 md:px-16 md:py-28 lg:px-[123px] lg:py-[134px]"
     >
       <div className="mx-auto flex max-w-[1186px] flex-col gap-10">
         <h2 className="text-[32px] font-medium leading-tight text-ink">
-          {t.sectionTitle}
+          {scrambled}
         </h2>
         <div className="grid gap-0 divide-y divide-[rgba(24,24,24,0.1)] md:grid-cols-3 md:gap-0 md:divide-x md:divide-y-0">
           {cards.map((card) => (
